@@ -2,10 +2,10 @@ import React, { useState, useRef } from 'react';
 import gsap from 'gsap';
 
 const initialStickers = [
-  { id: 1, label: '☕ Coffee Powered', color: 'bg-[#fff9c4]', rotate: '-rotate-6', x: 0, y: 0, tag: 'postit' },
+  { id: 1, label: '☕ Coffee Powered', color: 'bg-[#fff9c4] text-[#2d2d2d]', rotate: '-rotate-6', x: 0, y: 0, tag: 'postit' },
   { id: 2, label: '⚠️ DO NOT TOUCH!', color: 'bg-[#ff4d4d] text-white', rotate: 'rotate-12', x: 0, y: 0, tag: 'danger' },
-  { id: 3, label: '⚡ MERN Dev', color: 'bg-[#38BDF8] text-slate-900', rotate: '-rotate-3', x: 0, y: 0, tag: 'badge' },
-  { id: 4, label: '🎨 Hand-Crafted UI', color: 'bg-[#88CE02] text-slate-900', rotate: 'rotate-6', x: 0, y: 0, tag: 'badge' }
+  { id: 3, label: '⚡ MERN Dev', color: 'bg-[#38BDF8] text-[#2d2d2d]', rotate: '-rotate-3', x: 0, y: 0, tag: 'badge' },
+  { id: 4, label: '🎨 Hand-Crafted UI', color: 'bg-[#88CE02] text-[#2d2d2d]', rotate: 'rotate-6', x: 0, y: 0, tag: 'badge' }
 ];
 
 export const DraggableStickers = () => {
