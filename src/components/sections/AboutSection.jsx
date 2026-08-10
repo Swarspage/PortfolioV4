@@ -15,6 +15,14 @@ export const AboutSection = () => {
 
   return (
     <section id="about" className="relative pt-16 pb-12 scroll-mt-24">
+      {/* Subtle Doodle Floating Accents */}
+      <div className="absolute top-4 right-10 opacity-35 animate-float pointer-events-none hidden md:block" style={{ animationDelay: '0.5s' }}>
+        <span className="font-handwriting font-bold text-3xl text-[#2d5da1]">{'=>'}</span >
+      </div>
+      <div className="absolute bottom-4 left-6 opacity-35 animate-float pointer-events-none hidden md:block" style={{ animationDelay: '1.2s' }}>
+        <span className="font-handwriting font-bold text-3xl text-[#ff4d4d]">{`[ ]`}</span >
+      </div>
+
       <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
         
         {/* Left Side: Image / Visuals */}

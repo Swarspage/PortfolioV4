@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { Card } from '../ui/Card';
 import { Badge } from '../ui/Badge';
 import { Code2, PenTool } from 'lucide-react';
+import { SketchCircle } from '../decorations/HandDrawnDecorations';
 import skillsData from '../../All data/data/SkillsData.json';
 import gsap from 'gsap';
 
@@ -59,6 +60,13 @@ export const SkillsSection = () => {
 
   return (
     <section id="skills" className="relative pt-16 pb-12 scroll-mt-24 space-y-12">
+      {/* Floating Code Accents */}
+      <div className="absolute top-2 left-8 opacity-35 animate-float pointer-events-none hidden md:block" style={{ animationDelay: '0.8s' }}>
+        <span className="font-handwriting font-bold text-3xl text-[#2d5da1]">{`( )`}</span>
+      </div>
+      <div className="absolute top-8 right-6 opacity-35 animate-float pointer-events-none hidden md:block" style={{ animationDelay: '1.4s' }}>
+        <SketchCircle className="w-12 h-12 text-[#ff4d4d]" />
+      </div>
       <div className="text-center max-w-2xl mx-auto space-y-3">
         <Badge variant="blue" rotate="right" icon={Code2}>
           Tech Stack

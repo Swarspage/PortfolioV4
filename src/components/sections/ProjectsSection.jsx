@@ -4,6 +4,7 @@ import { Badge } from '../ui/Badge';
 import { Button } from '../ui/Button';
 import { Modal } from '../ui/Modal';
 import { FolderGit2, ExternalLink, Code2, Play, ArrowRight, ArrowLeft } from 'lucide-react';
+import { SketchStar, SketchCircle } from '../decorations/HandDrawnDecorations';
 import projectsJson from '../../All data/data/ProjectsData.json';
 
 const icons = import.meta.glob('../../All data/assets/*.{webp,png,jpg,svg}', { eager: true, query: '?url', import: 'default' });
@@ -58,6 +59,13 @@ export const ProjectsSection = () => {
 
   return (
     <section id="projects" className="relative pt-16 pb-12 scroll-mt-24 space-y-12">
+      {/* Subtle Floating Code Doodles */}
+      <div className="absolute top-2 left-6 opacity-35 animate-float pointer-events-none hidden md:block" style={{ animationDelay: '0.3s' }}>
+        <span className="font-handwriting font-bold text-2xl text-[#88CE02]">{`/* code */`}</span>
+      </div>
+      <div className="absolute top-6 right-8 opacity-35 animate-float pointer-events-none hidden md:block" style={{ animationDelay: '1.1s' }}>
+        <SketchStar className="w-8 h-8 text-[#ff4d4d]" />
+      </div>
       <div className="text-center max-w-2xl mx-auto space-y-3">
         <Badge variant="postit" rotate="left" icon={FolderGit2}>
           Portfolio Highlights

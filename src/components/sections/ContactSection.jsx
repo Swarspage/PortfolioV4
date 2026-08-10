@@ -121,6 +121,13 @@ export const ContactSection = ({ onOpenResume }) => {
 
   return (
     <section id="contact" ref={sectionRef} className="relative pt-16 pb-24 max-w-6xl mx-auto px-4">
+      {/* Floating Code Accents */}
+      <div className="absolute top-6 left-6 opacity-35 animate-float pointer-events-none hidden md:block" style={{ animationDelay: '0.6s' }}>
+        <span className="font-handwriting font-bold text-3xl text-[#2d5da1]">{`</>`}</span>
+      </div>
+      <div className="absolute top-10 right-8 opacity-35 animate-float pointer-events-none hidden md:block" style={{ animationDelay: '1.5s' }}>
+        <span className="font-handwriting font-bold text-3xl text-[#ff4d4d]">{`{ }`}</span>
+      </div>
       {/* Header */}
       <div className="text-center max-w-2xl mx-auto space-y-3 mb-16">
         <Badge variant="blue" rotate="right" icon={Mail}>

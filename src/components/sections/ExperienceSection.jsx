@@ -41,6 +41,13 @@ export const ExperienceSection = () => {
 
   return (
     <section id="experience" ref={containerRef} className="relative pt-16 pb-32 w-full max-w-4xl mx-auto px-4">
+      {/* Floating Code Accents */}
+      <div className="absolute top-10 left-4 opacity-35 animate-float pointer-events-none hidden md:block" style={{ animationDelay: '0.4s' }}>
+        <span className="font-handwriting font-bold text-3xl text-[#ff4d4d]">{`{ }`}</span>
+      </div>
+      <div className="absolute bottom-24 right-6 opacity-35 animate-float pointer-events-none hidden md:block" style={{ animationDelay: '1.2s' }}>
+        <span className="font-handwriting font-bold text-3xl text-[#88CE02]">{`=>`}</span>
+      </div>
       {/* Section Header */}
       <div className="text-center max-w-2xl mx-auto space-y-3 mb-16">
         <Badge variant="orange" rotate="left" icon={Briefcase}>
