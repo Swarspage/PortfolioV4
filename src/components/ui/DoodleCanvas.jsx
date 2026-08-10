@@ -90,25 +90,53 @@ export const DoodleCanvas = () => {
     }
   };
 
-  const handleTouchStart = (e) => {
-    if (!isActive) return;
-    if (e.touches && e.touches.length === 1) {
-      soundManager.playClick();
-      isDrawing.current = true;
-      lastPoint.current = getPageCoords(e);
-    } else {
-      isDrawing.current = false;
-    }
-  };
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas || !isActive) return;
 
-  const handleTouchMove = (e) => {
-    if (!isActive || !isDrawing.current) return;
-    if (e.touches && e.touches.length === 1) {
-      draw(e);
-    } else {
+    const handleNativeTouchStart = (e) => {
+      if (e.touches && e.touches.length === 1) {
+        soundManager.playClick();
+        isDrawing.current = true;
+        lastPoint.current = getPageCoords(e);
+      } else {
+        isDrawing.current = false;
+      }
+    };
+
+    const handleNativeTouchMove = (e) => {
+      if (isDrawing.current && e.touches && e.touches.length === 1) {
+        if (e.cancelable) e.preventDefault(); // Stop screen from scrolling down when drawing
+        const coords = getPageCoords(e);
+        const ctx = canvas.getContext('2d');
+        ctx.strokeStyle = penColor;
+        ctx.lineWidth = 3;
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
+        ctx.beginPath();
+        ctx.moveTo(lastPoint.current.x, lastPoint.current.y);
+        ctx.lineTo(coords.x, coords.y);
+        ctx.stroke();
+        lastPoint.current = coords;
+      } else {
+        isDrawing.current = false;
+      }
+    };
+
+    const handleNativeTouchEnd = () => {
       isDrawing.current = false;
-    }
-  };
+    };
+
+    canvas.addEventListener('touchstart', handleNativeTouchStart, { passive: true });
+    canvas.addEventListener('touchmove', handleNativeTouchMove, { passive: false });
+    canvas.addEventListener('touchend', handleNativeTouchEnd, { passive: true });
+
+    return () => {
+      canvas.removeEventListener('touchstart', handleNativeTouchStart);
+      canvas.removeEventListener('touchmove', handleNativeTouchMove);
+      canvas.removeEventListener('touchend', handleNativeTouchEnd);
+    };
+  }, [isActive, penColor]);
 
   return (
     <>
@@ -119,9 +147,6 @@ export const DoodleCanvas = () => {
         onMouseMove={draw}
         onMouseUp={stopDrawing}
         onMouseLeave={stopDrawing}
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={stopDrawing}
         className={`absolute top-0 left-0 w-full z-40 ${isActive ? 'pointer-events-auto cursor-crosshair' : 'pointer-events-none'}`}
       />
 
