@@ -19,11 +19,20 @@ const getImageUrl = (imageSrc) => {
 export const ProjectsSection = () => {
   const { projectsData } = projectsJson;
   
+  const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' ? window.innerWidth < 768 : false);
   const [currentPage, setCurrentPage] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [activeProject, setActiveProject] = useState(null);
-  const projectsPerPage = 2;
-  
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const projectsPerPage = isMobile ? 1 : 2;
   const totalPages = Math.ceil(projectsData.length / projectsPerPage);
   
   const handleNext = () => {

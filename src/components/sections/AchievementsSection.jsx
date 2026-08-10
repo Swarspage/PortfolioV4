@@ -37,11 +37,20 @@ const IconMap = {
 export const AchievementsSection = () => {
   const containerRef = useRef(null);
   
+  const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' ? window.innerWidth < 768 : false);
   const [currentPage, setCurrentPage] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [activeAchievement, setActiveAchievement] = useState(null);
-  const itemsPerPage = 2;
-  
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const itemsPerPage = isMobile ? 1 : 2;
   const totalPages = Math.ceil(achievementsData.length / itemsPerPage);
   
   const handleNext = () => {
