@@ -80,9 +80,9 @@ export const YoutubeSection = () => {
               </h3>
             </div>
             
-            <div className="w-full aspect-video border-4 border-[var(--color-ink)] rounded-lg overflow-hidden bg-[var(--color-ink)] shadow-hard-sm transform rotate-1 hover:rotate-0 transition-transform duration-300">
+            <div className="w-full aspect-video border-4 border-[var(--color-ink)] rounded-lg overflow-hidden bg-[var(--color-ink)] shadow-hard-sm isolate transform-gpu">
               <iframe 
-                className="w-full h-full"
+                className="w-full h-full relative z-0"
                 src={`https://www.youtube.com/embed/${youtubeData.featuredVideo.id}?rel=0`} 
                 title="Featured YouTube Video" 
                 frameBorder="0" 
