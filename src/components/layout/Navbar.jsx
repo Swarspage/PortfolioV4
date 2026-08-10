@@ -70,21 +70,7 @@ export const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const [showTryMeTooltip, setShowTryMeTooltip] = useState(false);
-
-  useEffect(() => {
-    const hasSeen = localStorage.getItem('hasSeenTryMeTooltip');
-    if (!hasSeen) {
-      setShowTryMeTooltip(true);
-      const timer = setTimeout(() => setShowTryMeTooltip(false), 10000);
-      return () => clearTimeout(timer);
-    }
-  }, []);
-
   const handleThemeToggle = (e) => {
-    setShowTryMeTooltip(false);
-    localStorage.setItem('hasSeenTryMeTooltip', 'true');
-
     if (!document.startViewTransition) {
       toggleTheme();
       return;
@@ -122,26 +108,29 @@ export const Navbar = () => {
   };
 
   return (
-    <header className="sticky top-3 z-50 max-w-7xl mx-auto px-2 sm:px-4">
-      <nav className="bg-[var(--color-bg)] border-[3px] border-[var(--color-ink)] wobbly-card shadow-hard px-3 sm:px-4 py-2 flex items-center justify-between relative transition-all">
+    <header className="sticky top-3 z-50 max-w-7xl mx-auto px-3 sm:px-6">
+      <nav className="bg-[var(--color-bg)] border-[3px] border-[var(--color-ink)] wobbly-card shadow-hard px-4 py-2.5 flex items-center justify-between relative transition-all">
         
         {/* Brand / Logo */}
         <div 
           onClick={() => scrollToSection('hero')}
-          className="flex items-center gap-2 cursor-pointer group select-none shrink-0"
+          className="flex items-center gap-2.5 cursor-pointer group select-none"
         >
-          <div className="w-9 h-9 sm:w-10 sm:h-10 bg-[var(--color-postit)] border-2 border-[var(--color-ink)] wobbly-circle flex items-center justify-center font-heading font-bold text-xl shadow-hard-sm group-hover:rotate-12 transition-transform">
-            <PenTool className="w-4 h-4 sm:w-5 sm:h-5 text-[#ff4d4d]" />
+          <div className="w-10 h-10 bg-[var(--color-postit)] border-2 border-[var(--color-ink)] wobbly-circle flex items-center justify-center font-heading font-bold text-xl shadow-hard-sm group-hover:rotate-12 transition-transform">
+            <PenTool className="w-5 h-5 text-[#ff4d4d]" />
           </div>
           <div className="flex flex-col">
-            <span className="font-heading font-bold text-xl sm:text-2xl tracking-tight text-[var(--color-ink)] flex items-center gap-1">
+            <span className="font-heading font-bold text-2xl tracking-tight text-[var(--color-ink)] flex items-center gap-1.5">
               {heroData.name || 'Swar Shinde'}
+              <PostItTag className="text-xs px-1.5 py-0.5 ml-1 hidden lg:inline-block">
+                Dev
+              </PostItTag>
             </span>
           </div>
         </div>
 
         {/* Desktop Nav Items (All 9 Sections) */}
-        <div className="hidden xl:flex items-center gap-3.5 font-handwriting text-base lg:text-lg font-bold">
+        <div className="hidden xl:flex items-center gap-5 font-handwriting text-lg font-bold">
           {navItems.map((item) => {
             const Icon = item.icon;
             const isActive = activeSection === item.id;
@@ -149,7 +138,7 @@ export const Navbar = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`relative px-1.5 py-0.5 flex items-center gap-1 transition-all hover:-rotate-2 ${
+                className={`relative px-2 py-1 flex items-center gap-1 transition-all hover:-rotate-2 ${
                   isActive ? 'text-[#ff4d4d]' : 'text-[var(--color-ink)] hover:text-[#2d5da1]'
                 }`}
               >
@@ -166,7 +155,7 @@ export const Navbar = () => {
         </div>
 
         {/* Medium Screen Nav Items (Compact dropdown / key sections) */}
-        <div className="hidden lg:flex xl:hidden items-center gap-2.5 font-handwriting text-base font-bold">
+        <div className="hidden lg:flex xl:hidden items-center gap-3 font-handwriting text-lg font-bold">
           {navItems.slice(0, 5).map((item) => {
             const Icon = item.icon;
             const isActive = activeSection === item.id;
@@ -174,7 +163,7 @@ export const Navbar = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`relative px-1 py-0.5 flex items-center gap-1 ${
+                className={`relative px-1.5 py-1 flex items-center gap-1 ${
                   isActive ? 'text-[#ff4d4d]' : 'text-[var(--color-ink)] hover:text-[#2d5da1]'
                 }`}
               >
@@ -191,36 +180,27 @@ export const Navbar = () => {
         </div>
 
         {/* Right Side Actions */}
-        <div className="flex items-center gap-2 relative shrink-0">
-          {/* First-Time "Try me! ✨" Popup Tooltip */}
-          {showTryMeTooltip && (
-            <div className="absolute right-full mr-2.5 top-1/2 -translate-y-1/2 bg-[#ff4d4d] text-white px-2.5 py-1 rounded-lg font-handwriting font-bold text-xs shadow-hard-sm animate-bounce whitespace-nowrap z-50 border-2 border-[#2d2d2d] pointer-events-none">
-              Try me! ✨
-              {/* Tooltip Right Arrow */}
-              <div className="absolute top-1/2 -right-1.5 -translate-y-1/2 w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-l-[6px] border-l-[#2d2d2d]" />
-            </div>
-          )}
-
+        <div className="flex items-center gap-3">
           {/* Dark Mode Toggle */}
           <button
             onClick={handleThemeToggle}
             title={isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-            className="p-1.5 sm:p-2 bg-[var(--color-muted)] border-2 border-[var(--color-ink)] wobbly-tag shadow-hard-sm text-[var(--color-ink)] hover:bg-[var(--color-postit)] transition-colors group"
+            className="p-2 bg-[var(--color-muted)] border-2 border-[var(--color-ink)] wobbly-tag shadow-hard-sm text-[var(--color-ink)] hover:bg-[var(--color-postit)] transition-colors group"
             aria-label="Toggle dark mode"
           >
             {isDark 
-              ? <Sun className="w-4 h-4 sm:w-5 sm:h-5 stroke-[2.5] group-hover:rotate-45 transition-transform duration-300" />
-              : <Moon className="w-4 h-4 sm:w-5 sm:h-5 stroke-[2.5] group-hover:-rotate-12 transition-transform duration-300" />
+              ? <Sun className="w-5 h-5 stroke-[2.5] group-hover:rotate-45 transition-transform duration-300" />
+              : <Moon className="w-5 h-5 stroke-[2.5] group-hover:-rotate-12 transition-transform duration-300" />
             }
           </button>
 
           {/* Mobile / Tablet Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="xl:hidden p-1.5 sm:p-2 bg-[var(--color-muted)] border-2 border-[var(--color-ink)] wobbly-tag shadow-hard-sm text-[var(--color-ink)] hover:bg-[var(--color-postit)] transition-colors"
+            className="xl:hidden p-2 bg-[var(--color-muted)] border-2 border-[var(--color-ink)] wobbly-tag shadow-hard-sm text-[var(--color-ink)] hover:bg-[var(--color-postit)] transition-colors"
             aria-label="Toggle Navigation Menu"
           >
-            {mobileMenuOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6 stroke-[2.5]" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6 stroke-[2.5]" />}
+            {mobileMenuOpen ? <X className="w-6 h-6 stroke-[2.5]" /> : <Menu className="w-6 h-6 stroke-[2.5]" />}
           </button>
         </div>
       </nav>
