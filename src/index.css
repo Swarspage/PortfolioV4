@@ -1,0 +1,194 @@
+@import "tailwindcss";
+
+@theme {
+  --font-heading: 'Kalam', cursive, sans-serif;
+  --font-handwriting: 'Patrick Hand', cursive, sans-serif;
+  --color-paper: #fdfbf7;
+  --color-pencil: #2d2d2d;
+  --color-muted-paper: #e5e0d8;
+  --color-accent-red: #ff4d4d;
+  --color-accent-blue: #2d5da1;
+  --color-postit: #fff9c4;
+}
+
+@layer base {
+  * {
+    border-color: #2d2d2d;
+  }
+  
+  body {
+    font-family: 'Patrick Hand', cursive, sans-serif;
+    background-color: #fdfbf7;
+    color: #2d2d2d;
+    background-image: radial-gradient(#e5e0d8 1.5px, transparent 1.5px);
+    background-size: 24px 24px;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Kalam', cursive, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+}
+
+/* --- Hand-Drawn Design System Utilities --- */
+
+.font-heading {
+  font-family: 'Kalam', cursive, sans-serif;
+}
+
+.font-handwriting {
+  font-family: 'Patrick Hand', cursive, sans-serif;
+}
+
+/* Irregular Wobbly Border Radii */
+.wobbly-1 {
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+}
+
+.wobbly-2 {
+  border-radius: 20px 255px 20px 255px / 255px 20px 255px 20px;
+}
+
+.wobbly-3 {
+  border-radius: 255px 25px 225px 25px / 25px 225px 25px 255px;
+}
+
+.wobbly-btn {
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+}
+
+.wobbly-card {
+  border-radius: 255px 20px 225px 20px / 20px 225px 20px 255px;
+}
+
+.wobbly-input {
+  border-radius: 255px 12px 225px 12px / 12px 225px 12px 255px;
+}
+
+.wobbly-tag {
+  border-radius: 255px 8px 225px 8px / 8px 225px 8px 255px;
+}
+
+.wobbly-circle {
+  border-radius: 60% 40% 70% 30% / 40% 50% 60% 50%;
+}
+
+/* Hard Offset Cut-Paper Shadows */
+.shadow-hard-sm {
+  box-shadow: 2px 2px 0px 0px #2d2d2d;
+}
+
+.shadow-hard {
+  box-shadow: 4px 4px 0px 0px #2d2d2d;
+}
+
+.shadow-hard-lg {
+  box-shadow: 8px 8px 0px 0px #2d2d2d;
+}
+
+.shadow-hard-postit {
+  box-shadow: 6px 6px 0px 0px rgba(45, 45, 45, 0.2);
+}
+
+.shadow-hard-blue {
+  box-shadow: 4px 4px 0px 0px #2d5da1;
+}
+
+.shadow-hard-red {
+  box-shadow: 4px 4px 0px 0px #ff4d4d;
+}
+
+/* Paper Grain Texture Override */
+.bg-notebook {
+  background-color: #fdfbf7;
+  background-image: radial-gradient(#e5e0d8 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+}
+
+/* Decorative Tape Strip */
+.tape-strip {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-1.5deg);
+  width: 90px;
+  height: 26px;
+  background-color: rgba(229, 224, 216, 0.75);
+  border: 1px dashed rgba(45, 45, 45, 0.3);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  backdrop-filter: blur(1px);
+  z-index: 20;
+}
+
+/* Thumbtack Effect */
+.thumbtack-pin {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 18px;
+  background-color: #ff4d4d;
+  border: 2px solid #2d2d2d;
+  border-radius: 50%;
+  box-shadow: 2px 2px 0px 0px #2d2d2d;
+  z-index: 20;
+}
+
+.thumbtack-pin::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 4px;
+  height: 4px;
+  background-color: rgba(255,255,255,0.7);
+  border-radius: 50%;
+}
+
+/* Speech Bubble Tail */
+.speech-tail-bottom {
+  position: absolute;
+  bottom: -16px;
+  left: 32px;
+  width: 0;
+  height: 0;
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  border-top: 16px solid #2d2d2d;
+}
+
+.speech-tail-bottom-inner {
+  position: absolute;
+  bottom: -12px;
+  left: 34px;
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 14px solid #ffffff;
+  z-index: 2;
+}
+
+/* Animations */
+@keyframes jiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-1.5deg); }
+  75% { transform: rotate(1.5deg); }
+}
+
+@keyframes gentle-float {
+  0%, 100% { transform: translateY(0px) rotate(-1deg); }
+  50% { transform: translateY(-6px) rotate(1deg); }
+}
+
+.animate-jiggle:hover {
+  animation: jiggle 0.4s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: gentle-float 4s ease-in-out infinite;
+}

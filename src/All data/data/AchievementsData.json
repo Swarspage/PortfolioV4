@@ -1,0 +1,58 @@
+[
+  {
+    "title": "Shipped to 500+ Users · SIMS",
+    "category": "Deployment",
+    "date": "2026",
+    "description": "Most portfolio projects live on localhost. SIMS lives at a college domain and gets used by over 500 students every day. Built during my internship under the HOD — I owned the entire frontend. Seeing something you built actually get used is a different kind of validation.",
+    "iconName": "rocket"
+  },
+  {
+    "title": "Internship · Full Dev Team",
+    "category": "Deployment",
+    "date": "2026",
+    "description": "The full development team behind the Student Information Management System. A real-world deployment serving an entire college — built from scratch during a structured internship program under direct mentorship of the Head of Department.",
+    "iconName": "academic"
+  },
+  {
+    "title": "Internship Certificate · DMCE",
+    "category": "Recognition",
+    "date": "2026",
+    "description": "Official internship completion certificate from Datta Meghe College of Engineering. Formal recognition of the full-stack development work and contribution to the SIMS platform deployed across the institution.",
+    "iconName": "academic"
+  },
+  {
+    "title": "Letter of Appreciation",
+    "category": "Recognition",
+    "date": "2026",
+    "description": "Received an official Letter of Appreciation for outstanding contribution during the internship. A formal acknowledgment from the institution for the quality and impact of the development work delivered.",
+    "iconName": "academic"
+  },
+  {
+    "title": "Official Certificate · TT Doubles",
+    "category": "Sports",
+    "date": "2025",
+    "description": "The official certificate for securing 2nd place in the DMCE Milestone 2025 Table Tennis Doubles. A reminder that agility and strategy apply just as much on the table as they do in code.",
+    "iconName": "trophy"
+  },
+  {
+    "title": "Top 8 Finalist · Code-A-Thon 2.0",
+    "category": "Competition",
+    "date": "2026",
+    "description": "Out of 100+ submissions, Singularity placed Top 8. Built over 1.5 months — not a weekend sprint — it pulled real-time telemetry from NASA, SpaceX, and ISRO into a single mission control. Orbital mechanics, 3D globe rendering, AI integration, live ISS tracking.",
+    "iconName": "trophy"
+  },
+  {
+    "title": "The Team Behind Singularity",
+    "category": "Competition",
+    "date": "2026",
+    "description": "Code-A-Thon 2.0 wasn't a solo mission. The team that built Singularity — each member owning a critical subsystem. From backend architecture to 3D rendering, the project came together through late nights and relentless iteration.",
+    "iconName": "trophy"
+  },
+  {
+    "title": "2nd Place · Table Tennis Doubles",
+    "category": "Sports",
+    "date": "2025",
+    "description": "Partnered with a senior and competed in the DMCE Milestone 2025 Table Tennis Doubles tournament. Fought our way to the finals and secured 2nd place — as a first-year in Sem 2. Proof that competitive drive isn't limited to a keyboard.",
+    "iconName": "trophy"
+  }
+]
