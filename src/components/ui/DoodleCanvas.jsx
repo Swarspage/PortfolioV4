@@ -90,6 +90,26 @@ export const DoodleCanvas = () => {
     }
   };
 
+  const handleTouchStart = (e) => {
+    if (!isActive) return;
+    if (e.touches && e.touches.length === 1) {
+      soundManager.playClick();
+      isDrawing.current = true;
+      lastPoint.current = getPageCoords(e);
+    } else {
+      isDrawing.current = false;
+    }
+  };
+
+  const handleTouchMove = (e) => {
+    if (!isActive || !isDrawing.current) return;
+    if (e.touches && e.touches.length === 1) {
+      draw(e);
+    } else {
+      isDrawing.current = false;
+    }
+  };
+
   return (
     <>
       {/* Scrollable Absolute Canvas Overlay over full page height */}
@@ -99,59 +119,68 @@ export const DoodleCanvas = () => {
         onMouseMove={draw}
         onMouseUp={stopDrawing}
         onMouseLeave={stopDrawing}
-        onTouchStart={startDrawing}
-        onTouchMove={draw}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
         onTouchEnd={stopDrawing}
         className={`absolute top-0 left-0 w-full z-40 ${isActive ? 'pointer-events-auto cursor-crosshair' : 'pointer-events-none'}`}
       />
 
       {/* Floating Toggle Button (Fixed Bottom Left) */}
-      <div className="fixed bottom-4 left-4 z-50 flex items-center gap-2 select-none">
-        <button
-          onClick={() => {
-            soundManager.playPop();
-            setIsActive(!isActive);
-          }}
-          className={`flex items-center gap-2 px-3.5 py-2 border-2 border-[var(--color-ink)] rounded-full font-handwriting font-bold text-sm shadow-hard-md transition-all ${
-            isActive ? 'bg-[#ff4d4d] text-white scale-105 animate-pulse' : 'bg-[var(--color-postit)] text-[var(--color-ink)] hover:scale-105'
-          }`}
-        >
-          <Edit3 className="w-4 h-4" />
-          <span>{isActive ? 'Doodling Active! ✏️' : 'Doodle Mode 🎨'}</span>
-        </button>
-
+      <div className="fixed bottom-4 left-4 z-50 flex flex-col items-start gap-2 select-none">
+        {/* Mobile Gesture Hint */}
         {isActive && (
-          <div className="flex items-center gap-2 bg-[var(--color-surface)] border-2 border-[var(--color-ink)] p-1.5 rounded-full shadow-hard-md animate-float">
-            {['#ff4d4d', '#2d5da1', '#88CE02', '#2d2d2d'].map((c) => (
-              <button
-                key={c}
-                onClick={() => {
-                  soundManager.playClick();
-                  setPenColor(c);
-                }}
-                className={`w-6 h-6 rounded-full border-2 border-[var(--color-ink)] transition-transform ${penColor === c ? 'scale-125 shadow-hard-sm' : 'hover:scale-110'}`}
-                style={{ backgroundColor: c }}
-              />
-            ))}
-            <button
-              onClick={clearCanvas}
-              title="Clear Doodle"
-              className="p-1 text-[var(--color-ink)] hover:text-[#ff4d4d] transition-colors"
-            >
-              <Trash2 className="w-4 h-4" />
-            </button>
-            <button
-              onClick={() => {
-                soundManager.playPop();
-                setIsActive(false);
-              }}
-              title="Close"
-              className="p-1 text-[var(--color-ink)] hover:text-[#ff4d4d] transition-colors"
-            >
-              <X className="w-4 h-4" />
-            </button>
+          <div className="bg-[var(--color-ink)] text-[var(--color-bg)] px-3 py-1 rounded-full font-handwriting text-xs font-bold shadow-hard-sm animate-bounce flex items-center gap-1.5 border border-[var(--color-bg)]">
+            <span>💡 1 finger to draw, 2 fingers to scroll!</span>
           </div>
         )}
+
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() => {
+              soundManager.playPop();
+              setIsActive(!isActive);
+            }}
+            className={`flex items-center gap-2 px-3.5 py-2 border-2 border-[var(--color-ink)] rounded-full font-handwriting font-bold text-sm shadow-hard-md transition-all ${
+              isActive ? 'bg-[#ff4d4d] text-white scale-105 animate-pulse' : 'bg-[var(--color-postit)] text-[var(--color-ink)] hover:scale-105'
+            }`}
+          >
+            <Edit3 className="w-4 h-4" />
+            <span>{isActive ? 'Doodling Active! ✏️' : 'Doodle Mode 🎨'}</span>
+          </button>
+
+          {isActive && (
+            <div className="flex items-center gap-2 bg-[var(--color-surface)] border-2 border-[var(--color-ink)] p-1.5 rounded-full shadow-hard-md animate-float">
+              {['#ff4d4d', '#2d5da1', '#88CE02', '#2d2d2d'].map((c) => (
+                <button
+                  key={c}
+                  onClick={() => {
+                    soundManager.playClick();
+                    setPenColor(c);
+                  }}
+                  className={`w-6 h-6 rounded-full border-2 border-[var(--color-ink)] transition-transform ${penColor === c ? 'scale-125 shadow-hard-sm' : 'hover:scale-110'}`}
+                  style={{ backgroundColor: c }}
+                />
+              ))}
+              <button
+                onClick={clearCanvas}
+                title="Clear Doodle"
+                className="p-1 text-[var(--color-ink)] hover:text-[#ff4d4d] transition-colors"
+              >
+                <Trash2 className="w-4 h-4" />
+              </button>
+              <button
+                onClick={() => {
+                  soundManager.playPop();
+                  setIsActive(false);
+                }}
+                title="Close"
+                className="p-1 text-[var(--color-ink)] hover:text-[#ff4d4d] transition-colors"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+          )}
+        </div>
       </div>
     </>
   );
