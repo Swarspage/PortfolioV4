@@ -43,9 +43,11 @@ export const DoodleCanvas = () => {
     const canvas = canvasRef.current;
     if (!canvas) return { x: 0, y: 0 };
     const rect = canvas.getBoundingClientRect();
+    const touch = e.touches && e.touches.length > 0 ? e.touches[0] : (e.changedTouches && e.changedTouches.length > 0 ? e.changedTouches[0] : e);
+
     return {
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top
+      x: touch.clientX - rect.left,
+      y: touch.clientY - rect.top
     };
   };
 
@@ -97,6 +99,9 @@ export const DoodleCanvas = () => {
         onMouseMove={draw}
         onMouseUp={stopDrawing}
         onMouseLeave={stopDrawing}
+        onTouchStart={startDrawing}
+        onTouchMove={draw}
+        onTouchEnd={stopDrawing}
         className={`absolute top-0 left-0 w-full z-40 ${isActive ? 'pointer-events-auto cursor-crosshair' : 'pointer-events-none'}`}
       />
 

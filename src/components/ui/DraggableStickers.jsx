@@ -67,20 +67,21 @@ export const DraggableStickers = () => {
     }
   };
 
-  const handleMouseDown = (id, e) => {
+  const handleStart = (id, clientX, clientY, currentTarget) => {
     setActiveDrag(id);
     const sticker = stickers.find(s => s.id === id);
     dragRef.current = {
-      startX: e.clientX,
-      startY: e.clientY,
+      startX: clientX,
+      startY: clientY,
       initialX: sticker.x,
       initialY: sticker.y,
       moved: false
     };
 
-    const handleMouseMove = (moveEvent) => {
-      const dx = moveEvent.clientX - dragRef.current.startX;
-      const dy = moveEvent.clientY - dragRef.current.startY;
+    const handleMove = (moveEvent) => {
+      const touch = moveEvent.touches ? moveEvent.touches[0] : moveEvent;
+      const dx = touch.clientX - dragRef.current.startX;
+      const dy = touch.clientY - dragRef.current.startY;
 
       if (Math.abs(dx) > 3 || Math.abs(dy) > 3) {
         dragRef.current.moved = true;
@@ -91,26 +92,41 @@ export const DraggableStickers = () => {
       );
     };
 
-    const handleMouseUp = (upEvent) => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('mouseup', handleMouseUp);
+    const handleEnd = (endEvent) => {
+      window.removeEventListener('mousemove', handleMove);
+      window.removeEventListener('mouseup', handleEnd);
+      window.removeEventListener('touchmove', handleMove);
+      window.removeEventListener('touchend', handleEnd);
 
       if (!dragRef.current.moved && sticker.tag === 'danger') {
-        triggerConfetti(upEvent);
+        triggerConfetti(currentTarget);
       }
       setActiveDrag(null);
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('mouseup', handleMouseUp);
+    window.addEventListener('mousemove', handleMove);
+    window.addEventListener('mouseup', handleEnd);
+    window.addEventListener('touchmove', handleMove, { passive: true });
+    window.addEventListener('touchend', handleEnd);
+  };
+
+  const handleMouseDown = (id, e) => {
+    handleStart(id, e.clientX, e.clientY, e.currentTarget);
+  };
+
+  const handleTouchStart = (id, e) => {
+    if (e.touches && e.touches[0]) {
+      handleStart(id, e.touches[0].clientX, e.touches[0].clientY, e.currentTarget);
+    }
   };
 
   return (
-    <div className="flex flex-wrap items-center gap-3 pt-2 select-none">
+    <div className="flex flex-wrap items-center gap-3 pt-2 select-none touch-none">
       {stickers.map((s) => (
         <div
           key={s.id}
           onMouseDown={(e) => handleMouseDown(s.id, e)}
+          onTouchStart={(e) => handleTouchStart(s.id, e)}
           style={{ transform: `translate3d(${s.x}px, ${s.y}px, 0)` }}
           className={`cursor-grab active:cursor-grabbing inline-flex items-center gap-1.5 px-3 py-1.5 border-2 border-[var(--color-ink)] rounded-md font-handwriting font-bold text-sm shadow-hard-sm hover:scale-110 hover:-rotate-3 transition-transform ${s.color} ${s.rotate} ${activeDrag === s.id ? 'z-50 shadow-hard-lg scale-115' : ''}`}
         >

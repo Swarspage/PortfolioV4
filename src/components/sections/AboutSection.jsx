@@ -15,7 +15,7 @@ export const AboutSection = () => {
 
   return (
     <section id="about" className="relative pt-16 pb-12 scroll-mt-24">
-      <div className="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-16">
+      <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
         
         {/* Left Side: Image / Visuals */}
         <div className="w-full lg:w-5/12 flex justify-center relative">
