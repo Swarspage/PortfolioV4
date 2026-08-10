@@ -60,6 +60,24 @@
     min-height: 100vh;
     overflow-x: hidden;
     transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'><path d='M2 26 L1 27 L2 28 L3 27 Z' fill='%232d2d2d'/><path d='M2 26 L6 22 L9 25 L5 27 Z' fill='%23ff4d4d' stroke='%232d2d2d' stroke-width='1.5'/><path d='M6 22 L19 9 L22 12 L9 25 Z' fill='%23F7DF1E' stroke='%232d2d2d' stroke-width='1.5'/><path d='M19 9 L22 6 L25 9 L22 12 Z' fill='%23ff6b6b' stroke='%232d2d2d' stroke-width='1.5'/></svg>") 1 27, auto;
+  }
+
+  /* Global Responsive Scaling for Laptop & Tablet Viewports */
+  @media (max-width: 1400px) {
+    html {
+      font-size: 95%;
+    }
+  }
+  @media (max-width: 1024px) {
+    html {
+      font-size: 90%;
+    }
+  }
+
+  /* Interactive Elements & Cards use custom hand pointer */
+  a, button, [role="button"], input, textarea, select, .cursor-pointer, .group, .wobbly-card, .wobbly-circle, .wobbly-tag, .shadow-hard, .shadow-hard-md, .shadow-hard-lg {
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'><text y='22' font-size='22'>👆</text></svg>") 8 0, pointer !important;
   }
 
   /* Custom Scrollbar matching the theme */

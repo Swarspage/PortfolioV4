@@ -11,6 +11,8 @@ import { AchievementsSection } from './components/sections/AchievementsSection';
 import { YoutubeSection } from './components/sections/YoutubeSection';
 import { ContactSection } from './components/sections/ContactSection';
 import { ResumeModal } from './components/ui/ResumeModal';
+import { PencilTrailCanvas } from './components/ui/PencilTrailCanvas';
+import { DoodleCanvas } from './components/ui/DoodleCanvas';
 import { PostItTag, SquigglyUnderline } from './components/decorations/HandDrawnDecorations';
 import { PenTool } from 'lucide-react';
 import resumePdf from './All data/assets/Swar-Res.pdf';
@@ -30,6 +32,8 @@ export const App = () => {
 
   return (
     <ThemeProvider>
+      <PencilTrailCanvas />
+      <DoodleCanvas />
       <div className="min-h-screen bg-notebook text-[var(--color-ink)] flex flex-col font-handwriting selection:bg-accent-red selection:text-white pb-16">
       {/* 1. Navbar Component (All 9 sections configured) */}
       <Navbar />
@@ -66,7 +70,7 @@ export const App = () => {
       </main>
 
       {/* Footer */}
-      <footer className="max-w-6xl mx-auto px-4 mt-20 text-center">
+      <footer className="w-full max-w-6xl mx-auto px-4 sm:px-6 pt-24 pb-12 text-center relative z-20 clear-both mt-auto flex-shrink-0">
         <div className="border-t-2 border-dashed border-[var(--color-ink)]/40 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 font-handwriting text-lg font-bold">
           <div className="flex items-center gap-2 font-heading text-xl">
             <span className="text-[#ff4d4d]"><PenTool className="w-5 h-5 inline-block -mt-1" /></span> Swar Shinde Portfolio

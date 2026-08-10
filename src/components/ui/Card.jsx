@@ -1,5 +1,6 @@
 import React from 'react';
 import { TapeStrip, Thumbtack } from '../decorations/HandDrawnDecorations';
+import { soundManager } from '../../utils/soundFx';
 
 export const Card = ({
   children,
@@ -8,6 +9,7 @@ export const Card = ({
   rotate = 'none',     // 'none', 'left', 'right', 'slightLeft', 'slightRight'
   className = '',
   hoverJiggle = true,
+  onClick,
   ...props
 }) => {
   const rotationClasses = {
@@ -19,7 +21,7 @@ export const Card = ({
   };
 
   const hoverClasses = hoverJiggle
-    ? 'transition-all duration-150 ease-out hover:scale-[1.01] hover:-rotate-1 hover:shadow-hard-lg'
+    ? 'transition-all duration-200 ease-out hover:scale-[1.02] hover:-rotate-1 hover:shadow-hard-xl'
     : '';
 
   const variantClasses = {
@@ -31,8 +33,14 @@ export const Card = ({
     speech:     'bg-[var(--color-surface)] text-[var(--color-ink)] shadow-hard border-[3px] border-[var(--color-ink)] wobbly-card relative'
   };
 
+  const handleClick = (e) => {
+    soundManager.playClick();
+    if (onClick) onClick(e);
+  };
+
   return (
     <div
+      onClick={handleClick}
       className={`
         relative p-6 md:p-8
         ${variantClasses[variant]}
