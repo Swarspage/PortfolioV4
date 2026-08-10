@@ -53,10 +53,10 @@ export const ProjectsSection = () => {
         <Badge variant="postit" rotate="left" icon={FolderGit2}>
           Portfolio Highlights
         </Badge>
-        <h2 className="text-4xl md:text-5xl font-heading font-bold text-[#2d2d2d]">
+        <h2 className="text-4xl md:text-5xl font-heading font-bold text-[var(--color-ink)]">
           Featured Projects
         </h2>
-        <p className="text-xl text-[#2d2d2d]/80 font-handwriting">
+        <p className="text-xl text-[var(--color-ink)]/80 font-handwriting">
           Things I've built that actually leave <code>localhost</code> and make an impact.
         </p>
       </div>
@@ -87,29 +87,29 @@ export const ProjectsSection = () => {
               >
               {/* Project Image */}
               {imagePath && (
-                <div className="relative w-full aspect-video bg-[#e5e0d8] border-[3px] border-[#2d2d2d] wobbly-card overflow-hidden group-image">
+                <div className="relative w-full aspect-video bg-[var(--color-muted)] border-[3px] border-[var(--color-ink)] wobbly-card overflow-hidden group-image">
                   <img
                     src={imagePath}
                     alt={project.name}
                     className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-300 group-hover:scale-105"
                   />
                   {/* Hover Tag */}
-                  <div className="absolute top-3 right-3 bg-white border-2 border-[#2d2d2d] rounded-md px-2 py-1 shadow-hard-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-handwriting text-xs font-bold z-20 transform rotate-3 text-[#2d2d2d]">
+                  <div className="absolute top-3 right-3 bg-[var(--color-surface)] border-2 border-[var(--color-ink)] rounded-md px-2 py-1 shadow-hard-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-handwriting text-xs font-bold z-20 transform rotate-3 text-[var(--color-ink)]">
                     Click to enlarge 🔍
                   </div>
-                  <div className="absolute inset-0 border-[3px] border-[#2d2d2d] wobbly-card pointer-events-none" />
+                  <div className="absolute inset-0 border-[3px] border-[var(--color-ink)] wobbly-card pointer-events-none" />
                 </div>
               )}
 
               {/* Project Info */}
               <div className="flex-1 flex flex-col space-y-3">
-                <h3 className="font-heading text-3xl font-bold text-[#2d2d2d]">
+                <h3 className="font-heading text-3xl font-bold text-[var(--color-ink)]">
                   {project.name}
                 </h3>
                 <p className="font-heading font-bold text-lg text-[#2d5da1] leading-tight">
                   {project.impactStatement}
                 </p>
-                <p className="text-[#2d2d2d]/85 font-handwriting text-lg leading-relaxed flex-1">
+                <p className="text-[var(--color-ink)]/85 font-handwriting text-lg leading-relaxed flex-1">
                   {project.description}
                 </p>
 
@@ -124,7 +124,7 @@ export const ProjectsSection = () => {
               </div>
 
               {/* Action Links */}
-              <div className="pt-4 border-t-2 border-dashed border-[#2d2d2d]/30 flex flex-wrap items-center gap-3">
+              <div className="pt-4 border-t-2 border-dashed border-[var(--color-ink)]/30 flex flex-wrap items-center gap-3">
                 {project.liveLink && (
                   <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="flex-1">
                     <Button variant="primary" size="sm" className="w-full" icon={ExternalLink}>
@@ -141,7 +141,7 @@ export const ProjectsSection = () => {
                 )}
                 {project.demoLink && (
                   <a href={project.demoLink} target="_blank" rel="noopener noreferrer" className="flex-1">
-                    <Button variant="outline" size="sm" className="w-full bg-white" icon={Play}>
+                    <Button variant="outline" size="sm" className="w-full bg-[var(--color-surface)]" icon={Play}>
                       Demo
                     </Button>
                   </a>
@@ -161,12 +161,12 @@ export const ProjectsSection = () => {
             size="md" 
             onClick={handlePrev}
             disabled={currentPage === 0}
-            className="w-32 bg-white"
+            className="w-32 bg-[var(--color-surface)]"
           >
             <ArrowLeft className="w-5 h-5 mr-1" /> Prev
           </Button>
           
-          <span className="font-heading font-bold text-xl text-[#2d2d2d]">
+          <span className="font-heading font-bold text-xl text-[var(--color-ink)]">
             {currentPage + 1} / {totalPages}
           </span>
           
@@ -175,7 +175,7 @@ export const ProjectsSection = () => {
             size="md" 
             onClick={handleNext}
             disabled={currentPage === totalPages - 1}
-            className="w-32 bg-white"
+            className="w-32 bg-[var(--color-surface)]"
           >
             Next <ArrowRight className="w-5 h-5 ml-1" />
           </Button>

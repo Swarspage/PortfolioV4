@@ -26,7 +26,7 @@ const SOCIALS = [
   { label: 'Email', icon: emailIcon, val: 'shindeswar@hotmail.com', action: () => window.open('mailto:shindeswar@hotmail.com', '_blank') },
 ];
 
-export const ContactSection = () => {
+export const ContactSection = ({ onOpenResume }) => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -126,10 +126,10 @@ export const ContactSection = () => {
         <Badge variant="blue" rotate="right" icon={Mail}>
           Initiate Connection
         </Badge>
-        <h2 className="text-4xl md:text-5xl font-heading font-bold text-[#2d2d2d]">
+        <h2 className="text-4xl md:text-5xl font-heading font-bold text-[var(--color-ink)]">
           Let's Get In Touch
         </h2>
-        <p className="text-xl text-[#2d2d2d]/80 font-handwriting">
+        <p className="text-xl text-[var(--color-ink)]/80 font-handwriting">
           Got a project in mind or just want to say hi? Send me a message!
         </p>
       </div>
@@ -139,7 +139,7 @@ export const ContactSection = () => {
         {/* Left Side: Form */}
         <div className="lg:col-span-7">
           <Card variant="postit" decoration="tape" rotate="none" className="p-6 sm:p-10 w-full">
-            <h3 className="font-heading font-bold text-3xl text-[#2d2d2d] mb-8 wobbly-line inline-block pb-2">
+            <h3 className="font-heading font-bold text-3xl text-[var(--color-ink)] mb-8 wobbly-line inline-block pb-2">
               Send a Message
             </h3>
             
@@ -192,7 +192,7 @@ export const ContactSection = () => {
           
           {/* Socials Card */}
           <Card variant="default" decoration="tack" rotate="slightRight" className="p-6 sm:p-8">
-            <h3 className="font-heading font-bold text-2xl text-[#2d2d2d] mb-6">
+            <h3 className="font-heading font-bold text-2xl text-[var(--color-ink)] mb-6">
               Digital Footprint
             </h3>
             <div className="flex flex-col gap-4">
@@ -203,13 +203,13 @@ export const ContactSection = () => {
                     social.action();
                     if (social.label === 'Discord') showToast('Copied Discord ID to clipboard!', 'success');
                   }}
-                  className="flex items-center gap-4 p-3 bg-[#fdfbf7] border-2 border-[#2d2d2d] rounded-xl hover:bg-[#e5e0d8] hover:-translate-y-1 hover:-rotate-1 transition-all shadow-hard-sm group"
+                  className="flex items-center gap-4 p-3 bg-[var(--color-bg)] border-2 border-[var(--color-ink)] rounded-xl hover:bg-[var(--color-muted)] hover:-translate-y-1 hover:-rotate-1 transition-all shadow-hard-sm group"
                 >
-                  <div className="w-10 h-10 bg-white border-2 border-[#2d2d2d] rounded-lg flex items-center justify-center p-1.5 transform -rotate-2 group-hover:rotate-0 transition-transform">
+                  <div className="w-10 h-10 bg-[var(--color-surface)] border-2 border-[var(--color-ink)] rounded-lg flex items-center justify-center p-1.5 transform -rotate-2 group-hover:rotate-0 transition-transform">
                     <img src={social.icon} alt={social.label} className="w-full h-full object-contain" />
                   </div>
                   <div className="flex flex-col items-start text-left">
-                    <span className="font-heading font-bold text-lg leading-tight text-[#2d2d2d]">{social.label}</span>
+                    <span className="font-heading font-bold text-lg leading-tight text-[var(--color-ink)]">{social.label}</span>
                     <span className="font-handwriting text-[#00618A] text-sm group-hover:underline underline-offset-2 decoration-wavy">
                       {social.val}
                     </span>
@@ -230,24 +230,19 @@ export const ContactSection = () => {
                   </span>
                   Status: Online
                 </div>
-                <div className="font-heading font-bold text-3xl text-[#2d2d2d]">
+                <div className="font-heading font-bold text-3xl text-[var(--color-ink)]">
                   {formatISTTime()}
                 </div>
-                <div className="font-handwriting text-[#2d2d2d]/70 text-sm">
+                <div className="font-handwriting text-[var(--color-ink)]/70 text-sm">
                   Navi Mumbai | Pune, IN
                 </div>
               </div>
               
               <Button 
                 variant="outline" 
-                className="bg-white whitespace-nowrap" 
+                className="bg-[var(--color-surface)] whitespace-nowrap" 
                 icon={FileDown}
-                onClick={() => {
-                  const link = document.createElement("a");
-                  link.href = resumePdf; 
-                  link.download = "Swar-Res.pdf";
-                  document.body.appendChild(link); link.click(); document.body.removeChild(link);
-                }}
+                onClick={onOpenResume}
               >
                 Access CV
               </Button>
@@ -261,8 +256,8 @@ export const ContactSection = () => {
       {toast && (
         <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] animate-in slide-in-from-bottom-5 fade-in duration-300">
           <div className={`
-            flex items-center gap-3 px-5 py-3 rounded-lg border-4 border-[#2d2d2d] shadow-hard-lg font-handwriting text-lg font-bold wobbly-card transform -rotate-1
-            ${toast.type === 'error' ? 'bg-[#ff4d4d] text-white' : 'bg-[#fff9c4] text-[#2d2d2d]'}
+            flex items-center gap-3 px-5 py-3 rounded-lg border-4 border-[var(--color-ink)] shadow-hard-lg font-handwriting text-lg font-bold wobbly-card transform -rotate-1
+            ${toast.type === 'error' ? 'bg-[#ff4d4d] text-white' : 'bg-[var(--color-postit)] text-[var(--color-ink)]'}
           `}>
             {toast.type === 'error' ? (
               <AlertCircle className="w-6 h-6 stroke-[2.5]" />

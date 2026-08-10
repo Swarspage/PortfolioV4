@@ -54,10 +54,10 @@ export const EducationSection = () => {
         <Badge variant="green" rotate="right" icon={GraduationCap}>
           Education
         </Badge>
-        <h2 className="text-4xl md:text-5xl font-heading font-bold text-[#2d2d2d]">
+        <h2 className="text-4xl md:text-5xl font-heading font-bold text-[var(--color-ink)]">
           My Academic Path <BookOpen className="inline-block w-8 h-8 -mt-2 text-[#00618A]" />
         </h2>
-        <p className="text-xl text-[#2d2d2d]/80 font-handwriting">
+        <p className="text-xl text-[var(--color-ink)]/80 font-handwriting">
           The foundation of my knowledge and growth.
         </p>
       </div>
@@ -75,31 +75,31 @@ export const EducationSection = () => {
               variant="default"
               decoration={idx % 2 === 0 ? 'tape' : 'tack'}
               rotate={idx % 2 === 0 ? 'slightLeft' : 'slightRight'}
-              className="p-8 shadow-hard-xl bg-white w-full border-4 border-[#2d2d2d] flex flex-col h-full items-center text-center group hover:-translate-y-2 transition-transform duration-300 relative overflow-hidden"
+              className="p-8 shadow-hard-xl bg-[var(--color-surface)] w-full border-4 border-[var(--color-ink)] flex flex-col h-full items-center text-center group hover:-translate-y-2 transition-transform duration-300 relative overflow-hidden"
             >
               {/* Glorious Top Ribbon Decor */}
               <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-[#ff4d4d] via-[#F7DF1E] to-[#61DAFB] opacity-80" />
 
-              <div className="w-16 h-16 bg-[#2d2d2d] rounded-full flex items-center justify-center mb-6 shadow-hard-sm group-hover:scale-110 transition-transform duration-300 wobbly-circle">
+              <div className="w-16 h-16 bg-[var(--color-ink)] rounded-full flex items-center justify-center mb-6 shadow-hard-sm group-hover:scale-110 transition-transform duration-300 wobbly-circle">
                 <Award className="w-8 h-8 text-white" />
               </div>
 
-              <h3 className="font-heading text-2xl font-bold text-[#2d2d2d] mb-2 leading-tight">
+              <h3 className="font-heading text-2xl font-bold text-[var(--color-ink)] mb-2 leading-tight">
                 {edu.institution}
               </h3>
               
-              <div className="w-12 h-1 bg-[#2d2d2d]/20 rounded-full mb-4 wobbly-line" />
+              <div className="w-12 h-1 bg-[var(--color-ink)]/20 rounded-full mb-4 wobbly-line" />
 
               <p className="font-handwriting font-bold text-lg text-[#00618A] mb-2">
                 {edu.degree}
               </p>
               
-              <p className="font-handwriting text-[#2d2d2d]/70 text-base mb-6 flex-grow">
+              <p className="font-handwriting text-[var(--color-ink)]/70 text-base mb-6 flex-grow">
                 {edu.details}
               </p>
 
-              <div className="mt-auto w-full flex items-center justify-between border-t-2 border-dashed border-[#2d2d2d]/20 pt-4">
-                <span className="font-handwriting font-bold text-[#2d2d2d]/90 bg-[#fdfbf7] px-3 py-1 border-2 border-[#2d2d2d] rounded-sm shadow-hard-sm text-sm transform -rotate-2">
+              <div className="mt-auto w-full flex items-center justify-between border-t-2 border-dashed border-[var(--color-ink)]/20 pt-4">
+                <span className="font-handwriting font-bold text-[var(--color-ink)]/90 bg-[var(--color-bg)] px-3 py-1 border-2 border-[var(--color-ink)] rounded-sm shadow-hard-sm text-sm transform -rotate-2">
                   {edu.years}
                 </span>
 
@@ -108,7 +108,7 @@ export const EducationSection = () => {
                     Pursuing
                   </span>
                 ) : (
-                  <span className="text-xs font-bold px-3 py-1 bg-[#2d2d2d]/10 text-[#2d2d2d] border-2 border-[#2d2d2d] rounded-full uppercase tracking-wider transform rotate-2">
+                  <span className="text-xs font-bold px-3 py-1 bg-[var(--color-ink)]/10 text-[var(--color-ink)] border-2 border-[var(--color-ink)] rounded-full uppercase tracking-wider transform rotate-2">
                     Graduated
                   </span>
                 )}

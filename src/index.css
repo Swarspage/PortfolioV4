@@ -1,29 +1,96 @@
 @import "tailwindcss";
 
-@theme {
-  --font-heading: 'Kalam', cursive, sans-serif;
-  --font-handwriting: 'Patrick Hand', cursive, sans-serif;
-  --color-paper: #fdfbf7;
-  --color-pencil: #2d2d2d;
-  --color-muted-paper: #e5e0d8;
-  --color-accent-red: #ff4d4d;
-  --color-accent-blue: #2d5da1;
-  --color-postit: #fff9c4;
+/* ─── Runtime color tokens (overridden by .dark on <html>) ──────────────── */
+:root {
+  --color-bg:       #fdfbf7;   /* Paper white */
+  --color-surface:  #ffffff;   /* Card / form surfaces */
+  --color-ink:      #2d2d2d;   /* Pencil / text */
+  --color-muted:    #e5e0d8;   /* Muted paper */
+  --color-postit:   #fff9c4;   /* Post-it yellow */
+  --color-shadow:   #2d2d2d;   /* Hard offset shadow */
+  --color-dot:      #e5e0d8;   /* Background dot grid */
+  --color-tack:     #ff4d4d;   /* Thumbtack red */
+  --speech-tail:    #2d2d2d;   /* Speech bubble border */
+  --speech-inner:   #ffffff;   /* Speech bubble fill */
 }
 
+/* Dark mode — flip every token at once */
+.dark {
+  --color-bg:       #111111;
+  --color-surface:  #1a1a1a;
+  --color-ink:      #e8e3dc;
+  --color-muted:    #1e1e1e;
+  --color-postit:   #2e2a10;
+  --color-shadow:   rgba(200, 200, 200, 0.12);
+  --color-dot:      #1c1c1c;
+  --color-tack:     #ff6b6b;
+  --speech-tail:    #555555;
+  --speech-inner:   #1a1a1a;
+}
+
+/* ─── Tailwind design tokens ─────────────────────────────────────────────── */
+@theme {
+  --font-heading:      'Kalam', cursive, sans-serif;
+  --font-handwriting:  'Patrick Hand', cursive, sans-serif;
+
+  /* These reference the runtime vars — dark mode overrides work! */
+  --color-paper:       var(--color-bg);
+  --color-pencil:      var(--color-ink);
+  --color-muted-paper: var(--color-muted);
+  --color-surface:     var(--color-surface);
+  --color-postit:      var(--color-postit);
+
+  /* Accent colors stay constant across both themes */
+  --color-accent-red:  #ff4d4d;
+  --color-accent-blue: #2d5da1;
+}
+
+/* ─── Base styles ────────────────────────────────────────────────────────── */
 @layer base {
   * {
-    border-color: #2d2d2d;
+    border-color: var(--color-ink);
   }
-  
+
   body {
     font-family: 'Patrick Hand', cursive, sans-serif;
-    background-color: #fdfbf7;
-    color: #2d2d2d;
-    background-image: radial-gradient(#e5e0d8 1.5px, transparent 1.5px);
+    background-color: var(--color-bg);
+    color: var(--color-ink);
+    background-image: radial-gradient(var(--color-dot) 1.5px, transparent 1.5px);
     background-size: 24px 24px;
     min-height: 100vh;
     overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Custom Scrollbar matching the theme */
+  ::-webkit-scrollbar {
+    width: 14px;
+    height: 14px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-bg);
+    border-left: 2px solid var(--color-ink);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-ink);
+    border: 3px solid var(--color-bg);
+    border-radius: 8px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-tack);
+  }
+
+  /* View Transition API: Theme Ripple */
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
+  }
+  ::view-transition-old(root) {
+    z-index: 1;
+  }
+  ::view-transition-new(root) {
+    z-index: 9999;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -33,7 +100,7 @@
   }
 }
 
-/* --- Hand-Drawn Design System Utilities --- */
+/* ─── Utility classes ────────────────────────────────────────────────────── */
 
 .font-heading {
   font-family: 'Kalam', cursive, sans-serif;
@@ -43,68 +110,32 @@
   font-family: 'Patrick Hand', cursive, sans-serif;
 }
 
-/* Irregular Wobbly Border Radii */
-.wobbly-1 {
-  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
-}
+/* Wobbly borders */
+.wobbly-1     { border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px; }
+.wobbly-2     { border-radius: 20px 255px 20px 255px / 255px 20px 255px 20px; }
+.wobbly-3     { border-radius: 255px 25px 225px 25px / 25px 225px 25px 255px; }
+.wobbly-btn   { border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px; }
+.wobbly-card  { border-radius: 255px 20px 225px 20px / 20px 225px 20px 255px; }
+.wobbly-input { border-radius: 255px 12px 225px 12px / 12px 225px 12px 255px; }
+.wobbly-tag   { border-radius: 255px 8px 225px 8px / 8px 225px 8px 255px; }
+.wobbly-circle{ border-radius: 60% 40% 70% 30% / 40% 50% 60% 50%; }
 
-.wobbly-2 {
-  border-radius: 20px 255px 20px 255px / 255px 20px 255px 20px;
-}
+/* Hard offset shadows — use CSS variable so dark mode can soften them */
+.shadow-hard-sm  { box-shadow: 2px 2px 0px 0px var(--color-shadow); }
+.shadow-hard     { box-shadow: 4px 4px 0px 0px var(--color-shadow); }
+.shadow-hard-lg  { box-shadow: 8px 8px 0px 0px var(--color-shadow); }
+.shadow-hard-xl  { box-shadow: 10px 10px 0px 0px var(--color-shadow); }
+.shadow-hard-2xl { box-shadow: 14px 14px 0px 0px var(--color-shadow); }
+.shadow-hard-md  { box-shadow: 6px 6px 0px 0px var(--color-shadow); }
 
-.wobbly-3 {
-  border-radius: 255px 25px 225px 25px / 25px 225px 25px 255px;
-}
+.shadow-hard-postit { box-shadow: 6px 6px 0px 0px rgba(45, 45, 45, 0.2); }
+.shadow-hard-blue   { box-shadow: 4px 4px 0px 0px #2d5da1; }
+.shadow-hard-red    { box-shadow: 4px 4px 0px 0px #ff4d4d; }
 
-.wobbly-btn {
-  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
-}
-
-.wobbly-card {
-  border-radius: 255px 20px 225px 20px / 20px 225px 20px 255px;
-}
-
-.wobbly-input {
-  border-radius: 255px 12px 225px 12px / 12px 225px 12px 255px;
-}
-
-.wobbly-tag {
-  border-radius: 255px 8px 225px 8px / 8px 225px 8px 255px;
-}
-
-.wobbly-circle {
-  border-radius: 60% 40% 70% 30% / 40% 50% 60% 50%;
-}
-
-/* Hard Offset Cut-Paper Shadows */
-.shadow-hard-sm {
-  box-shadow: 2px 2px 0px 0px #2d2d2d;
-}
-
-.shadow-hard {
-  box-shadow: 4px 4px 0px 0px #2d2d2d;
-}
-
-.shadow-hard-lg {
-  box-shadow: 8px 8px 0px 0px #2d2d2d;
-}
-
-.shadow-hard-postit {
-  box-shadow: 6px 6px 0px 0px rgba(45, 45, 45, 0.2);
-}
-
-.shadow-hard-blue {
-  box-shadow: 4px 4px 0px 0px #2d5da1;
-}
-
-.shadow-hard-red {
-  box-shadow: 4px 4px 0px 0px #ff4d4d;
-}
-
-/* Paper Grain Texture Override */
+/* Notebook dot grid */
 .bg-notebook {
-  background-color: #fdfbf7;
-  background-image: radial-gradient(#e5e0d8 1.5px, transparent 1.5px);
+  background-color: var(--color-bg);
+  background-image: radial-gradient(var(--color-dot) 1.5px, transparent 1.5px);
   background-size: 24px 24px;
 }
 
@@ -123,7 +154,12 @@
   z-index: 20;
 }
 
-/* Thumbtack Effect */
+.dark .tape-strip {
+  background-color: rgba(50, 47, 40, 0.8);
+  border-color: rgba(200, 195, 185, 0.2);
+}
+
+/* Thumbtack */
 .thumbtack-pin {
   position: absolute;
   top: -10px;
@@ -131,10 +167,10 @@
   transform: translateX(-50%);
   width: 18px;
   height: 18px;
-  background-color: #ff4d4d;
-  border: 2px solid #2d2d2d;
+  background-color: var(--color-tack);
+  border: 2px solid var(--color-ink);
   border-radius: 50%;
-  box-shadow: 2px 2px 0px 0px #2d2d2d;
+  box-shadow: 2px 2px 0px 0px var(--color-shadow);
   z-index: 20;
 }
 
@@ -158,7 +194,7 @@
   height: 0;
   border-left: 14px solid transparent;
   border-right: 14px solid transparent;
-  border-top: 16px solid #2d2d2d;
+  border-top: 16px solid var(--speech-tail);
 }
 
 .speech-tail-bottom-inner {
@@ -169,26 +205,31 @@
   height: 0;
   border-left: 12px solid transparent;
   border-right: 12px solid transparent;
-  border-top: 14px solid #ffffff;
+  border-top: 14px solid var(--speech-inner);
   z-index: 2;
+}
+
+/* Smooth theme transition on interactive elements */
+.wobbly-card, .wobbly-btn, .wobbly-input, .wobbly-tag {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Animations */
 @keyframes jiggle {
   0%, 100% { transform: rotate(0deg); }
-  25% { transform: rotate(-1.5deg); }
-  75% { transform: rotate(1.5deg); }
+  25%       { transform: rotate(-1.5deg); }
+  75%       { transform: rotate(1.5deg); }
 }
 
 @keyframes gentle-float {
   0%, 100% { transform: translateY(0px) rotate(-1deg); }
-  50% { transform: translateY(-6px) rotate(1deg); }
+  50%       { transform: translateY(-6px) rotate(1deg); }
 }
 
-.animate-jiggle:hover {
-  animation: jiggle 0.4s ease-in-out infinite;
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-.animate-float {
-  animation: gentle-float 4s ease-in-out infinite;
-}
+.animate-jiggle:hover { animation: jiggle 0.4s ease-in-out infinite; }
+.animate-float        { animation: gentle-float 4s ease-in-out infinite; }

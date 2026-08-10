@@ -46,10 +46,10 @@ export const YoutubeSection = () => {
         <Badge variant="red" rotate="right" icon={MonitorPlay}>
           Content Creator
         </Badge>
-        <h2 className="text-4xl md:text-5xl font-heading font-bold text-[#2d2d2d]">
+        <h2 className="text-4xl md:text-5xl font-heading font-bold text-[var(--color-ink)]">
           YouTube & Live Builds
         </h2>
-        <p className="text-xl text-[#2d2d2d]/80 font-handwriting">
+        <p className="text-xl text-[var(--color-ink)]/80 font-handwriting">
           Building in public and sharing the process.
         </p>
       </div>
@@ -63,7 +63,7 @@ export const YoutubeSection = () => {
           variant="default"
           decoration="tape"
           rotate="none"
-          className="p-4 md:p-6 shadow-hard-xl bg-white w-full border-4 border-[#2d2d2d] group relative overflow-hidden"
+          className="p-4 md:p-6 shadow-hard-xl bg-[var(--color-surface)] w-full border-4 border-[var(--color-ink)] group relative overflow-hidden"
         >
           {/* Decorative Banner Background */}
           <div className="absolute top-0 left-0 w-full h-40 opacity-20 hidden md:block">
@@ -75,12 +75,12 @@ export const YoutubeSection = () => {
               <div className="w-10 h-10 bg-[#ff4d4d] rounded-full flex items-center justify-center border-2 border-[#2d2d2d] shadow-hard-sm wobbly-circle">
                 <Play className="w-5 h-5 text-white fill-current" />
               </div>
-              <h3 className="font-heading text-2xl font-bold text-[#2d2d2d]">
+              <h3 className="font-heading text-2xl font-bold text-[var(--color-ink)]">
                 Featured Video
               </h3>
             </div>
             
-            <div className="w-full aspect-video border-4 border-[#2d2d2d] rounded-lg overflow-hidden bg-[#2d2d2d] shadow-hard-sm transform rotate-1 hover:rotate-0 transition-transform duration-300">
+            <div className="w-full aspect-video border-4 border-[var(--color-ink)] rounded-lg overflow-hidden bg-[var(--color-ink)] shadow-hard-sm transform rotate-1 hover:rotate-0 transition-transform duration-300">
               <iframe 
                 className="w-full h-full"
                 src={`https://www.youtube.com/embed/${youtubeData.featuredVideo.id}?rel=0`} 
@@ -109,14 +109,14 @@ export const YoutubeSection = () => {
                 variant="default"
                 decoration="tack"
                 rotate={idx % 2 === 0 ? 'slightLeft' : 'slightRight'}
-                className="p-4 md:p-5 shadow-hard-lg bg-white w-full border-4 border-[#2d2d2d] flex flex-col h-full group hover:-translate-y-2 transition-transform duration-300 relative"
+                className="p-4 md:p-5 shadow-hard-lg bg-[var(--color-surface)] w-full border-4 border-[var(--color-ink)] flex flex-col h-full group hover:-translate-y-2 transition-transform duration-300 relative"
               >
                 {/* Thumbnail Area */}
                 <a 
                   href={video.link} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className={`block relative w-full aspect-video border-2 border-[#2d2d2d] mb-4 overflow-hidden rounded-md shadow-hard-sm ${isLocked ? 'cursor-not-allowed' : 'cursor-pointer'}`}
+                  className={`block relative w-full aspect-video border-2 border-[var(--color-ink)] mb-4 overflow-hidden rounded-md shadow-hard-sm ${isLocked ? 'cursor-not-allowed' : 'cursor-pointer'}`}
                 >
                   <img 
                     src={video.thumbnail} 
@@ -127,8 +127,8 @@ export const YoutubeSection = () => {
                   {/* Overlay for Locked/Play */}
                   <div className="absolute inset-0 flex items-center justify-center bg-[#2d2d2d]/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     {isLocked ? (
-                      <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center border-2 border-[#2d2d2d] transform -rotate-12 shadow-hard-sm">
-                        <Lock className="w-6 h-6 text-[#2d2d2d]" />
+                      <div className="w-12 h-12 bg-[var(--color-surface)] rounded-full flex items-center justify-center border-2 border-[var(--color-ink)] transform -rotate-12 shadow-hard-sm">
+                        <Lock className="w-6 h-6 text-[var(--color-ink)]" />
                       </div>
                     ) : (
                       <div className="w-12 h-12 bg-[#ff4d4d] rounded-full flex items-center justify-center border-2 border-[#2d2d2d] shadow-hard-sm">
@@ -137,14 +137,14 @@ export const YoutubeSection = () => {
                     )}
                   </div>
 
-                  <div className="absolute top-2 right-2 px-2 py-1 bg-white border-2 border-[#2d2d2d] rounded-full font-handwriting font-bold text-xs text-[#2d2d2d] shadow-hard-sm transform rotate-3">
+                  <div className="absolute top-2 right-2 px-2 py-1 bg-[var(--color-surface)] border-2 border-[var(--color-ink)] rounded-full font-handwriting font-bold text-xs text-[var(--color-ink)] shadow-hard-sm transform rotate-3">
                     {video.label}
                   </div>
                 </a>
 
                 {/* Text Area */}
                 <div className="flex flex-col flex-grow">
-                  <h4 className="font-heading text-xl font-bold text-[#2d2d2d] leading-tight mb-2">
+                  <h4 className="font-heading text-xl font-bold text-[var(--color-ink)] leading-tight mb-2">
                     {video.title}
                   </h4>
                   {isLocked && (

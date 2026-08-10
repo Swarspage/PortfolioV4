@@ -73,10 +73,10 @@ export const AchievementsSection = () => {
         <Badge variant="blue" rotate="left" icon={Star}>
           Highlights
         </Badge>
-        <h2 className="text-4xl md:text-5xl font-heading font-bold text-[#2d2d2d]">
+        <h2 className="text-4xl md:text-5xl font-heading font-bold text-[var(--color-ink)]">
           Achievements & Wins
         </h2>
-        <p className="text-xl text-[#2d2d2d]/80 font-handwriting">
+        <p className="text-xl text-[var(--color-ink)]/80 font-handwriting">
           Moments I'm genuinely proud of.
         </p>
       </div>
@@ -85,13 +85,13 @@ export const AchievementsSection = () => {
       <div className="flex justify-end gap-4 mb-8">
         <button 
           onClick={handlePrev}
-          className="p-3 rounded-full border-2 border-[#2d2d2d] bg-[#fdfbf7] hover:bg-[#2d2d2d] hover:text-white transition-colors wobbly-circle shadow-hard-sm"
+          className="p-3 rounded-full border-2 border-[var(--color-ink)] bg-[var(--color-bg)] hover:bg-[var(--color-ink)] hover:text-[var(--color-bg)] transition-colors wobbly-circle shadow-hard-sm"
         >
           <ArrowLeft className="w-6 h-6" />
         </button>
         <button 
           onClick={handleNext}
-          className="p-3 rounded-full border-2 border-[#2d2d2d] bg-[#fdfbf7] hover:bg-[#2d2d2d] hover:text-white transition-colors wobbly-circle shadow-hard-sm"
+          className="p-3 rounded-full border-2 border-[var(--color-ink)] bg-[var(--color-bg)] hover:bg-[var(--color-ink)] hover:text-[var(--color-bg)] transition-colors wobbly-circle shadow-hard-sm"
         >
           <ArrowRight className="w-6 h-6" />
         </button>
@@ -123,28 +123,28 @@ export const AchievementsSection = () => {
                 variant="default"
                 decoration={isEven ? 'tape' : 'tack'}
                 rotate={isEven ? 'slightLeft' : 'slightRight'}
-                className="p-6 md:p-8 shadow-hard-xl bg-white w-full border-4 border-[#2d2d2d] flex flex-col h-full group hover:-translate-y-2 transition-transform duration-300"
+                className="p-6 md:p-8 shadow-hard-xl bg-[var(--color-surface)] w-full border-4 border-[var(--color-ink)] flex flex-col h-full group hover:-translate-y-2 transition-transform duration-300"
               >
                 {/* Photo Area */}
                 <div className="w-full mb-6">
                   {imageSrc ? (
-                    <div className="relative p-2 pb-8 bg-white border-2 border-[#2d2d2d] shadow-hard-sm transform rotate-[-2deg] group-hover:rotate-0 transition-transform duration-300 overflow-hidden group-image">
+                    <div className="relative p-2 pb-8 bg-[var(--color-surface)] border-2 border-[var(--color-ink)] shadow-hard-sm transform rotate-[-2deg] group-hover:rotate-0 transition-transform duration-300 overflow-hidden group-image">
                       <img 
                         src={imageSrc} 
                         alt={achievement.title} 
                         className="w-full h-56 object-cover border border-[#2d2d2d]/20 filter grayscale-[20%] sepia-[10%] group-hover:filter-none transition-all duration-500" 
                       />
                       {/* Hover Tag */}
-                      <div className="absolute top-4 right-4 bg-white border-2 border-[#2d2d2d] rounded-md px-2 py-1 shadow-hard-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-handwriting text-xs font-bold z-20 transform rotate-3 text-[#2d2d2d]">
+                      <div className="absolute top-4 right-4 bg-[var(--color-surface)] border-2 border-[var(--color-ink)] rounded-md px-2 py-1 shadow-hard-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-handwriting text-xs font-bold z-20 transform rotate-3 text-[var(--color-ink)]">
                         Click to enlarge 🔍
                       </div>
-                      <div className="absolute bottom-2 left-0 w-full text-center font-handwriting font-bold text-[#2d2d2d] text-sm px-2">
+                      <div className="absolute bottom-2 left-0 w-full text-center font-handwriting font-bold text-[var(--color-ink)] text-sm px-2">
                         {achievement.date}
                       </div>
                     </div>
                   ) : (
-                    <div className="w-full h-56 flex items-center justify-center bg-[#fdfbf7] border-4 border-dashed border-[#2d2d2d]/20 rounded-3xl wobbly-circle transform rotate-[2deg]">
-                      <IconComponent className="w-24 h-24 text-[#2d2d2d]/20" />
+                    <div className="w-full h-56 flex items-center justify-center bg-[var(--color-bg)] border-4 border-dashed border-[var(--color-ink)]/20 rounded-3xl wobbly-circle transform rotate-[2deg]">
+                      <IconComponent className="w-24 h-24 text-[var(--color-ink)]/20" />
                     </div>
                   )}
                 </div>
@@ -154,13 +154,13 @@ export const AchievementsSection = () => {
                   <span className="font-handwriting font-bold text-[#00618A] uppercase tracking-wider text-sm mb-2">
                     {achievement.category}
                   </span>
-                  <h3 className="font-heading text-2xl md:text-3xl font-bold text-[#2d2d2d] leading-tight mb-4">
+                  <h3 className="font-heading text-2xl md:text-3xl font-bold text-[var(--color-ink)] leading-tight mb-4">
                     {achievement.title}
                   </h3>
                   
                   <div className="w-16 h-1 bg-[#F7DF1E] rounded-full mb-4 wobbly-line" />
                   
-                  <p className="font-handwriting text-lg text-[#2d2d2d]/80 leading-relaxed flex-grow">
+                  <p className="font-handwriting text-lg text-[var(--color-ink)]/80 leading-relaxed flex-grow">
                     {achievement.description}
                   </p>
                 </div>
@@ -183,7 +183,7 @@ export const AchievementsSection = () => {
                 setIsAnimating(false);
               }, 300);
             }}
-            className={`h-3 rounded-full transition-all duration-300 border-2 border-[#2d2d2d] ${i === currentPage ? 'w-8 bg-[#2d2d2d]' : 'w-3 bg-white'}`}
+            className={`h-3 rounded-full transition-all duration-300 border-2 border-[var(--color-ink)] ${i === currentPage ? 'w-8 bg-[var(--color-ink)]' : 'w-3 bg-[var(--color-surface)]'}`}
             aria-label={`Go to page ${i + 1}`}
           />
         ))}

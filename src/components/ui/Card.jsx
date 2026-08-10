@@ -5,33 +5,30 @@ export const Card = ({
   children,
   variant = 'default', // 'default', 'postit', 'speech', 'muted', 'accentRed', 'accentBlue'
   decoration = 'none', // 'none', 'tape', 'tack'
-  rotate = 'none', // 'none', 'left', 'right', 'slightLeft', 'slightRight'
+  rotate = 'none',     // 'none', 'left', 'right', 'slightLeft', 'slightRight'
   className = '',
   hoverJiggle = true,
   ...props
 }) => {
-  // Rotations
   const rotationClasses = {
-    none: 'rotate-0',
-    left: '-rotate-2',
-    right: 'rotate-2',
+    none:       'rotate-0',
+    left:       '-rotate-2',
+    right:      'rotate-2',
     slightLeft: '-rotate-1',
-    slightRight: 'rotate-1'
+    slightRight:'rotate-1'
   };
 
-  // Hover jiggle effect
   const hoverClasses = hoverJiggle
     ? 'transition-all duration-150 ease-out hover:scale-[1.01] hover:-rotate-1 hover:shadow-hard-lg'
     : '';
 
-  // Background & Variant styles
   const variantClasses = {
-    default: 'bg-white text-[#2d2d2d] shadow-hard border-[3px] border-[#2d2d2d] wobbly-card',
-    postit: 'bg-[#fff9c4] text-[#2d2d2d] shadow-hard-postit border-[3px] border-[#2d2d2d] wobbly-card',
-    muted: 'bg-[#e5e0d8] text-[#2d2d2d] shadow-hard border-[3px] border-[#2d2d2d] wobbly-card',
-    accentRed: 'bg-[#ff4d4d] text-white shadow-hard border-[3px] border-[#2d2d2d] wobbly-card',
-    accentBlue: 'bg-[#2d5da1] text-white shadow-hard border-[3px] border-[#2d2d2d] wobbly-card',
-    speech: 'bg-white text-[#2d2d2d] shadow-hard border-[3px] border-[#2d2d2d] wobbly-card relative'
+    default:    'bg-[var(--color-surface)] text-[var(--color-ink)] shadow-hard border-[3px] border-[var(--color-ink)] wobbly-card',
+    postit:     'bg-[var(--color-postit)]  text-[var(--color-ink)] shadow-hard-postit border-[3px] border-[var(--color-ink)] wobbly-card',
+    muted:      'bg-[var(--color-muted)]   text-[var(--color-ink)] shadow-hard border-[3px] border-[var(--color-ink)] wobbly-card',
+    accentRed:  'bg-[#ff4d4d] text-white shadow-hard border-[3px] border-[var(--color-ink)] wobbly-card',
+    accentBlue: 'bg-[#2d5da1] text-white shadow-hard border-[3px] border-[var(--color-ink)] wobbly-card',
+    speech:     'bg-[var(--color-surface)] text-[var(--color-ink)] shadow-hard border-[3px] border-[var(--color-ink)] wobbly-card relative'
   };
 
   return (
@@ -45,13 +42,11 @@ export const Card = ({
       `}
       {...props}
     >
-      {/* Decorative Strip / Pin */}
       {decoration === 'tape' && <TapeStrip />}
       {decoration === 'tack' && <Thumbtack />}
 
       {children}
 
-      {/* Speech Bubble Tail if speech variant */}
       {variant === 'speech' && (
         <>
           <div className="speech-tail-bottom" aria-hidden="true" />

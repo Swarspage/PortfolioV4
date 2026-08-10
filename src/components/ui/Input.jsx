@@ -13,7 +13,7 @@ export const Input = ({
   return (
     <div className="flex flex-col gap-1.5 w-full font-handwriting">
       {label && (
-        <label htmlFor={inputId} className="font-heading font-bold text-xl text-[#2d2d2d] flex items-center gap-1">
+        <label htmlFor={inputId} className="font-heading font-bold text-xl text-[var(--color-ink)] flex items-center gap-1">
           <span>{label}</span>
         </label>
       )}
@@ -21,9 +21,10 @@ export const Input = ({
         id={inputId}
         type={type}
         className={`
-          w-full px-4 py-3 text-xl bg-white text-[#2d2d2d]
-          border-[3px] border-[#2d2d2d] wobbly-input shadow-hard-sm
-          placeholder:text-[#2d2d2d]/40 placeholder:font-handwriting
+          w-full px-4 py-3 text-xl
+          bg-[var(--color-surface)] text-[var(--color-ink)]
+          border-[3px] border-[var(--color-ink)] wobbly-input shadow-hard-sm
+          placeholder:text-[var(--color-ink)]/40 placeholder:font-handwriting
           focus:outline-none focus:border-[#2d5da1] focus:ring-4 focus:ring-[#2d5da1]/20
           transition-all duration-150
           ${error ? 'border-[#ff4d4d] focus:border-[#ff4d4d]' : ''}
@@ -53,7 +54,7 @@ export const TextArea = ({
   return (
     <div className="flex flex-col gap-1.5 w-full font-handwriting">
       {label && (
-        <label htmlFor={inputId} className="font-heading font-bold text-xl text-[#2d2d2d] flex items-center gap-1">
+        <label htmlFor={inputId} className="font-heading font-bold text-xl text-[var(--color-ink)] flex items-center gap-1">
           <span>{label}</span>
         </label>
       )}
@@ -61,9 +62,10 @@ export const TextArea = ({
         id={inputId}
         rows={rows}
         className={`
-          w-full px-4 py-3 text-xl bg-white text-[#2d2d2d]
-          border-[3px] border-[#2d2d2d] wobbly-input shadow-hard-sm
-          placeholder:text-[#2d2d2d]/40 placeholder:font-handwriting
+          w-full px-4 py-3 text-xl
+          bg-[var(--color-surface)] text-[var(--color-ink)]
+          border-[3px] border-[var(--color-ink)] wobbly-input shadow-hard-sm
+          placeholder:text-[var(--color-ink)]/40 placeholder:font-handwriting
           focus:outline-none focus:border-[#2d5da1] focus:ring-4 focus:ring-[#2d5da1]/20
           transition-all duration-150 resize-y
           ${error ? 'border-[#ff4d4d] focus:border-[#ff4d4d]' : ''}

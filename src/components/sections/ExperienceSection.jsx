@@ -46,10 +46,10 @@ export const ExperienceSection = () => {
         <Badge variant="orange" rotate="left" icon={Briefcase}>
           My Journey
         </Badge>
-        <h2 className="text-4xl md:text-5xl font-heading font-bold text-[#2d2d2d]">
+        <h2 className="text-4xl md:text-5xl font-heading font-bold text-[var(--color-ink)]">
           Experience <Target className="inline-block w-8 h-8 -mt-2 text-[#ff4d4d]" />
         </h2>
-        <p className="text-xl text-[#2d2d2d]/80 font-handwriting">
+        <p className="text-xl text-[var(--color-ink)]/80 font-handwriting">
           Where I've been and what I've built.
         </p>
       </div>
@@ -66,11 +66,11 @@ export const ExperienceSection = () => {
               variant="default"
               decoration={idx % 2 === 0 ? 'tape' : 'tack'}
               rotate={idx % 2 === 0 ? 'slightLeft' : 'slightRight'}
-              className="p-6 md:p-8 shadow-hard-xl bg-[#fdfbf7] w-full border-4 border-[#2d2d2d] transform-gpu origin-top"
+              className="p-6 md:p-8 shadow-hard-xl bg-[var(--color-bg)] w-full border-4 border-[var(--color-ink)] transform-gpu origin-top"
             >
-              <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 border-b-2 border-dashed border-[#2d2d2d]/30 pb-4 mb-4">
+              <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 border-b-2 border-dashed border-[var(--color-ink)]/30 pb-4 mb-4">
                 <div className="space-y-1">
-                  <h3 className="font-heading text-2xl md:text-3xl font-bold text-[#2d2d2d]">
+                  <h3 className="font-heading text-2xl md:text-3xl font-bold text-[var(--color-ink)]">
                     {exp.role}
                   </h3>
                   <div className="flex items-center gap-2 font-handwriting text-lg text-[#ff4d4d] font-bold">
@@ -79,7 +79,7 @@ export const ExperienceSection = () => {
                 </div>
                 
                 <div className="flex flex-col md:items-end gap-2">
-                  <span className="font-handwriting font-bold text-[#2d2d2d]/70 flex items-center gap-1 bg-[#2d2d2d]/5 px-3 py-1 rounded-full border border-[#2d2d2d]/20 w-max">
+                  <span className="font-handwriting font-bold text-[var(--color-ink)]/70 flex items-center gap-1 bg-[var(--color-ink)]/5 px-3 py-1 rounded-full border border-[var(--color-ink)]/20 w-max">
                     <Calendar className="w-4 h-4" /> {exp.duration}
                   </span>
                   {exp.active && (
@@ -90,7 +90,7 @@ export const ExperienceSection = () => {
                 </div>
               </div>
               
-              <p className="font-handwriting text-lg md:text-xl text-[#2d2d2d]/80 leading-relaxed">
+              <p className="font-handwriting text-lg md:text-xl text-[var(--color-ink)]/80 leading-relaxed">
                 {exp.description}
               </p>
             </Card>
