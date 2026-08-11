@@ -1,17 +1,51 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Card } from '../ui/Card';
 import { Badge } from '../ui/Badge';
-import { Modal } from '../ui/Modal';
 import { TapeStrip, Thumbtack, SketchStar } from '../decorations/HandDrawnDecorations';
 import aboutData from '../../All data/data/AboutData.json';
 import { User, Code2 } from 'lucide-react';
 
 // Use this relative path for Vite to pick up the image correctly, 
 // or import it if the bundler allows it. We'll use import so Vite hashes it.
-import profileImage from '../../All data/assets/image.webp';
+import profileImage from '../../All data/Cloudy Face.webp';
 
 export const AboutSection = () => {
-  const [activePhoto, setActivePhoto] = useState(null);
+  const cardRef = useRef(null);
+
+  // 3D Parallax Mouse Tilt Effect
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      if (!cardRef.current) return;
+      const card = cardRef.current;
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      const rotateX = ((y - centerY) / centerY) * -10; // Max rotation 10deg
+      const rotateY = ((x - centerX) / centerX) * 10;
+
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+    };
+
+    const handleMouseLeave = () => {
+      if (!cardRef.current) return;
+      cardRef.current.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+    };
+
+    const cardEl = cardRef.current;
+    if (cardEl) {
+      cardEl.addEventListener('mousemove', handleMouseMove);
+      cardEl.addEventListener('mouseleave', handleMouseLeave);
+    }
+    return () => {
+      if (cardEl) {
+        cardEl.removeEventListener('mousemove', handleMouseMove);
+        cardEl.removeEventListener('mouseleave', handleMouseLeave);
+      }
+    };
+  }, []);
 
   return (
     <section id="about" className="relative pt-16 pb-12 scroll-mt-24">
@@ -32,33 +66,22 @@ export const AboutSection = () => {
             <SketchStar className="w-10 h-10 stroke-[2]" />
           </div>
 
-          <Card
-            variant="default"
-            decoration="tape"
-            rotate="left"
-            className="w-full max-w-md p-3 shadow-hard-lg cursor-pointer group"
+          <div
+            ref={cardRef}
+            className="w-full max-w-lg p-3 group flex justify-center transition-transform duration-200 ease-out"
+            style={{ transformStyle: 'preserve-3d' }}
           >
             <div 
-              className="relative w-full aspect-[4/5] bg-[var(--color-muted)] border-[3px] border-[var(--color-ink)] wobbly-card overflow-hidden"
-              onClick={() => setActivePhoto({
-                title: 'Swar Shinde',
-                category: 'About Me',
-                description: 'The Developer Behind The Screen ✏️',
-                imageSrc: profileImage,
-                date: 'Developer'
-              })}
+              className="relative w-full aspect-[4/5] flex items-center justify-center animate-float"
+              style={{ transform: 'translateZ(20px)' }}
             >
               <img
                 src={profileImage}
                 alt="Swar Shinde"
-                className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-300"
+                className="w-full h-full object-contain drop-shadow-2xl group-hover:scale-105 transition-all duration-300"
               />
-              {/* Hover Tag */}
-              <div className="absolute top-3 right-3 bg-[var(--color-surface)] border-2 border-[var(--color-ink)] rounded-md px-2 py-1 shadow-hard-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-handwriting text-xs font-bold z-20 transform rotate-3 text-[var(--color-ink)]">
-                Click to enlarge 🔍
-              </div>
             </div>
-          </Card>
+          </div>
         </div>
 
         {/* Right Side: Text Content */}
@@ -91,12 +114,6 @@ export const AboutSection = () => {
 
       </div>
 
-      <Modal 
-        isOpen={!!activePhoto} 
-        onClose={() => setActivePhoto(null)} 
-        data={activePhoto}
-        type="achievement"
-      />
     </section>
   );
 };
