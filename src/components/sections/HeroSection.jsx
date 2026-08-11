@@ -160,7 +160,7 @@ export const HeroSection = ({ onOpenResume }) => {
       </div>
 
       {/* Left Column: Intro & Headline */}
-      <div className="flex-1 space-y-6 text-center md:text-left relative">
+      <div className="flex-1 space-y-6 text-center md:text-left relative order-2 lg:order-1">
 
         <div data-hero="tag">
           <PostItTag className="animate-float flex items-center gap-2">
@@ -220,7 +220,7 @@ export const HeroSection = ({ onOpenResume }) => {
         </div>
       </div>
 
-      <div className="relative flex-1 flex justify-center w-full max-w-sm lg:max-w-md">
+      <div className="relative flex-1 flex justify-center w-full max-w-sm lg:max-w-md order-1 lg:order-2">
         <div ref={cardRef} className="w-full transition-transform duration-200 ease-out" style={{ transformStyle: 'preserve-3d' }}>
           <div className="w-full text-center relative p-5 sm:p-6 lg:p-8 flex flex-col items-center group">
 
