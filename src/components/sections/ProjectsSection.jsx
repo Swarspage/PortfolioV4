@@ -108,6 +108,9 @@ export const ProjectsSection = () => {
                   <img
                     src={imagePath}
                     alt={project.name}
+                    loading="lazy"
+                    width="640"
+                    height="360"
                     className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-300 group-hover:scale-105"
                   />
                   {/* Hover Tag */}

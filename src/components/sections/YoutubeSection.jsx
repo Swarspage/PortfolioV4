@@ -67,7 +67,7 @@ export const YoutubeSection = () => {
         >
           {/* Decorative Banner Background */}
           <div className="absolute top-0 left-0 w-full h-40 opacity-20 hidden md:block">
-            <img src={utubeBanner} alt="Youtube Banner" className="w-full h-full object-cover" />
+            <img src={utubeBanner} alt="Youtube Banner" loading="lazy" width="640" height="360" className="w-full h-full object-cover" />
           </div>
 
           <div className="relative z-10">

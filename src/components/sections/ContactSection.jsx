@@ -213,7 +213,7 @@ export const ContactSection = ({ onOpenResume }) => {
                   className="flex items-center gap-4 p-3 bg-[var(--color-bg)] border-2 border-[var(--color-ink)] rounded-xl hover:bg-[var(--color-muted)] hover:-translate-y-1 hover:-rotate-1 transition-all shadow-hard-sm group"
                 >
                   <div className="w-10 h-10 bg-[var(--color-surface)] border-2 border-[var(--color-ink)] rounded-lg flex items-center justify-center p-1.5 transform -rotate-2 group-hover:rotate-0 transition-transform">
-                    <img src={social.icon} alt={social.label} className="w-full h-full object-contain" />
+                    <img src={social.icon} alt={social.label} loading="lazy" width="24" height="24" className="w-full h-full object-contain" />
                   </div>
                   <div className="flex flex-col items-start text-left">
                     <span className="font-heading font-bold text-lg leading-tight text-[var(--color-ink)]">{social.label}</span>

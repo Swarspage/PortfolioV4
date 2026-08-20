@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /assets/*.map
+Sitemap: https://swarshinde.dev/sitemap.xml

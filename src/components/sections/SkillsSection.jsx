@@ -117,6 +117,9 @@ export const SkillsSection = () => {
                           <img 
                             src={iconPath} 
                             alt={skill.skill} 
+                            loading="lazy"
+                            width="32"
+                            height="32"
                             className="w-8 h-8 object-contain transition-transform duration-300 group-hover:rotate-12"
                           />
                         )}

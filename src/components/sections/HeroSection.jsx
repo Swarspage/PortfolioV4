@@ -244,7 +244,7 @@ export const HeroSection = ({ onOpenResume }) => {
                   </div>
                 )}
 
-                <img src={profileImage} alt={name} className="w-full h-full object-contain drop-shadow-xl group-hover/avatar:scale-105 transition-all duration-300" />
+                <img src={profileImage} alt={name} loading="eager" decoding="async" width="320" height="320" className="w-full h-full object-contain drop-shadow-xl group-hover/avatar:scale-105 transition-all duration-300" />
 
                 <div data-hero="star-badge" className="absolute -bottom-2 -right-2 bg-[#ff4d4d] text-white p-2 border-2 border-[#2d2d2d] wobbly-tag shadow-hard-sm group-hover/avatar:rotate-12 transition-transform">
                   <SketchStar className="w-5 h-5 text-white" />
