@@ -26,3 +26,7 @@ dist-ssr
 # Environment variables (keep secrets out of git)
 .env
 .env.*
+
+# graphify
+graphify-out/cost.json
+graphify-out/cache/

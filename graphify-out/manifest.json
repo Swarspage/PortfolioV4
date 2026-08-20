@@ -1,0 +1,266 @@
+{
+  ".oxlintrc.json": {
+    "mtime": 1786392776.3749733,
+    "seen": 1787250453.7148008,
+    "ast_hash": "5e6e3cea3e89137071c142dd7835b0ef",
+    "semantic_hash": "5e6e3cea3e89137071c142dd7835b0ef"
+  },
+  "package.json": {
+    "mtime": 1786424193.7846649,
+    "seen": 1787250453.7148066,
+    "ast_hash": "59c559e8915f922849c4f3ef38355055",
+    "semantic_hash": "59c559e8915f922849c4f3ef38355055"
+  },
+  "src/All data/data/AboutData.json": {
+    "mtime": 1778725458.9934645,
+    "seen": 1787250453.714809,
+    "ast_hash": "f29934aafc4f0b6a1c09002375c1c468",
+    "semantic_hash": "f29934aafc4f0b6a1c09002375c1c468"
+  },
+  "src/All data/data/AchievementsData.json": {
+    "mtime": 1786396442.7214425,
+    "seen": 1787250453.7148101,
+    "ast_hash": "dba3135e6197a9edb0005b1ff9b1fd41",
+    "semantic_hash": "dba3135e6197a9edb0005b1ff9b1fd41"
+  },
+  "src/All data/data/EducationData.json": {
+    "mtime": 1778365995.3112445,
+    "seen": 1787250453.7148108,
+    "ast_hash": "1d34f03b971125204a52f1da5da85432",
+    "semantic_hash": "1d34f03b971125204a52f1da5da85432"
+  },
+  "src/All data/data/ExperienceData.json": {
+    "mtime": 1778366005.0826755,
+    "seen": 1787250453.7148118,
+    "ast_hash": "e26ce9a08f3f9b6f9f924a9cf63c3349",
+    "semantic_hash": "e26ce9a08f3f9b6f9f924a9cf63c3349"
+  },
+  "src/All data/data/HeroData.json": {
+    "mtime": 1786392530.0853145,
+    "seen": 1787250453.714813,
+    "ast_hash": "1a82eb868606f999244d5b93f0df2df4",
+    "semantic_hash": "1a82eb868606f999244d5b93f0df2df4"
+  },
+  "src/All data/data/ProjectsData.json": {
+    "mtime": 1787250186.7486708,
+    "seen": 1787250453.714814,
+    "ast_hash": "7b660d7f22748ac91a786675882dd7af",
+    "semantic_hash": "7b660d7f22748ac91a786675882dd7af"
+  },
+  "src/All data/data/SkillsData.json": {
+    "mtime": 1778368252.958115,
+    "seen": 1787250453.7148147,
+    "ast_hash": "bd178a83c48dda025fee67a913873855",
+    "semantic_hash": "bd178a83c48dda025fee67a913873855"
+  },
+  "src/All data/data/YoutubeData.json": {
+    "mtime": 1778483343.9265628,
+    "seen": 1787250453.7148159,
+    "ast_hash": "0188ec84a855a96d6085d15c1769b215",
+    "semantic_hash": "0188ec84a855a96d6085d15c1769b215"
+  },
+  "src/App.jsx": {
+    "mtime": 1786402136.6904683,
+    "seen": 1787250453.714817,
+    "ast_hash": "193e545aa30fa42c0f1acc4aaa3c68f7",
+    "semantic_hash": "193e545aa30fa42c0f1acc4aaa3c68f7"
+  },
+  "src/components/Navbar.jsx": {
+    "mtime": 1786393136.2252815,
+    "seen": 1787250453.7148182,
+    "ast_hash": "e4b483ad520def1b82a0a852bc45b020",
+    "semantic_hash": "e4b483ad520def1b82a0a852bc45b020"
+  },
+  "src/components/decorations/HandDrawnDecorations.jsx": {
+    "mtime": 1786392947.021829,
+    "seen": 1787250453.714819,
+    "ast_hash": "f9b247f86f819892f59d40a2ecd9d483",
+    "semantic_hash": "f9b247f86f819892f59d40a2ecd9d483"
+  },
+  "src/components/layout/Navbar.jsx": {
+    "mtime": 1786403497.525286,
+    "seen": 1787250453.7148201,
+    "ast_hash": "b85a63160b02a6c253372c9d11776fea",
+    "semantic_hash": "b85a63160b02a6c253372c9d11776fea"
+  },
+  "src/components/sections/AboutSection.jsx": {
+    "mtime": 1786424232.228134,
+    "seen": 1787250453.714821,
+    "ast_hash": "090ef99805e10f6d05fcb2998a96582e",
+    "semantic_hash": "090ef99805e10f6d05fcb2998a96582e"
+  },
+  "src/components/sections/AchievementsSection.jsx": {
+    "mtime": 1786402864.049157,
+    "seen": 1787250453.7148218,
+    "ast_hash": "adda734049da68f48b2ed62e9ced1e48",
+    "semantic_hash": "adda734049da68f48b2ed62e9ced1e48"
+  },
+  "src/components/sections/ContactSection.jsx": {
+    "mtime": 1787248804.0875504,
+    "seen": 1787250453.7148228,
+    "ast_hash": "0601a5d3ae774ea5a587f95b74dccef4",
+    "semantic_hash": "0601a5d3ae774ea5a587f95b74dccef4"
+  },
+  "src/components/sections/EducationSection.jsx": {
+    "mtime": 1786402873.2618046,
+    "seen": 1787250453.7148235,
+    "ast_hash": "d26123e3980938f6286fbe8a801490a1",
+    "semantic_hash": "d26123e3980938f6286fbe8a801490a1"
+  },
+  "src/components/sections/ExperienceSection.jsx": {
+    "mtime": 1786403165.48359,
+    "seen": 1787250453.7148244,
+    "ast_hash": "8d2d01de6dc03bda0a6f8f54799f1457",
+    "semantic_hash": "8d2d01de6dc03bda0a6f8f54799f1457"
+  },
+  "src/components/sections/HeroSection.jsx": {
+    "mtime": 1787248796.0050924,
+    "seen": 1787250453.7148252,
+    "ast_hash": "f6ed89feeaac8a4695329cc3b5e28711",
+    "semantic_hash": "f6ed89feeaac8a4695329cc3b5e28711"
+  },
+  "src/components/sections/ProjectsSection.jsx": {
+    "mtime": 1787248798.0209613,
+    "seen": 1787250453.7148263,
+    "ast_hash": "7b2c329fc243f890e1516358eb72576e",
+    "semantic_hash": "7b2c329fc243f890e1516358eb72576e"
+  },
+  "src/components/sections/SkillsSection.jsx": {
+    "mtime": 1787248800.0452485,
+    "seen": 1787250453.714827,
+    "ast_hash": "425ec029ee6139a999a3e0b82203e44b",
+    "semantic_hash": "425ec029ee6139a999a3e0b82203e44b"
+  },
+  "src/components/sections/YoutubeSection.jsx": {
+    "mtime": 1787248802.0645401,
+    "seen": 1787250453.7148283,
+    "ast_hash": "9068d7fd7625b7a78f9c1bbb999b17ac",
+    "semantic_hash": "9068d7fd7625b7a78f9c1bbb999b17ac"
+  },
+  "src/components/ui/Badge.jsx": {
+    "mtime": 1786399404.7753072,
+    "seen": 1787250453.7148292,
+    "ast_hash": "e4f638bc9b21ee78a7a59b457724ac71",
+    "semantic_hash": "e4f638bc9b21ee78a7a59b457724ac71"
+  },
+  "src/components/ui/Button.jsx": {
+    "mtime": 1786399418.5834818,
+    "seen": 1787250453.7148302,
+    "ast_hash": "541cd4daaff0be92897450bbe4e74760",
+    "semantic_hash": "541cd4daaff0be92897450bbe4e74760"
+  },
+  "src/components/ui/Card.jsx": {
+    "mtime": 1786401362.5917838,
+    "seen": 1787250453.7148309,
+    "ast_hash": "761f03cff10e4a3a18b39d33c9e2170d",
+    "semantic_hash": "761f03cff10e4a3a18b39d33c9e2170d"
+  },
+  "src/components/ui/DoodleCanvas.jsx": {
+    "mtime": 1786402684.3740304,
+    "seen": 1787250453.7148316,
+    "ast_hash": "b23e4459f1ce80060534fe68e83bee60",
+    "semantic_hash": "b23e4459f1ce80060534fe68e83bee60"
+  },
+  "src/components/ui/DraggableStickers.jsx": {
+    "mtime": 1786403053.667534,
+    "seen": 1787250453.7148325,
+    "ast_hash": "cfec769707aa2bd2e218fab7e3c856e1",
+    "semantic_hash": "cfec769707aa2bd2e218fab7e3c856e1"
+  },
+  "src/components/ui/Input.jsx": {
+    "mtime": 1786399448.867,
+    "seen": 1787250453.7148335,
+    "ast_hash": "8c1ed1c49de63cdd44a41557368d0e98",
+    "semantic_hash": "8c1ed1c49de63cdd44a41557368d0e98"
+  },
+  "src/components/ui/MiniCodeSandbox.jsx": {
+    "mtime": 1786401158.3158956,
+    "seen": 1787250453.7148345,
+    "ast_hash": "02624288cf91bf47c2f7554ae1e4ff7d",
+    "semantic_hash": "02624288cf91bf47c2f7554ae1e4ff7d"
+  },
+  "src/components/ui/Modal.jsx": {
+    "mtime": 1786399477.606761,
+    "seen": 1787250453.7148352,
+    "ast_hash": "0323606c3ff62145f0d8f3baa3501c62",
+    "semantic_hash": "0323606c3ff62145f0d8f3baa3501c62"
+  },
+  "src/components/ui/PencilTrailCanvas.jsx": {
+    "mtime": 1786401146.7514706,
+    "seen": 1787250453.714836,
+    "ast_hash": "347da51d3e1ca54255b4b608c013115d",
+    "semantic_hash": "347da51d3e1ca54255b4b608c013115d"
+  },
+  "src/components/ui/ResumeModal.jsx": {
+    "mtime": 1786399870.209423,
+    "seen": 1787250453.7148368,
+    "ast_hash": "465d3ba088871e024d0a05bb5241e8ec",
+    "semantic_hash": "465d3ba088871e024d0a05bb5241e8ec"
+  },
+  "src/components/ui/Typewriter.jsx": {
+    "mtime": 1786400626.29995,
+    "seen": 1787250453.7148378,
+    "ast_hash": "e8cd11a8a6299c3901790cb74a7858e6",
+    "semantic_hash": "e8cd11a8a6299c3901790cb74a7858e6"
+  },
+  "src/components/ui/dark/DarkBadge.jsx": {
+    "mtime": 1786398819.814845,
+    "seen": 1787250453.7148385,
+    "ast_hash": "c235882da38e445ead222c173bee5cfb",
+    "semantic_hash": "c235882da38e445ead222c173bee5cfb"
+  },
+  "src/components/ui/dark/DarkButton.jsx": {
+    "mtime": 1786398838.769111,
+    "seen": 1787250453.7148395,
+    "ast_hash": "9e935483185df6d7bb657323dba1e30d",
+    "semantic_hash": "9e935483185df6d7bb657323dba1e30d"
+  },
+  "src/components/ui/dark/DarkCard.jsx": {
+    "mtime": 1786398858.9284384,
+    "seen": 1787250453.7148407,
+    "ast_hash": "d5a292d3369eb5196ff72ce3f55003e1",
+    "semantic_hash": "d5a292d3369eb5196ff72ce3f55003e1"
+  },
+  "src/components/ui/dark/DarkInput.jsx": {
+    "mtime": 1786398874.8246202,
+    "seen": 1787250453.7148414,
+    "ast_hash": "70c524af8f2d0268e9ad8e388e6295b2",
+    "semantic_hash": "70c524af8f2d0268e9ad8e388e6295b2"
+  },
+  "src/components/ui/dark/DarkModal.jsx": {
+    "mtime": 1786398907.1046185,
+    "seen": 1787250453.714842,
+    "ast_hash": "2b14ac78e376973c5a81d4ad30364482",
+    "semantic_hash": "2b14ac78e376973c5a81d4ad30364482"
+  },
+  "src/components/ui/dark/index.js": {
+    "mtime": 1786398917.7821555,
+    "seen": 1787250453.7148428,
+    "ast_hash": "267b7545432758247fbb03c620197a15",
+    "semantic_hash": "267b7545432758247fbb03c620197a15"
+  },
+  "src/context/ThemeContext.jsx": {
+    "mtime": 1786400514.8973129,
+    "seen": 1787250453.7148438,
+    "ast_hash": "d76b92c3ae3813c5cd9112971c4b0d55",
+    "semantic_hash": "d76b92c3ae3813c5cd9112971c4b0d55"
+  },
+  "src/main.jsx": {
+    "mtime": 1786392776.4273214,
+    "seen": 1787250453.7148447,
+    "ast_hash": "e13723e2574429d9a6d849727e3ff695",
+    "semantic_hash": "e13723e2574429d9a6d849727e3ff695"
+  },
+  "src/utils/soundFx.js": {
+    "mtime": 1786401473.8882883,
+    "seen": 1787250453.7148457,
+    "ast_hash": "cba079264bc4b23655469006616abe26",
+    "semantic_hash": "cba079264bc4b23655469006616abe26"
+  },
+  "vite.config.js": {
+    "mtime": 1787248855.6352193,
+    "seen": 1787250453.714847,
+    "ast_hash": "8eaba9196dff49b9f61e3876536d68f3",
+    "semantic_hash": "8eaba9196dff49b9f61e3876536d68f3"
+  }
+}
