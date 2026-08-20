@@ -262,5 +262,455 @@
     "seen": 1787250453.714847,
     "ast_hash": "8eaba9196dff49b9f61e3876536d68f3",
     "semantic_hash": "8eaba9196dff49b9f61e3876536d68f3"
+  },
+  ".agents/rules/graphify.md": {
+    "mtime": 1787250434.7365167,
+    "seen": 1787250630.3584182,
+    "ast_hash": "a0e4d192b9e2e17256124dbfc8e24e6a",
+    "semantic_hash": ""
+  },
+  ".agents/skills/graphify/SKILL.md": {
+    "mtime": 1787250434.722512,
+    "seen": 1787250630.3584218,
+    "ast_hash": "1656a8a8e4a05bbe69f32cd15de81e87",
+    "semantic_hash": ""
+  },
+  ".agents/skills/graphify/references/add-watch.md": {
+    "mtime": 1787250421.8708827,
+    "seen": 1787250630.3584232,
+    "ast_hash": "d59d027fe449f06aa03905a01184e779",
+    "semantic_hash": ""
+  },
+  ".agents/skills/graphify/references/exports.md": {
+    "mtime": 1787250421.8728833,
+    "seen": 1787250630.358425,
+    "ast_hash": "9da2a2152e60a22f07f05fed5158f287",
+    "semantic_hash": ""
+  },
+  ".agents/skills/graphify/references/extraction-spec.md": {
+    "mtime": 1787250421.8738832,
+    "seen": 1787250630.3584263,
+    "ast_hash": "42fef56a01698118f7fd722acdadea34",
+    "semantic_hash": ""
+  },
+  ".agents/skills/graphify/references/github-and-merge.md": {
+    "mtime": 1787250421.8748834,
+    "seen": 1787250630.3584282,
+    "ast_hash": "cde13df085e4c492aeb7ba298a996d0d",
+    "semantic_hash": ""
+  },
+  ".agents/skills/graphify/references/hooks.md": {
+    "mtime": 1787250421.8758843,
+    "seen": 1787250630.3584294,
+    "ast_hash": "3f545db6ce646650bb9de588f5512a27",
+    "semantic_hash": ""
+  },
+  ".agents/skills/graphify/references/query.md": {
+    "mtime": 1787250421.8768885,
+    "seen": 1787250630.3584306,
+    "ast_hash": "3c46f8ad006874260614ed8657d02307",
+    "semantic_hash": ""
+  },
+  ".agents/skills/graphify/references/transcribe.md": {
+    "mtime": 1787250421.8778837,
+    "seen": 1787250630.358432,
+    "ast_hash": "67b6a5fa6c0974e18f60db9f8932fbd8",
+    "semantic_hash": ""
+  },
+  ".agents/skills/graphify/references/update.md": {
+    "mtime": 1787250421.8788836,
+    "seen": 1787250630.3584332,
+    "ast_hash": "9378bd03d56baaf78bd738ab3848f142",
+    "semantic_hash": ""
+  },
+  ".agents/workflows/graphify.md": {
+    "mtime": 1787250434.7365167,
+    "seen": 1787250630.3584342,
+    "ast_hash": "a831cf3669f1e6ab85d8a80ebe655f99",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1786399120.7854228,
+    "seen": 1787250630.3584356,
+    "ast_hash": "e719949536720334e7ef99d7faf6c504",
+    "semantic_hash": ""
+  },
+  "index.html": {
+    "mtime": 1787249117.6204913,
+    "seen": 1787250630.3584368,
+    "ast_hash": "6c85d8f03cd5cc03c1723fad5e13493b",
+    "semantic_hash": ""
+  },
+  "public/google15ae901a53a2309e.html": {
+    "mtime": 1787248752.5775917,
+    "seen": 1787250630.3584383,
+    "ast_hash": "94cdbbc62affeae5743fb9569095bb2e",
+    "semantic_hash": ""
+  },
+  "public/robots.txt": {
+    "mtime": 1787248748.5281978,
+    "seen": 1787250630.3584394,
+    "ast_hash": "9423ee459e6f57a819e714a6866d6bf1",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/google15ae901a53a2309e.html": {
+    "mtime": 1779098475.6262186,
+    "seen": 1787250630.3584406,
+    "ast_hash": "94cdbbc62affeae5743fb9569095bb2e",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/robots.txt": {
+    "mtime": 1779098026.6579201,
+    "seen": 1787250630.358442,
+    "ast_hash": "6077494ca4f78b87b1313b74d02a22d5",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/Swar-Res.pdf": {
+    "mtime": 1780857648.3998415,
+    "seen": 1787250630.3584435,
+    "ast_hash": "993792e92a9de23b36d36b315e0beced",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/Swar-Resume.pdf": {
+    "mtime": 1764696647.1649399,
+    "seen": 1787250630.3584445,
+    "ast_hash": "803fe58dea1ba7109d61236f40a3d063",
+    "semantic_hash": ""
+  },
+  "public/og-image.png": {
+    "mtime": 1787249215.696915,
+    "seen": 1787250630.3584464,
+    "ast_hash": "7bdfb8bf2bdaf665833f8145e246ccb0",
+    "semantic_hash": ""
+  },
+  "src/All data/Cloudy Face.png": {
+    "mtime": 1786422359.3663874,
+    "seen": 1787250630.3584478,
+    "ast_hash": "e78ce2660fddb359b8fa6a8b1c9e6609",
+    "semantic_hash": ""
+  },
+  "src/All data/Cloudy Face.webp": {
+    "mtime": 1786424210.875,
+    "seen": 1787250630.358449,
+    "ast_hash": "e02cc54b864e439b07a3fb2729b59e3c",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/Achievements/CodeAThonehackthon.webp": {
+    "mtime": 1778160726.848,
+    "seen": 1787250630.35845,
+    "ast_hash": "c7945041e194adeffe840b624f2bf91b",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/Achievements/InternCertificate.webp": {
+    "mtime": 1778262402.532,
+    "seen": 1787250630.3584511,
+    "ast_hash": "1341c679ac3bc26c6dd10490a0047bac",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/Achievements/LOA.webp": {
+    "mtime": 1778262402.895,
+    "seen": 1787250630.358453,
+    "ast_hash": "8758832335529407cea0e19bc526261f",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/Achievements/LetterofAppreciationInternship.webp": {
+    "mtime": 1778262402.831,
+    "seen": 1787250630.3584547,
+    "ast_hash": "886895c4a17ea9f8f974b62512edc8f6",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/Achievements/Tabletennisdoubles2ndprize.webp": {
+    "mtime": 1778262403.171,
+    "seen": 1787250630.3584561,
+    "ast_hash": "0a278f917f27439d623c940ba523511a",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/Achievements/codeAThon2.0withTeam.webp": {
+    "mtime": 1778262402.399,
+    "seen": 1787250630.3584573,
+    "ast_hash": "0df1ba9ac20ac96780cfd3a57e9f5087",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/Achievements/internshipGroupPhoto.webp": {
+    "mtime": 1778262402.711,
+    "seen": 1787250630.3584592,
+    "ast_hash": "c0003abaaf0ccae66529a317cb38bb7c",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/Achievements/soloInternHODPic.webp": {
+    "mtime": 1778262403.015,
+    "seen": 1787250630.358461,
+    "ast_hash": "b70b1a629e6c06290a7a6c870ea875ca",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/C.webp": {
+    "mtime": 1775935221.593,
+    "seen": 1787250630.358462,
+    "ast_hash": "ed89a037eb8cbfc909e79cc5a04d759b",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/Git.webp": {
+    "mtime": 1775935222.093,
+    "seen": 1787250630.358464,
+    "ast_hash": "ee4b4dd4f9514760ed545d09a6416dec",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/InternCertificate.webp": {
+    "mtime": 1778262303.707,
+    "seen": 1787250630.3584654,
+    "ast_hash": "1341c679ac3bc26c6dd10490a0047bac",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/LOA.webp": {
+    "mtime": 1778262304.051,
+    "seen": 1787250630.358467,
+    "ast_hash": "8758832335529407cea0e19bc526261f",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/LetterofAppreciationInternship.webp": {
+    "mtime": 1778262303.979,
+    "seen": 1787250630.3584685,
+    "ast_hash": "886895c4a17ea9f8f974b62512edc8f6",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/MongoDB.webp": {
+    "mtime": 1775935223.022,
+    "seen": 1787250630.3584702,
+    "ast_hash": "a681c9a0135a85fa9c0f595e3278944d",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/MySQL.webp": {
+    "mtime": 1775935223.108,
+    "seen": 1787250630.3584714,
+    "ast_hash": "04a9dd86bcc70de120e3a208df65293c",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/Python.webp": {
+    "mtime": 1775935223.363,
+    "seen": 1787250630.3584726,
+    "ast_hash": "098b4c3d94472c6b4e4e26fc70b4de5c",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/RecipeAi.webp": {
+    "mtime": 1778262304.684,
+    "seen": 1787250630.358474,
+    "ast_hash": "3d0da2fe215c0c436f5519a5511fe0df",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/Singularity.webp": {
+    "mtime": 1778262304.921,
+    "seen": 1787250630.3584754,
+    "ast_hash": "c06723b361236397e45a668fe43b81e7",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/Skilltube.webp": {
+    "mtime": 1778262305.008,
+    "seen": 1787250630.3584769,
+    "ast_hash": "492f5af4d620574e709a07227f68e34a",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/Tabletennisdoubles2ndprize.webp": {
+    "mtime": 1778262304.391,
+    "seen": 1787250630.3584783,
+    "ast_hash": "0a278f917f27439d623c940ba523511a",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/VS.webp": {
+    "mtime": 1775935226.927,
+    "seen": 1787250630.3584836,
+    "ast_hash": "5a018abd9d17833461cc15f99c8e69a4",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/Vayu.webp": {
+    "mtime": 1778262305.113,
+    "seen": 1787250630.3584847,
+    "ast_hash": "ff79fce8d896ea7227a7d50f65755f0e",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/X.webp": {
+    "mtime": 1775935227.013,
+    "seen": 1787250630.358486,
+    "ast_hash": "ebbf8a2dcc23fe8824cf0386e8e1226e",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/canva.webp": {
+    "mtime": 1775935221.618,
+    "seen": 1787250630.3584874,
+    "ast_hash": "12dbac278967e1046e32c6caa8550bf0",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/codeAThon2.0withTeam.webp": {
+    "mtime": 1778262303.586,
+    "seen": 1787250630.3584883,
+    "ast_hash": "0df1ba9ac20ac96780cfd3a57e9f5087",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/cpp.webp": {
+    "mtime": 1775935221.713,
+    "seen": 1787250630.3584898,
+    "ast_hash": "08ea7ee844cf37b99a57e2ae36e2506c",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/css.webp": {
+    "mtime": 1775935221.799,
+    "seen": 1787250630.3584912,
+    "ast_hash": "7602b41ca7a45cb3bc45aebe8620ec55",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/discord.webp": {
+    "mtime": 1775935221.891,
+    "seen": 1787250630.3584924,
+    "ast_hash": "aade8901bedba1a1847f8c90e81d3385",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/downloadicon.webp": {
+    "mtime": 1775935221.901,
+    "seen": 1787250630.3584933,
+    "ast_hash": "75c58c1081b177b774e095dd856eadc3",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/email.webp": {
+    "mtime": 1775935221.962,
+    "seen": 1787250630.3584945,
+    "ast_hash": "9f7e5729dc71aaadb71326c029d8deb0",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/express.webp": {
+    "mtime": 1775935221.973,
+    "seen": 1787250630.3584955,
+    "ast_hash": "c5e48b504c9f69798b5af49c6947e587",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/favicon.png": {
+    "mtime": 1779100013.5830507,
+    "seen": 1787250630.3584974,
+    "ast_hash": "5150a4f126cb207e04cf2ec1d9e1b778",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/framer-motion.svg": {
+    "mtime": 1778368301.7743704,
+    "seen": 1787250630.3584983,
+    "ast_hash": "9b870a83569afa1b49a8eb5408bce9d5",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/github.webp": {
+    "mtime": 1775935222.174,
+    "seen": 1787250630.3584995,
+    "ast_hash": "8f910fd11028adfb0ccd6c2c4dff083a",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/gsap.svg": {
+    "mtime": 1778368301.7689767,
+    "seen": 1787250630.3585007,
+    "ast_hash": "fd8e3acbfd5aaa9f8525ba18a4ea1ef5",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/html.webp": {
+    "mtime": 1775935222.263,
+    "seen": 1787250630.358502,
+    "ast_hash": "5014ca0461475751fc77e40a397035f8",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/image.webp": {
+    "mtime": 1778262304.556,
+    "seen": 1787250630.3585029,
+    "ast_hash": "b76be4dc999d1b7fcaa53be106712986",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/internshipGroupPhoto.webp": {
+    "mtime": 1778262303.877,
+    "seen": 1787250630.3585043,
+    "ast_hash": "c0003abaaf0ccae66529a317cb38bb7c",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/java.webp": {
+    "mtime": 1775935222.699,
+    "seen": 1787250630.3585055,
+    "ast_hash": "56322e48ee449da771dab7b111a5f4d0",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/js.webp": {
+    "mtime": 1775935222.785,
+    "seen": 1787250630.358507,
+    "ast_hash": "3ee60195c18d183fb94c83a2b779a262",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/linkedin-logo.webp": {
+    "mtime": 1775935222.841,
+    "seen": 1787250630.358508,
+    "ast_hash": "6053b660d54387f016fdbb14ca6372ec",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/mobile.webp": {
+    "mtime": 1775935222.905,
+    "seen": 1787250630.3585093,
+    "ast_hash": "70b5a4dfe65a590e4b4ff9098f75dec6",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/node-js.webp": {
+    "mtime": 1775935223.184,
+    "seen": 1787250630.3585105,
+    "ast_hash": "48a4c45d6af4d463e65df463e2f336c2",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/og-image.png": {
+    "mtime": 1779097984.7178743,
+    "seen": 1787250630.358512,
+    "ast_hash": "84c0274ea4f86cc7d9dea1d9bd064636",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/postman.webp": {
+    "mtime": 1775935223.196,
+    "seen": 1787250630.3585129,
+    "ast_hash": "8826e93c8b12673ce8f8f1ee42a8dcab",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/problemsolving.webp": {
+    "mtime": 1775935223.283,
+    "seen": 1787250630.358514,
+    "ast_hash": "e556d6926dc8c0e45d3fe161304e5c71",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/react.webp": {
+    "mtime": 1775935223.44,
+    "seen": 1787250630.3585155,
+    "ast_hash": "08c61b00feb521648fe48eec43eee992",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/sims.webp": {
+    "mtime": 1778262304.827,
+    "seen": 1787250630.3585167,
+    "ast_hash": "153d1de3940483fc57a913679d330c49",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/soloInternHODPic.webp": {
+    "mtime": 1778262304.182,
+    "seen": 1787250630.3585184,
+    "ast_hash": "b70b1a629e6c06290a7a6c870ea875ca",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/tailwind.svg": {
+    "mtime": 1778368301.7659726,
+    "seen": 1787250630.3585196,
+    "ast_hash": "53446d99881da3bceb26833d7552cdc9",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/threejs.svg": {
+    "mtime": 1778368301.7828002,
+    "seen": 1787250630.3585207,
+    "ast_hash": "b481a9fc1822bd4aab92ff2018fb70c9",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/utubebanner.webp": {
+    "mtime": 1775935225.974,
+    "seen": 1787250630.358522,
+    "ast_hash": "33543f02727c38420893887a1159fd92",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/vite.svg": {
+    "mtime": 1778368301.7833114,
+    "seen": 1787250630.358523,
+    "ast_hash": "b7d3ac13e380f77a83ad37823c1b7831",
+    "semantic_hash": ""
   }
 }
