@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+﻿import React, { useEffect, useRef } from 'react';
 import { X, FileDown, ExternalLink, FileText } from 'lucide-react';
 import { Button } from './Button';
 import gsap from 'gsap';
@@ -59,7 +59,7 @@ export const ResumeModal = ({ isOpen, onClose, pdfUrl }) => {
               <FileText className="w-5 h-5 text-white stroke-[2.5]" />
             </div>
             <span className="font-heading font-bold text-xl text-[var(--color-ink)]">
-              Swar Shinde — Resume
+              Swar Shinde - Resume
             </span>
           </div>
 

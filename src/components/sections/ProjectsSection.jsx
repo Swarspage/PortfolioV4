@@ -74,7 +74,7 @@ export const ProjectsSection = () => {
           Featured Projects
         </h2>
         <p className="text-xl text-[var(--color-ink)]/80 font-handwriting">
-          Things I've built that actually leave <code>localhost</code> and make an impact.
+          Things I've built that people actually use.
         </p>
       </div>
 
