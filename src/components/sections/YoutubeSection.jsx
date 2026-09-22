@@ -83,10 +83,10 @@ export const YoutubeSection = () => {
             <div className="w-full aspect-video border-4 border-[var(--color-ink)] rounded-lg overflow-hidden bg-[var(--color-ink)] shadow-hard-sm isolate transform-gpu">
               <iframe 
                 className="w-full h-full relative z-0"
-                src={`https://www.youtube.com/embed/${youtubeData.featuredVideo.id}?rel=0`} 
+                src={`https://www.youtube-nocookie.com/embed/${youtubeData.featuredVideo.id}?rel=0`} 
                 title="Featured YouTube Video" 
-                frameBorder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen
               ></iframe>
             </div>

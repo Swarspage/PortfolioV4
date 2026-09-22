@@ -1,17 +1,17 @@
-﻿[
+[
   {
     "role": "Frontend Intern",
     "org": "Datta Meghe College",
-    "duration": "2023 – Present",
-    "active": true,
-    "description": "Building and maintaining features across the stack - React on the front, Express and MongoDB in the back. Integrated real-world APIs like OpenWeather and Leaflet into student-facing apps. SIMS, the college management system I built here, is used by 500+ students daily. Not a demo project."
+    "duration": "Aug 2025 - Mar 2026",
+    "active": false,
+    "description": "Built and maintained features across the stack - React on the front, Express and MongoDB in the back. Integrated real-world APIs like OpenWeather and Leaflet into student-facing apps. SIMS, the college management system I built here, has 500+ students registered on it. Not a demo project."
   },
   {
-    "role": "Tech Team Contributor",
-    "org": "CSI-CATT",
-    "duration": "2023 – Present",
+    "role": "Technical Co-Lead",
+    "org": "CSI-CATT DMCE",
+    "duration": "Jul 2026 - Present",
     "active": true,
-    "description": "Fast-paced collaboration, rapid prototyping, and shipping under deadlines. Worked across frontend and backend on internal tools and hackathon builds. This is where Singularity - the Top 8 hackathon project - was born."
+    "description": "Elected Technical Co-Lead for CSI-CATT 2026-27. Leading the technical wing of the college's Computer Society chapter - driving workshops, events, and the chapter's dev projects. Went from contributor to the person setting the technical direction."
   },
   {
     "role": "Freelance Developer",

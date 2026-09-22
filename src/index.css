@@ -251,3 +251,36 @@
 
 .animate-jiggle:hover { animation: jiggle 0.4s ease-in-out infinite; }
 .animate-float        { animation: gentle-float 4s ease-in-out infinite; }
+
+/* --- Sketch Skeleton (image loading placeholder) --- */
+@keyframes sketch-sweep {
+  0%   { transform: translateX(-100%) skewX(-12deg); }
+  100% { transform: translateX(250%)  skewX(-12deg); }
+}
+
+.skeleton-hatch {
+  background-color: var(--color-muted);
+  background-image:
+    repeating-linear-gradient(45deg, transparent, transparent 6px, rgba(45,45,45,0.06) 6px, rgba(45,45,45,0.06) 7px),
+    repeating-linear-gradient(-45deg, transparent, transparent 6px, rgba(45,45,45,0.04) 6px, rgba(45,45,45,0.04) 7px);
+  position: relative;
+  overflow: hidden;
+}
+
+.skeleton-hatch::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.55) 45%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0.55) 55%, transparent 100%);
+  animation: sketch-sweep 1.6s ease-in-out infinite;
+}
+
+.dark .skeleton-hatch {
+  background-image:
+    repeating-linear-gradient(45deg, transparent, transparent 6px, rgba(255,255,255,0.04) 6px, rgba(255,255,255,0.04) 7px),
+    repeating-linear-gradient(-45deg, transparent, transparent 6px, rgba(255,255,255,0.03) 6px, rgba(255,255,255,0.03) 7px);
+}
+
+.dark .skeleton-hatch::after {
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.07) 45%, rgba(255,255,255,0.12) 50%, rgba(255,255,255,0.07) 55%, transparent 100%);
+}

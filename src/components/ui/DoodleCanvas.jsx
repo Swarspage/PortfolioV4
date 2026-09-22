@@ -15,21 +15,12 @@ export const DoodleCanvas = () => {
     const ctx = canvas.getContext('2d');
 
     const updateCanvasSize = () => {
-      const docWidth = document.documentElement.scrollWidth || window.innerWidth;
-      const docHeight = document.documentElement.scrollHeight || window.innerHeight;
+      const w = window.innerWidth;
+      const h = window.innerHeight;
 
-      // Only resize if enlarged to prevent clearing drawing
-      if (canvas.width < docWidth || canvas.height < docHeight) {
-        const tempCanvas = document.createElement('canvas');
-        tempCanvas.width = canvas.width;
-        tempCanvas.height = canvas.height;
-        const tempCtx = tempCanvas.getContext('2d');
-        if (canvas.width > 0) tempCtx.drawImage(canvas, 0, 0);
-
-        canvas.width = docWidth;
-        canvas.height = docHeight;
-
-        if (tempCanvas.width > 0) ctx.drawImage(tempCanvas, 0, 0);
+      if (canvas.width !== w || canvas.height !== h) {
+        canvas.width = w;
+        canvas.height = h;
       }
     };
 
@@ -147,7 +138,7 @@ export const DoodleCanvas = () => {
         onMouseMove={draw}
         onMouseUp={stopDrawing}
         onMouseLeave={stopDrawing}
-        className={`absolute top-0 left-0 w-full z-40 ${isActive ? 'pointer-events-auto cursor-crosshair' : 'pointer-events-none'}`}
+        className={`fixed inset-0 w-full h-full z-40 ${isActive ? 'pointer-events-auto cursor-crosshair' : 'pointer-events-none'}`}
       />
 
       {/* Floating Toggle Button (Fixed Bottom Left) */}

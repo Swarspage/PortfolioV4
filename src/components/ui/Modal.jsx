@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { X, ExternalLink, Code2, Play } from 'lucide-react';
 import { Card } from './Card';
 import { Button } from './Button';
+import { ImageWithSkeleton } from './ImageWithSkeleton';
 import gsap from 'gsap';
 
 export const Modal = ({ isOpen, onClose, data, type }) => {
@@ -57,15 +58,13 @@ export const Modal = ({ isOpen, onClose, data, type }) => {
           {/* Large Image Area */}
           <div className="w-full mb-6 flex-shrink-0">
             {data.imageSrc ? (
-              <div className="relative p-2 pb-10 bg-[var(--color-surface)] border-2 border-[var(--color-ink)] shadow-hard-md transform rotate-[-1deg]">
-                <img
+              <div className="relative p-2 bg-[var(--color-ink)]/5 border-2 border-[var(--color-ink)] shadow-hard-md transform rotate-[-1deg] overflow-hidden">
+                <ImageWithSkeleton
                   src={data.imageSrc}
                   alt={data.title}
-                  className="w-full max-h-[50vh] object-cover border border-[var(--color-ink)]/20 filter sepia-[5%]"
+                  className="w-full max-h-[65vh] object-contain filter sepia-[5%]"
+                  skeletonClass="w-full min-h-[300px]"
                 />
-                <div className="absolute bottom-[-12px] left-1/2 -translate-x-1/2 bg-[var(--color-surface)] px-4 py-1 border-2 border-[var(--color-ink)] rounded-full text-center font-handwriting font-bold text-[var(--color-ink)] shadow-hard-sm text-sm md:text-base z-10 whitespace-nowrap">
-                  {type === 'project' ? 'Featured Project' : data.date}
-                </div>
               </div>
             ) : (
               <div className="w-full h-64 flex items-center justify-center bg-[var(--color-bg)] border-4 border-dashed border-[var(--color-ink)]/20 rounded-3xl wobbly-circle transform rotate-[1deg]">

@@ -4,6 +4,7 @@ import { Badge } from '../ui/Badge';
 import { Modal } from '../ui/Modal';
 import { Trophy, Rocket, HeartHandshake, GraduationCap, Star, ArrowRight, ArrowLeft } from 'lucide-react';
 import achievementsData from '../../All data/data/AchievementsData.json';
+import { ImageWithSkeleton } from '../ui/ImageWithSkeleton';
 import gsap from 'gsap';
 
 const imageModules = import.meta.glob('../../All data/assets/Achievements/*.{webp,png,jpg,jpeg}', { eager: true, query: '?url', import: 'default' });
@@ -17,7 +18,8 @@ const imageMapping = {
   "Official Certificate · TT Doubles": "LetterofAppreciationInternship.webp",
   "Top 8 Finalist · Code-A-Thon 2.0": "CodeAThonehackthon.webp",
   "The Team Behind Singularity": "codeAThon2.0withTeam.webp",
-  "2nd Place · Table Tennis Doubles": "Tabletennisdoubles2ndprize.webp"
+  "2nd Place · Table Tennis Doubles": "Tabletennisdoubles2ndprize.webp",
+  "Technical Co-Lead · CSI-CATT": "CSITechLead.webp",
 };
 
 const getImageUrl = (title) => {
@@ -31,7 +33,8 @@ const IconMap = {
   "trophy": Trophy,
   "rocket": Rocket,
   "volunteer": HeartHandshake,
-  "academic": GraduationCap
+  "academic": GraduationCap,
+  "star": Star
 };
 
 export const AchievementsSection = () => {
@@ -137,25 +140,28 @@ export const AchievementsSection = () => {
                 {/* Photo Area */}
                 <div className="w-full mb-6">
                   {imageSrc ? (
-                    <div className="relative p-2 pb-8 bg-[var(--color-surface)] border-2 border-[var(--color-ink)] shadow-hard-sm transform rotate-[-2deg] group-hover:rotate-0 transition-transform duration-300 overflow-hidden group-image">
-                      <img 
-                        src={imageSrc} 
-                        alt={achievement.title} 
-                        className="w-full h-56 object-cover border border-[#2d2d2d]/20 filter grayscale-[20%] sepia-[10%] group-hover:filter-none transition-all duration-500" 
-                      />
-                      {/* Hover Tag */}
-                      <div className="absolute top-4 right-4 bg-[var(--color-surface)] border-2 border-[var(--color-ink)] rounded-md px-2 py-1 shadow-hard-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-handwriting text-xs font-bold z-20 transform rotate-3 text-[var(--color-ink)]">
-                        Click to enlarge 🔍
-                      </div>
-                      <div className="absolute bottom-2 left-0 w-full text-center font-handwriting font-bold text-[var(--color-ink)] text-sm px-2">
-                        {achievement.date}
-                      </div>
+                    <div className="relative p-2 bg-[var(--color-surface)] border-2 border-[var(--color-ink)] shadow-hard-sm transform rotate-[-2deg] group-hover:rotate-0 transition-transform duration-300 group-image overflow-hidden">
+                      <ImageWithSkeleton
+                        src={imageSrc}
+                        alt={achievement.title}
+                        className="absolute inset-0 w-full h-full object-cover filter grayscale-[20%] sepia-[10%] group-hover:filter-none transition-all duration-500"
+                        skeletonClass="w-full h-52"
+                      >
+                        {/* Hover Tag */}
+                        <div className="absolute top-2 right-2 bg-[var(--color-surface)] border-2 border-[var(--color-ink)] rounded-md px-2 py-1 shadow-hard-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-handwriting text-xs font-bold z-20 transform rotate-3 text-[var(--color-ink)]">
+                          Click to enlarge 🔍
+                        </div>
+                      </ImageWithSkeleton>
                     </div>
                   ) : (
                     <div className="w-full h-56 flex items-center justify-center bg-[var(--color-bg)] border-4 border-dashed border-[var(--color-ink)]/20 rounded-3xl wobbly-circle transform rotate-[2deg]">
                       <IconComponent className="w-24 h-24 text-[var(--color-ink)]/20" />
                     </div>
                   )}
+                  {/* Date label below the photo frame */}
+                  <div className="text-center font-handwriting font-bold text-[var(--color-ink)]/70 text-sm mt-2">
+                    {achievement.date}
+                  </div>
                 </div>
 
                 {/* Text Area */}

@@ -31,7 +31,7 @@ export const ContactSection = ({ onOpenResume }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [currentTime, setCurrentTime] = useState(new Date());
   const [toast, setToast] = useState(null); // { msg, type }
-  
+
   const sectionRef = useRef(null);
   const containerRef = useRef(null);
 
@@ -142,14 +142,14 @@ export const ContactSection = ({ onOpenResume }) => {
       </div>
 
       <div ref={containerRef} className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-start">
-        
+
         {/* Left Side: Form */}
         <div className="lg:col-span-7">
           <Card variant="postit" decoration="tape" rotate="none" className="p-6 sm:p-10 w-full">
             <h3 className="font-heading font-bold text-3xl text-[var(--color-ink)] mb-8 wobbly-line inline-block pb-2">
               Send a Message
             </h3>
-            
+
             <form onSubmit={handleSubmit} className="space-y-6">
               <Input
                 label="Your Name"
@@ -157,7 +157,7 @@ export const ContactSection = ({ onOpenResume }) => {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                placeholder="John Doe"
+                placeholder="Deepak Kalal"
               />
               <Input
                 label="Your Email"
@@ -166,7 +166,7 @@ export const ContactSection = ({ onOpenResume }) => {
                 type="email"
                 value={formData.email}
                 onChange={handleChange}
-                placeholder="john@example.com"
+                placeholder="puneet@superstar.com"
               />
               <TextArea
                 label="Your Message"
@@ -174,15 +174,15 @@ export const ContactSection = ({ onOpenResume }) => {
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                placeholder="What's on your mind?"
+                placeholder="Money followssss maaa brothaaa!!! Sayy smth to me :)"
                 rows={5}
               />
-              
+
               <div className="pt-2">
-                <Button 
-                  type="submit" 
-                  variant="primary" 
-                  size="lg" 
+                <Button
+                  type="submit"
+                  variant="primary"
+                  size="lg"
                   className="w-full sm:w-auto"
                   disabled={isSubmitting}
                   icon={isSubmitting ? undefined : Mail}
@@ -196,7 +196,7 @@ export const ContactSection = ({ onOpenResume }) => {
 
         {/* Right Side: Socials & Status */}
         <div className="lg:col-span-5 flex flex-col gap-8">
-          
+
           {/* Socials Card */}
           <Card variant="default" decoration="tack" rotate="slightRight" className="p-6 sm:p-8">
             <h3 className="font-heading font-bold text-2xl text-[var(--color-ink)] mb-6">
@@ -229,7 +229,7 @@ export const ContactSection = ({ onOpenResume }) => {
           {/* Status HUD (Hand-drawn style) */}
           <Card variant="muted" decoration="tape" rotate="slightLeft" className="p-6">
             <div className="flex flex-col sm:flex-row justify-between items-center gap-6">
-              <div className="flex flex-col text-center sm:text-left space-y-1">
+              <div className="flex flex-col text-center sm:text-left space-y-1 min-w-[180px]">
                 <div className="flex items-center justify-center sm:justify-start gap-2 text-sm font-bold text-[#00618A] uppercase tracking-wider font-handwriting">
                   <span className="relative flex h-3 w-3">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ff4d4d] opacity-75"></span>
@@ -237,17 +237,17 @@ export const ContactSection = ({ onOpenResume }) => {
                   </span>
                   Status: Online
                 </div>
-                <div className="font-heading font-bold text-3xl text-[var(--color-ink)]">
+                <div className="font-heading font-bold text-2xl sm:text-3xl text-[var(--color-ink)] whitespace-nowrap">
                   {formatISTTime()}
                 </div>
-                <div className="font-handwriting text-[var(--color-ink)]/70 text-sm">
+                <div className="font-handwriting text-[var(--color-ink)]/70 text-sm whitespace-nowrap">
                   Navi Mumbai | Pune, IN
                 </div>
               </div>
-              
-              <Button 
-                variant="outline" 
-                className="bg-[var(--color-surface)] whitespace-nowrap" 
+
+              <Button
+                variant="outline"
+                className="bg-[var(--color-surface)] whitespace-nowrap flex-shrink-0"
                 icon={FileDown}
                 onClick={onOpenResume}
               >
