@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Card } from '../ui/Card';
 import { Badge } from '../ui/Badge';
 import { Button } from '../ui/Button';
@@ -24,6 +24,32 @@ export const ProjectsSection = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [activeProject, setActiveProject] = useState(null);
+  const scrollContainerRef = useRef(null);
+
+  useEffect(() => {
+    if (!isMobile || !scrollContainerRef.current) return;
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            if (scrollContainerRef.current) {
+              scrollContainerRef.current.scrollBy({ left: 60, behavior: 'smooth' });
+              setTimeout(() => {
+                if (scrollContainerRef.current) {
+                  scrollContainerRef.current.scrollBy({ left: -60, behavior: 'smooth' });
+                }
+              }, 400);
+            }
+          }, 800);
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.5 });
+    
+    observer.observe(scrollContainerRef.current);
+    return () => observer.disconnect();
+  }, [isMobile]);
 
   React.useEffect(() => {
     const handleResize = () => {
@@ -52,7 +78,7 @@ export const ProjectsSection = () => {
     }, 300);
   };
   
-  const currentProjects = projectsData.slice(
+  const currentProjects = isMobile ? projectsData : projectsData.slice(
     currentPage * projectsPerPage,
     (currentPage + 1) * projectsPerPage
   );
@@ -78,7 +104,12 @@ export const ProjectsSection = () => {
         </p>
       </div>
 
-      <div className={`grid grid-cols-1 md:grid-cols-2 gap-10 transition-all duration-300 ease-in-out ${isAnimating ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`}>
+      <div 
+        ref={scrollContainerRef}
+        className={isMobile 
+          ? "flex flex-nowrap overflow-x-auto snap-x snap-mandatory gap-6 pt-4 pb-12 hide-scrollbar scroll-smooth -mx-4 px-4 sm:-mx-6 sm:px-6" 
+          : `grid grid-cols-1 md:grid-cols-2 gap-10 transition-all duration-300 ease-in-out ${isAnimating ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`}
+      >
         {currentProjects.map((project, index) => {
           const imagePath = getImageUrl(project.imageSrc);
           
@@ -95,7 +126,7 @@ export const ProjectsSection = () => {
                 githubLink: project.githubLink,
                 demoLink: project.demoLink
               })}
-              className="cursor-pointer group"
+              className={`cursor-pointer group ${isMobile ? 'snap-center shrink-0 w-[85vw]' : ''}`}
             >
               <Card
                 decoration={index % 2 === 0 ? 'tape' : 'tack'}
@@ -171,11 +202,12 @@ export const ProjectsSection = () => {
           </div>
           );
         })}
+        {isMobile && <div className="w-1 shrink-0" aria-hidden="true" />}
       </div>
 
       {/* Pagination Controls */}
-      {totalPages > 1 && (
-        <div className="flex items-center justify-center gap-6 pt-6">
+      {!isMobile && totalPages > 1 && (
+        <div className="hidden md:flex items-center justify-center gap-6 pt-6">
           <Button 
             variant="outline" 
             size="md" 

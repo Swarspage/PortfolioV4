@@ -34,41 +34,41 @@ export const App = () => {
       <PencilTrailCanvas />
       <DoodleCanvas />
       <div className="min-h-screen flex flex-col flex-1 bg-notebook text-[var(--color-ink)] font-handwriting selection:bg-accent-red selection:text-white">
-      {/* 1. Navbar Component (All 9 sections configured) */}
-      <Navbar />
+        {/* 1. Navbar Component (All 9 sections configured) */}
+        <Navbar />
 
-      {/* Main Content Area */}
-      <main className="flex-1 w-full max-w-6xl mx-auto px-4 sm:px-6 mt-6 space-y-16">
-        
-        {/* Section 1: Hero Section */}
-        <HeroSection onOpenResume={openResume} />
+        {/* Main Content Area */}
+        <main className="flex-1 w-full max-w-6xl mx-auto px-4 sm:px-6 mt-6 space-y-16">
 
-        {/* Section 2: About Section */}
-        <AboutSection />
+          {/* Section 1: Hero Section */}
+          <HeroSection onOpenResume={openResume} />
 
-        {/* Section 3: Projects Section */}
-        <ProjectsSection />
+          {/* Section 2: About Section */}
+          <AboutSection />
 
-        {/* Section 4: Skills Section */}
-        <SkillsSection />
+          {/* Section 3: Projects Section */}
+          <ProjectsSection />
 
-        {/* Section 5: Experience Section */}
-        <ExperienceSection />
+          {/* Section 4: Skills Section */}
+          <SkillsSection />
 
-        {/* Section 6: Education Section */}
-        <EducationSection />
+          {/* Section 5: Experience Section */}
+          <ExperienceSection />
 
-        {/* Section 7: Achievements Section */}
-        <AchievementsSection />
+          {/* Section 6: Education Section */}
+          <EducationSection />
 
-        {/* Section 8: YouTube & Live Builds Section */}
-        <YoutubeSection />
+          {/* Section 7: Achievements Section */}
+          <AchievementsSection />
 
-        {/* Section 9: Contact Section */}
-        <ContactSection onOpenResume={openResume} />
-      </main>
+          {/* Section 8: YouTube & Live Builds Section */}
+          <YoutubeSection />
 
-      <Footer />
+          {/* Section 9: Contact Section */}
+          <ContactSection onOpenResume={openResume} />
+        </main>
+
+        <Footer />
       </div>
 
       {/* Global Resume Modal */}

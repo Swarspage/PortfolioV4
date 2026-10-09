@@ -17,18 +17,6 @@
       "source_location": "L3"
     },
     {
-      "id": "src_components_decorations_handdrawndecorations_dashedarrow",
-      "label": "DashedArrow()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "dashedarrow()",
-      "source_file": "src/components/decorations/HandDrawnDecorations.jsx",
-      "source_location": "L3"
-    },
-    {
       "id": "src_components_decorations_handdrawndecorations_markerhighlight",
       "label": "MarkerHighlight()",
       "_callable": true,
@@ -89,31 +77,7 @@
       "source_location": "L101"
     },
     {
-      "id": "src_components_sections_aboutsection_aboutsection",
-      "label": "AboutSection()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "aboutsection()",
-      "source_file": "src/components/sections/AboutSection.jsx",
-      "source_location": "L12"
-    },
-    {
-      "id": "src_components_sections_achievementssection_achievementssection",
-      "label": "AchievementsSection()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "achievementssection()",
-      "source_file": "src/components/sections/AchievementsSection.jsx",
-      "source_location": "L37"
-    },
-    {
-      "id": "src_components_sections_achievementssection_getimageurl",
+      "id": "src_components_sections_projectssection_getimageurl",
       "label": "getImageUrl()",
       "_callable": true,
       "_origin": "ast",
@@ -121,8 +85,44 @@
       "community_name": "react",
       "file_type": "code",
       "norm_label": "getimageurl()",
-      "source_file": "src/components/sections/AchievementsSection.jsx",
-      "source_location": "L23"
+      "source_file": "src/components/sections/ProjectsSection.jsx",
+      "source_location": "L13"
+    },
+    {
+      "id": "src_components_sections_projectssection_projectssection",
+      "label": "ProjectsSection()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "projectssection()",
+      "source_file": "src/components/sections/ProjectsSection.jsx",
+      "source_location": "L20"
+    },
+    {
+      "id": "src_components_sections_skillssection_getimageurl",
+      "label": "getImageUrl()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "getimageurl()",
+      "source_file": "src/components/sections/SkillsSection.jsx",
+      "source_location": "L12"
+    },
+    {
+      "id": "src_components_sections_skillssection_skillssection",
+      "label": "SkillsSection()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "skillssection()",
+      "source_file": "src/components/sections/SkillsSection.jsx",
+      "source_location": "L18"
     },
     {
       "id": "src_components_ui_badge_badge",
@@ -134,18 +134,6 @@
       "file_type": "code",
       "norm_label": "badge()",
       "source_file": "src/components/ui/Badge.jsx",
-      "source_location": "L3"
-    },
-    {
-      "id": "src_components_ui_button_button",
-      "label": "Button()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "button()",
-      "source_file": "src/components/ui/Button.jsx",
       "source_location": "L3"
     },
     {
@@ -161,54 +149,6 @@
       "source_location": "L5"
     },
     {
-      "id": "src_components_ui_draggablestickers_draggablestickers",
-      "label": "DraggableStickers()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "draggablestickers()",
-      "source_file": "src/components/ui/DraggableStickers.jsx",
-      "source_location": "L11"
-    },
-    {
-      "id": "src_components_ui_minicodesandbox_minicodesandbox",
-      "label": "MiniCodeSandbox()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "minicodesandbox()",
-      "source_file": "src/components/ui/MiniCodeSandbox.jsx",
-      "source_location": "L7"
-    },
-    {
-      "id": "src_components_ui_modal_modal",
-      "label": "Modal()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "modal()",
-      "source_file": "src/components/ui/Modal.jsx",
-      "source_location": "L7"
-    },
-    {
-      "id": "src_components_ui_typewriter_typewriter",
-      "label": "Typewriter()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "typewriter()",
-      "source_file": "src/components/ui/Typewriter.jsx",
-      "source_location": "L3"
-    },
-    {
       "id": "src_app_app",
       "label": "App()",
       "_callable": true,
@@ -218,7 +158,7 @@
       "file_type": "code",
       "norm_label": "app()",
       "source_file": "src/App.jsx",
-      "source_location": "L20"
+      "source_location": "L19"
     },
     {
       "id": "src_components_decorations_handdrawndecorations_postittag",
@@ -245,6 +185,66 @@
       "source_location": "L31"
     },
     {
+      "id": "src_components_layout_footer_footer",
+      "label": "Footer()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "App.jsx",
+      "file_type": "code",
+      "norm_label": "footer()",
+      "source_file": "src/components/layout/Footer.jsx",
+      "source_location": "L47"
+    },
+    {
+      "id": "src_components_layout_footer_githubicon",
+      "label": "GithubIcon()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "App.jsx",
+      "file_type": "code",
+      "norm_label": "githubicon()",
+      "source_file": "src/components/layout/Footer.jsx",
+      "source_location": "L15"
+    },
+    {
+      "id": "src_components_layout_footer_linkedinicon",
+      "label": "LinkedinIcon()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "App.jsx",
+      "file_type": "code",
+      "norm_label": "linkedinicon()",
+      "source_file": "src/components/layout/Footer.jsx",
+      "source_location": "L21"
+    },
+    {
+      "id": "src_components_layout_footer_xicon",
+      "label": "XIcon()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "App.jsx",
+      "file_type": "code",
+      "norm_label": "xicon()",
+      "source_file": "src/components/layout/Footer.jsx",
+      "source_location": "L33"
+    },
+    {
+      "id": "src_components_layout_footer_youtubeicon",
+      "label": "YoutubeIcon()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "App.jsx",
+      "file_type": "code",
+      "norm_label": "youtubeicon()",
+      "source_file": "src/components/layout/Footer.jsx",
+      "source_location": "L27"
+    },
+    {
       "id": "src_components_layout_navbar_navbar",
       "label": "Navbar()",
       "_callable": true,
@@ -255,6 +255,18 @@
       "norm_label": "navbar()",
       "source_file": "src/components/layout/Navbar.jsx",
       "source_location": "L25"
+    },
+    {
+      "id": "src_components_sections_aboutsection_aboutsection",
+      "label": "AboutSection()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "App.jsx",
+      "file_type": "code",
+      "norm_label": "aboutsection()",
+      "source_file": "src/components/sections/AboutSection.jsx",
+      "source_location": "L12"
     },
     {
       "id": "src_components_sections_educationsection_educationsection",
@@ -281,66 +293,6 @@
       "source_location": "L11"
     },
     {
-      "id": "src_components_sections_herosection_herosection",
-      "label": "HeroSection()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "App.jsx",
-      "file_type": "code",
-      "norm_label": "herosection()",
-      "source_file": "src/components/sections/HeroSection.jsx",
-      "source_location": "L20"
-    },
-    {
-      "id": "src_components_sections_projectssection_getimageurl",
-      "label": "getImageUrl()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "App.jsx",
-      "file_type": "code",
-      "norm_label": "getimageurl()",
-      "source_file": "src/components/sections/ProjectsSection.jsx",
-      "source_location": "L13"
-    },
-    {
-      "id": "src_components_sections_projectssection_projectssection",
-      "label": "ProjectsSection()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "App.jsx",
-      "file_type": "code",
-      "norm_label": "projectssection()",
-      "source_file": "src/components/sections/ProjectsSection.jsx",
-      "source_location": "L20"
-    },
-    {
-      "id": "src_components_sections_skillssection_getimageurl",
-      "label": "getImageUrl()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "App.jsx",
-      "file_type": "code",
-      "norm_label": "getimageurl()",
-      "source_file": "src/components/sections/SkillsSection.jsx",
-      "source_location": "L12"
-    },
-    {
-      "id": "src_components_sections_skillssection_skillssection",
-      "label": "SkillsSection()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "App.jsx",
-      "file_type": "code",
-      "norm_label": "skillssection()",
-      "source_file": "src/components/sections/SkillsSection.jsx",
-      "source_location": "L18"
-    },
-    {
       "id": "src_components_sections_youtubesection_youtubesection",
       "label": "YoutubeSection()",
       "_callable": true,
@@ -363,18 +315,6 @@
       "norm_label": "penciltrailcanvas()",
       "source_file": "src/components/ui/PencilTrailCanvas.jsx",
       "source_location": "L3"
-    },
-    {
-      "id": "src_components_ui_resumemodal_resumemodal",
-      "label": "ResumeModal()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "App.jsx",
-      "file_type": "code",
-      "norm_label": "resumemodal()",
-      "source_file": "src/components/ui/ResumeModal.jsx",
-      "source_location": "L6"
     },
     {
       "id": "src_context_themecontext_themeprovider",
@@ -447,6 +387,138 @@
       "norm_label": "manualchunks()",
       "source_file": "vite.config.js",
       "source_location": "L11"
+    },
+    {
+      "id": "src_components_decorations_handdrawndecorations_dashedarrow",
+      "label": "DashedArrow()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "HeroSection.jsx",
+      "file_type": "code",
+      "norm_label": "dashedarrow()",
+      "source_file": "src/components/decorations/HandDrawnDecorations.jsx",
+      "source_location": "L3"
+    },
+    {
+      "id": "src_components_sections_herosection_herosection",
+      "label": "HeroSection()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "HeroSection.jsx",
+      "file_type": "code",
+      "norm_label": "herosection()",
+      "source_file": "src/components/sections/HeroSection.jsx",
+      "source_location": "L20"
+    },
+    {
+      "id": "src_components_ui_button_button",
+      "label": "Button()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "HeroSection.jsx",
+      "file_type": "code",
+      "norm_label": "button()",
+      "source_file": "src/components/ui/Button.jsx",
+      "source_location": "L3"
+    },
+    {
+      "id": "src_components_ui_draggablestickers_draggablestickers",
+      "label": "DraggableStickers()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "HeroSection.jsx",
+      "file_type": "code",
+      "norm_label": "draggablestickers()",
+      "source_file": "src/components/ui/DraggableStickers.jsx",
+      "source_location": "L11"
+    },
+    {
+      "id": "src_components_ui_minicodesandbox_minicodesandbox",
+      "label": "MiniCodeSandbox()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "HeroSection.jsx",
+      "file_type": "code",
+      "norm_label": "minicodesandbox()",
+      "source_file": "src/components/ui/MiniCodeSandbox.jsx",
+      "source_location": "L7"
+    },
+    {
+      "id": "src_components_ui_resumemodal_resumemodal",
+      "label": "ResumeModal()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "HeroSection.jsx",
+      "file_type": "code",
+      "norm_label": "resumemodal()",
+      "source_file": "src/components/ui/ResumeModal.jsx",
+      "source_location": "L6"
+    },
+    {
+      "id": "src_components_ui_typewriter_typewriter",
+      "label": "Typewriter()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "HeroSection.jsx",
+      "file_type": "code",
+      "norm_label": "typewriter()",
+      "source_file": "src/components/ui/Typewriter.jsx",
+      "source_location": "L3"
+    },
+    {
+      "id": "src_components_sections_achievementssection_achievementssection",
+      "label": "AchievementsSection()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 21,
+      "community_name": "AchievementsSection.jsx",
+      "file_type": "code",
+      "norm_label": "achievementssection()",
+      "source_file": "src/components/sections/AchievementsSection.jsx",
+      "source_location": "L40"
+    },
+    {
+      "id": "src_components_sections_achievementssection_getimageurl",
+      "label": "getImageUrl()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 21,
+      "community_name": "AchievementsSection.jsx",
+      "file_type": "code",
+      "norm_label": "getimageurl()",
+      "source_file": "src/components/sections/AchievementsSection.jsx",
+      "source_location": "L25"
+    },
+    {
+      "id": "src_components_ui_imagewithskeleton_imagewithskeleton",
+      "label": "ImageWithSkeleton()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 21,
+      "community_name": "AchievementsSection.jsx",
+      "file_type": "code",
+      "norm_label": "imagewithskeleton()",
+      "source_file": "src/components/ui/ImageWithSkeleton.jsx",
+      "source_location": "L8"
+    },
+    {
+      "id": "src_components_ui_modal_modal",
+      "label": "Modal()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 21,
+      "community_name": "AchievementsSection.jsx",
+      "file_type": "code",
+      "norm_label": "modal()",
+      "source_file": "src/components/ui/Modal.jsx",
+      "source_location": "L8"
     },
     {
       "id": "src_components_ui_dark_darkbadge_darkbadge",
@@ -615,50 +687,6 @@
       "source_location": "L1"
     },
     {
-      "id": "src_components_sections_achievementssection",
-      "label": "AchievementsSection.jsx",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "achievementssection.jsx",
-      "source_file": "src/components/sections/AchievementsSection.jsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_sections_achievementssection_iconmap",
-      "label": "IconMap",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "iconmap",
-      "source_file": "src/components/sections/AchievementsSection.jsx",
-      "source_location": "L30"
-    },
-    {
-      "id": "src_components_sections_achievementssection_imagemapping",
-      "label": "imageMapping",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "imagemapping",
-      "source_file": "src/components/sections/AchievementsSection.jsx",
-      "source_location": "L12"
-    },
-    {
-      "id": "src_components_sections_achievementssection_imagemodules",
-      "label": "imageModules",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "imagemodules",
-      "source_file": "src/components/sections/AchievementsSection.jsx",
-      "source_location": "L9"
-    },
-    {
       "id": "src_components_sections_educationsection",
       "label": "EducationSection.jsx",
       "_origin": "ast",
@@ -678,17 +706,6 @@
       "file_type": "code",
       "norm_label": "experiencesection.jsx",
       "source_file": "src/components/sections/ExperienceSection.jsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_sections_herosection",
-      "label": "HeroSection.jsx",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "herosection.jsx",
-      "source_file": "src/components/sections/HeroSection.jsx",
       "source_location": "L1"
     },
     {
@@ -758,17 +775,6 @@
       "source_location": "L1"
     },
     {
-      "id": "src_components_ui_button",
-      "label": "Button.jsx",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "button.jsx",
-      "source_file": "src/components/ui/Button.jsx",
-      "source_location": "L1"
-    },
-    {
       "id": "src_components_ui_card",
       "label": "Card.jsx",
       "_origin": "ast",
@@ -777,72 +783,6 @@
       "file_type": "code",
       "norm_label": "card.jsx",
       "source_file": "src/components/ui/Card.jsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_ui_draggablestickers",
-      "label": "DraggableStickers.jsx",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "draggablestickers.jsx",
-      "source_file": "src/components/ui/DraggableStickers.jsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_ui_draggablestickers_initialstickers",
-      "label": "initialStickers",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "initialstickers",
-      "source_file": "src/components/ui/DraggableStickers.jsx",
-      "source_location": "L4"
-    },
-    {
-      "id": "src_components_ui_minicodesandbox",
-      "label": "MiniCodeSandbox.jsx",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "minicodesandbox.jsx",
-      "source_file": "src/components/ui/MiniCodeSandbox.jsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_ui_modal",
-      "label": "Modal.jsx",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "modal.jsx",
-      "source_file": "src/components/ui/Modal.jsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_ui_resumemodal",
-      "label": "ResumeModal.jsx",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "resumemodal.jsx",
-      "source_file": "src/components/ui/ResumeModal.jsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_ui_typewriter",
-      "label": "Typewriter.jsx",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "typewriter.jsx",
-      "source_file": "src/components/ui/Typewriter.jsx",
       "source_location": "L1"
     },
     {
@@ -866,6 +806,39 @@
       "norm_label": "app.jsx",
       "source_file": "src/App.jsx",
       "source_location": "L1"
+    },
+    {
+      "id": "src_components_layout_footer",
+      "label": "Footer.jsx",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "App.jsx",
+      "file_type": "code",
+      "norm_label": "footer.jsx",
+      "source_file": "src/components/layout/Footer.jsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_layout_footer_navlinks",
+      "label": "navLinks",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "App.jsx",
+      "file_type": "code",
+      "norm_label": "navlinks",
+      "source_file": "src/components/layout/Footer.jsx",
+      "source_location": "L5"
+    },
+    {
+      "id": "src_components_layout_footer_socials",
+      "label": "socials",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "App.jsx",
+      "file_type": "code",
+      "norm_label": "socials",
+      "source_file": "src/components/layout/Footer.jsx",
+      "source_location": "L39"
     },
     {
       "id": "src_components_layout_navbar",
@@ -1459,6 +1432,149 @@
       "norm_label": "@vitejs/plugin-react",
       "source_file": "package.json",
       "source_location": "L25"
+    },
+    {
+      "id": "src_components_sections_herosection",
+      "label": "HeroSection.jsx",
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "HeroSection.jsx",
+      "file_type": "code",
+      "norm_label": "herosection.jsx",
+      "source_file": "src/components/sections/HeroSection.jsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_ui_button",
+      "label": "Button.jsx",
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "HeroSection.jsx",
+      "file_type": "code",
+      "norm_label": "button.jsx",
+      "source_file": "src/components/ui/Button.jsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_ui_draggablestickers",
+      "label": "DraggableStickers.jsx",
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "HeroSection.jsx",
+      "file_type": "code",
+      "norm_label": "draggablestickers.jsx",
+      "source_file": "src/components/ui/DraggableStickers.jsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_ui_draggablestickers_initialstickers",
+      "label": "initialStickers",
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "HeroSection.jsx",
+      "file_type": "code",
+      "norm_label": "initialstickers",
+      "source_file": "src/components/ui/DraggableStickers.jsx",
+      "source_location": "L4"
+    },
+    {
+      "id": "src_components_ui_minicodesandbox",
+      "label": "MiniCodeSandbox.jsx",
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "HeroSection.jsx",
+      "file_type": "code",
+      "norm_label": "minicodesandbox.jsx",
+      "source_file": "src/components/ui/MiniCodeSandbox.jsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_ui_resumemodal",
+      "label": "ResumeModal.jsx",
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "HeroSection.jsx",
+      "file_type": "code",
+      "norm_label": "resumemodal.jsx",
+      "source_file": "src/components/ui/ResumeModal.jsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_ui_typewriter",
+      "label": "Typewriter.jsx",
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "HeroSection.jsx",
+      "file_type": "code",
+      "norm_label": "typewriter.jsx",
+      "source_file": "src/components/ui/Typewriter.jsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_sections_achievementssection",
+      "label": "AchievementsSection.jsx",
+      "_origin": "ast",
+      "community": 21,
+      "community_name": "AchievementsSection.jsx",
+      "file_type": "code",
+      "norm_label": "achievementssection.jsx",
+      "source_file": "src/components/sections/AchievementsSection.jsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_sections_achievementssection_iconmap",
+      "label": "IconMap",
+      "_origin": "ast",
+      "community": 21,
+      "community_name": "AchievementsSection.jsx",
+      "file_type": "code",
+      "norm_label": "iconmap",
+      "source_file": "src/components/sections/AchievementsSection.jsx",
+      "source_location": "L32"
+    },
+    {
+      "id": "src_components_sections_achievementssection_imagemapping",
+      "label": "imageMapping",
+      "_origin": "ast",
+      "community": 21,
+      "community_name": "AchievementsSection.jsx",
+      "file_type": "code",
+      "norm_label": "imagemapping",
+      "source_file": "src/components/sections/AchievementsSection.jsx",
+      "source_location": "L13"
+    },
+    {
+      "id": "src_components_sections_achievementssection_imagemodules",
+      "label": "imageModules",
+      "_origin": "ast",
+      "community": 21,
+      "community_name": "AchievementsSection.jsx",
+      "file_type": "code",
+      "norm_label": "imagemodules",
+      "source_file": "src/components/sections/AchievementsSection.jsx",
+      "source_location": "L10"
+    },
+    {
+      "id": "src_components_ui_imagewithskeleton",
+      "label": "ImageWithSkeleton.jsx",
+      "_origin": "ast",
+      "community": 21,
+      "community_name": "AchievementsSection.jsx",
+      "file_type": "code",
+      "norm_label": "imagewithskeleton.jsx",
+      "source_file": "src/components/ui/ImageWithSkeleton.jsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_ui_modal",
+      "label": "Modal.jsx",
+      "_origin": "ast",
+      "community": 21,
+      "community_name": "AchievementsSection.jsx",
+      "file_type": "code",
+      "norm_label": "modal.jsx",
+      "source_file": "src/components/ui/Modal.jsx",
+      "source_location": "L1"
     },
     {
       "id": "package",
@@ -2418,7 +2534,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/sections/AchievementsSection.jsx",
-      "source_location": "L115",
+      "source_location": "L118",
       "weight": 1.0
     },
     {
@@ -2831,19 +2947,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_decorations_handdrawndecorations_postittag",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/App.jsx",
-      "source_location": "L16",
-      "weight": 1.0
-    },
-    {
-      "source": "src_app",
-      "target": "src_components_decorations_handdrawndecorations_squigglyunderline",
+      "target": "src_components_layout_footer_footer",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -3091,6 +3195,18 @@
       "context": "import",
       "source_file": "src/components/sections/AchievementsSection.jsx",
       "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_sections_achievementssection",
+      "target": "src_components_ui_imagewithskeleton_imagewithskeleton",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/sections/AchievementsSection.jsx",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -3610,6 +3726,18 @@
       "weight": 1.0
     },
     {
+      "source": "src_components_ui_modal",
+      "target": "src_components_ui_imagewithskeleton_imagewithskeleton",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/ui/Modal.jsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
       "source": "src_components_ui_resumemodal",
       "target": "src_components_ui_button_button",
       "relation": "imports",
@@ -3719,7 +3847,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_decorations_handdrawndecorations",
+      "target": "src_components_layout_footer",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -3834,6 +3962,18 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/decorations/HandDrawnDecorations.jsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_layout_footer",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/layout/Footer.jsx",
       "source_location": "L1",
       "weight": 1.0
     },
@@ -3979,6 +4119,18 @@
       "context": "import",
       "source_file": "src/components/sections/AchievementsSection.jsx",
       "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_sections_achievementssection",
+      "target": "src_components_ui_imagewithskeleton",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/sections/AchievementsSection.jsx",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -4558,6 +4710,18 @@
       "weight": 1.0
     },
     {
+      "source": "src_components_ui_imagewithskeleton",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/ui/ImageWithSkeleton.jsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
       "source": "src_components_ui_input",
       "target": "ref_react",
       "relation": "imports_from",
@@ -4639,6 +4803,18 @@
       "context": "import",
       "source_file": "src/components/ui/Modal.jsx",
       "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_modal",
+      "target": "src_components_ui_imagewithskeleton",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/ui/Modal.jsx",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -5741,7 +5917,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/App.jsx",
-      "source_location": "L20",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -5833,6 +6009,39 @@
       "weight": 1.0
     },
     {
+      "source": "src_components_layout_footer",
+      "target": "src_components_layout_footer_socials",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/layout/Footer.jsx",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_layout_footer",
+      "target": "src_components_layout_footer_footer",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/layout/Footer.jsx",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_layout_footer",
+      "target": "src_components_layout_footer_navlinks",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/layout/Footer.jsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
       "source": "src_components_layout_navbar",
       "target": "src_components_layout_navbar_navbar",
       "relation": "contains",
@@ -5856,13 +6065,24 @@
     },
     {
       "source": "src_components_sections_achievementssection",
+      "target": "src_components_sections_achievementssection_imagemodules",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/sections/AchievementsSection.jsx",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_sections_achievementssection",
       "target": "src_components_sections_achievementssection_imagemapping",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/sections/AchievementsSection.jsx",
-      "source_location": "L12",
+      "source_location": "L13",
       "weight": 1.0
     },
     {
@@ -5873,7 +6093,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/sections/AchievementsSection.jsx",
-      "source_location": "L23",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -5884,7 +6104,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/sections/AchievementsSection.jsx",
-      "source_location": "L30",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -5895,18 +6115,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/sections/AchievementsSection.jsx",
-      "source_location": "L37",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_sections_achievementssection",
-      "target": "src_components_sections_achievementssection_imagemodules",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/components/sections/AchievementsSection.jsx",
-      "source_location": "L9",
+      "source_location": "L40",
       "weight": 1.0
     },
     {
@@ -6174,6 +6383,17 @@
       "weight": 1.0
     },
     {
+      "source": "src_components_ui_imagewithskeleton",
+      "target": "src_components_ui_imagewithskeleton_imagewithskeleton",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/ui/ImageWithSkeleton.jsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
       "source": "src_components_ui_input",
       "target": "src_components_ui_input_input",
       "relation": "contains",
@@ -6214,7 +6434,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/ui/Modal.jsx",
-      "source_location": "L7",
+      "source_location": "L8",
       "weight": 1.0
     },
     {
@@ -6359,8 +6579,56 @@
       "source_file": "src/utils/soundFx.js",
       "source_location": "L9",
       "weight": 1.0
+    },
+    {
+      "source": "src_components_layout_footer",
+      "target": "src_components_layout_footer_githubicon",
+      "relation": "indirect_call",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "collection",
+      "source_file": "src/components/layout/Footer.jsx",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_layout_footer",
+      "target": "src_components_layout_footer_linkedinicon",
+      "relation": "indirect_call",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "collection",
+      "source_file": "src/components/layout/Footer.jsx",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_layout_footer",
+      "target": "src_components_layout_footer_xicon",
+      "relation": "indirect_call",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "collection",
+      "source_file": "src/components/layout/Footer.jsx",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_layout_footer",
+      "target": "src_components_layout_footer_youtubeicon",
+      "relation": "indirect_call",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "collection",
+      "source_file": "src/components/layout/Footer.jsx",
+      "source_location": "L43",
+      "weight": 1.0
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "b3b18ed74f016f5e1adf6dac086f71ede0391577"
+  "built_at_commit": "1c16c2adc681bf643f6ff3fb2181faa50312e0bf"
 }

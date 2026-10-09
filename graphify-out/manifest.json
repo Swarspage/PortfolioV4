@@ -18,9 +18,9 @@
     "semantic_hash": ""
   },
   "src/All data/data/AchievementsData.json": {
-    "mtime": 1790090443.8358383,
-    "seen": 1790090479.6570156,
-    "ast_hash": "1180da8bfdb6a6b138da063df7640d49",
+    "mtime": 1790091362.05366,
+    "seen": 1790097130.958326,
+    "ast_hash": "de1df288fb05f0f2d6c9c715e505bfc2",
     "semantic_hash": ""
   },
   "src/All data/data/EducationData.json": {
@@ -30,9 +30,9 @@
     "semantic_hash": "1d34f03b971125204a52f1da5da85432"
   },
   "src/All data/data/ExperienceData.json": {
-    "mtime": 1790090443.841622,
-    "seen": 1790090479.6570187,
-    "ast_hash": "9d280f336b1e39dec97ad18046ac5a18",
+    "mtime": 1790091206.3586473,
+    "seen": 1790097130.9583297,
+    "ast_hash": "624e7f07bff4042e7445a73d503f6958",
     "semantic_hash": ""
   },
   "src/All data/data/HeroData.json": {
@@ -60,10 +60,10 @@
     "semantic_hash": ""
   },
   "src/App.jsx": {
-    "mtime": 1786402136.6904683,
-    "seen": 1787250453.714817,
-    "ast_hash": "193e545aa30fa42c0f1acc4aaa3c68f7",
-    "semantic_hash": "193e545aa30fa42c0f1acc4aaa3c68f7"
+    "mtime": 1790096134.4124386,
+    "seen": 1790097130.958336,
+    "ast_hash": "d32068e7fcdda1637b226913366684de",
+    "semantic_hash": ""
   },
   "src/components/Navbar.jsx": {
     "mtime": 1786393136.2252815,
@@ -90,16 +90,16 @@
     "semantic_hash": "090ef99805e10f6d05fcb2998a96582e"
   },
   "src/components/sections/AchievementsSection.jsx": {
-    "mtime": 1786402864.049157,
-    "seen": 1787250453.7148218,
-    "ast_hash": "adda734049da68f48b2ed62e9ced1e48",
-    "semantic_hash": "adda734049da68f48b2ed62e9ced1e48"
+    "mtime": 1790091752.1816742,
+    "seen": 1790097130.9583442,
+    "ast_hash": "5f327c12198a6aaa3b5e8655b3c5f24c",
+    "semantic_hash": ""
   },
   "src/components/sections/ContactSection.jsx": {
-    "mtime": 1787248804.0875504,
-    "seen": 1787250453.7148228,
-    "ast_hash": "0601a5d3ae774ea5a587f95b74dccef4",
-    "semantic_hash": "0601a5d3ae774ea5a587f95b74dccef4"
+    "mtime": 1790096991.9005947,
+    "seen": 1790097130.9583452,
+    "ast_hash": "91a1b52754d91df1f78112b5039a2154",
+    "semantic_hash": ""
   },
   "src/components/sections/EducationSection.jsx": {
     "mtime": 1786402873.2618046,
@@ -132,10 +132,10 @@
     "semantic_hash": "425ec029ee6139a999a3e0b82203e44b"
   },
   "src/components/sections/YoutubeSection.jsx": {
-    "mtime": 1787248802.0645401,
-    "seen": 1787250453.7148283,
-    "ast_hash": "9068d7fd7625b7a78f9c1bbb999b17ac",
-    "semantic_hash": "9068d7fd7625b7a78f9c1bbb999b17ac"
+    "mtime": 1790094847.7879772,
+    "seen": 1790097130.9583523,
+    "ast_hash": "0f623629403c000762174aac27bdbf2d",
+    "semantic_hash": ""
   },
   "src/components/ui/Badge.jsx": {
     "mtime": 1786399404.7753072,
@@ -156,10 +156,10 @@
     "semantic_hash": "761f03cff10e4a3a18b39d33c9e2170d"
   },
   "src/components/ui/DoodleCanvas.jsx": {
-    "mtime": 1786402684.3740304,
-    "seen": 1787250453.7148316,
-    "ast_hash": "b23e4459f1ce80060534fe68e83bee60",
-    "semantic_hash": "b23e4459f1ce80060534fe68e83bee60"
+    "mtime": 1790096591.8435726,
+    "seen": 1790097130.9583566,
+    "ast_hash": "ab759af4464ee362591225f09432e605",
+    "semantic_hash": ""
   },
   "src/components/ui/DraggableStickers.jsx": {
     "mtime": 1786403053.667534,
@@ -180,10 +180,10 @@
     "semantic_hash": "02624288cf91bf47c2f7554ae1e4ff7d"
   },
   "src/components/ui/Modal.jsx": {
-    "mtime": 1786399477.606761,
-    "seen": 1787250453.7148352,
-    "ast_hash": "0323606c3ff62145f0d8f3baa3501c62",
-    "semantic_hash": "0323606c3ff62145f0d8f3baa3501c62"
+    "mtime": 1790091810.1560788,
+    "seen": 1790097130.958362,
+    "ast_hash": "1687f6d696701b958be2b969c5629cc9",
+    "semantic_hash": ""
   },
   "src/components/ui/PencilTrailCanvas.jsx": {
     "mtime": 1786401146.7514706,
@@ -336,9 +336,9 @@
     "semantic_hash": ""
   },
   "index.html": {
-    "mtime": 1787249117.6204913,
-    "seen": 1787250630.3584368,
-    "ast_hash": "6c85d8f03cd5cc03c1723fad5e13493b",
+    "mtime": 1790096090.345267,
+    "seen": 1790097130.9583912,
+    "ast_hash": "9f785fec93843b01fd19a4fca51f09ab",
     "semantic_hash": ""
   },
   "public/google15ae901a53a2309e.html": {
@@ -711,6 +711,42 @@
     "mtime": 1778368301.7833114,
     "seen": 1787250630.358523,
     "ast_hash": "b7d3ac13e380f77a83ad37823c1b7831",
+    "semantic_hash": ""
+  },
+  "src/components/layout/Footer.jsx": {
+    "mtime": 1790097059.4254985,
+    "seen": 1790097130.9583404,
+    "ast_hash": "8f945fca8a4110b28472db4c868833cf",
+    "semantic_hash": ""
+  },
+  "src/components/ui/ImageWithSkeleton.jsx": {
+    "mtime": 1790091643.144932,
+    "seen": 1790097130.9583588,
+    "ast_hash": "f9d69a277f22fca61463682c23787282",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/Achievements/CSITechLead.webp": {
+    "mtime": 1790090885.09,
+    "seen": 1790097130.9584029,
+    "ast_hash": "f138df63c7945d27bb5cea9c811e118d",
+    "semantic_hash": ""
+  },
+  "src/All data/assets/Achievements/CSITechLeadEvent.webp": {
+    "mtime": 1790090885.068,
+    "seen": 1790097130.958404,
+    "ast_hash": "98c6cc34701b502768936f8efa274718",
+    "semantic_hash": ""
+  },
+  "src/assets/CO tech lead main pic.jpg": {
+    "mtime": 1790090715.1078851,
+    "seen": 1790097130.9584677,
+    "ast_hash": "5d77de75cafe0c50c5094d4d775675dc",
+    "semantic_hash": ""
+  },
+  "src/assets/CSI CO TECH LEAD.jpg": {
+    "mtime": 1790090681.959699,
+    "seen": 1790097130.958469,
+    "ast_hash": "3b5b6009204eab07523dd354e676b3fc",
     "semantic_hash": ""
   }
 }

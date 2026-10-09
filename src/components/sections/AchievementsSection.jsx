@@ -44,6 +44,32 @@ export const AchievementsSection = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [activeAchievement, setActiveAchievement] = useState(null);
+  const scrollContainerRef = useRef(null);
+
+  useEffect(() => {
+    if (!isMobile || !scrollContainerRef.current) return;
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            if (scrollContainerRef.current) {
+              scrollContainerRef.current.scrollBy({ left: 60, behavior: 'smooth' });
+              setTimeout(() => {
+                if (scrollContainerRef.current) {
+                  scrollContainerRef.current.scrollBy({ left: -60, behavior: 'smooth' });
+                }
+              }, 400);
+            }
+          }, 800);
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.5 });
+    
+    observer.observe(scrollContainerRef.current);
+    return () => observer.disconnect();
+  }, [isMobile]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -72,7 +98,7 @@ export const AchievementsSection = () => {
     }, 300);
   };
   
-  const currentAchievements = achievementsData.slice(
+  const currentAchievements = isMobile ? achievementsData : achievementsData.slice(
     currentPage * itemsPerPage,
     (currentPage + 1) * itemsPerPage
   );
@@ -94,26 +120,34 @@ export const AchievementsSection = () => {
       </div>
 
       {/* Navigation Controls */}
-      <div className="flex justify-end gap-4 mb-8">
-        <button 
-          onClick={handlePrev}
-          className="p-3 rounded-full border-2 border-[var(--color-ink)] bg-[var(--color-bg)] hover:bg-[var(--color-ink)] hover:text-[var(--color-bg)] transition-colors wobbly-circle shadow-hard-sm"
-        >
-          <ArrowLeft className="w-6 h-6" />
-        </button>
-        <button 
-          onClick={handleNext}
-          className="p-3 rounded-full border-2 border-[var(--color-ink)] bg-[var(--color-bg)] hover:bg-[var(--color-ink)] hover:text-[var(--color-bg)] transition-colors wobbly-circle shadow-hard-sm"
-        >
-          <ArrowRight className="w-6 h-6" />
-        </button>
-      </div>
+      {!isMobile && (
+        <div className="hidden md:flex justify-end gap-4 mb-8">
+          <button 
+            onClick={handlePrev}
+            className="p-3 rounded-full border-2 border-[var(--color-ink)] bg-[var(--color-bg)] hover:bg-[var(--color-ink)] hover:text-[var(--color-bg)] transition-colors wobbly-circle shadow-hard-sm"
+          >
+            <ArrowLeft className="w-6 h-6" />
+          </button>
+          <button 
+            onClick={handleNext}
+            className="p-3 rounded-full border-2 border-[var(--color-ink)] bg-[var(--color-bg)] hover:bg-[var(--color-ink)] hover:text-[var(--color-bg)] transition-colors wobbly-circle shadow-hard-sm"
+          >
+            <ArrowRight className="w-6 h-6" />
+          </button>
+        </div>
+      )}
 
       {/* Grid Layout with Transition */}
-      <div className={`grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 transition-opacity duration-300 ${isAnimating ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`}>
+      <div 
+        ref={scrollContainerRef}
+        className={isMobile
+          ? "flex flex-nowrap overflow-x-auto snap-x snap-mandatory gap-6 pt-4 pb-12 hide-scrollbar scroll-smooth -mx-4 px-4 sm:-mx-6 sm:px-6"
+          : `grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 transition-opacity duration-300 ${isAnimating ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`
+        }
+      >
         {currentAchievements.map((achievement, idx) => {
           // Keep visual variety consistent with global index
-          const globalIdx = currentPage * itemsPerPage + idx;
+          const globalIdx = isMobile ? idx : currentPage * itemsPerPage + idx;
           const isEven = globalIdx % 2 === 0;
           const imageSrc = getImageUrl(achievement.title);
           const IconComponent = IconMap[achievement.iconName] || Star;
@@ -121,7 +155,7 @@ export const AchievementsSection = () => {
           return (
             <div 
               key={globalIdx} 
-              className="h-full flex flex-col cursor-pointer"
+              className={`h-full flex flex-col cursor-pointer ${isMobile ? 'snap-center shrink-0 w-[85vw]' : ''}`}
               onClick={() => setActiveAchievement({
                 title: achievement.title,
                 category: achievement.category,
@@ -183,26 +217,29 @@ export const AchievementsSection = () => {
             </div>
           );
         })}
+        {isMobile && <div className="w-1 shrink-0" aria-hidden="true" />}
       </div>
       
       {/* Page Indicators */}
-      <div className="flex justify-center gap-2 mt-10">
-        {Array.from({ length: totalPages }).map((_, i) => (
-          <button
-            key={i}
-            onClick={() => {
-              if (i === currentPage) return;
-              setIsAnimating(true);
-              setTimeout(() => {
-                setCurrentPage(i);
-                setIsAnimating(false);
-              }, 300);
-            }}
-            className={`h-3 rounded-full transition-all duration-300 border-2 border-[var(--color-ink)] ${i === currentPage ? 'w-8 bg-[var(--color-ink)]' : 'w-3 bg-[var(--color-surface)]'}`}
-            aria-label={`Go to page ${i + 1}`}
-          />
-        ))}
-      </div>
+      {!isMobile && (
+        <div className="hidden md:flex justify-center gap-2 mt-10">
+          {Array.from({ length: totalPages }).map((_, i) => (
+            <button
+              key={i}
+              onClick={() => {
+                if (i === currentPage) return;
+                setIsAnimating(true);
+                setTimeout(() => {
+                  setCurrentPage(i);
+                  setIsAnimating(false);
+                }, 300);
+              }}
+              className={`h-3 rounded-full transition-all duration-300 border-2 border-[var(--color-ink)] ${i === currentPage ? 'w-8 bg-[var(--color-ink)]' : 'w-3 bg-[var(--color-surface)]'}`}
+              aria-label={`Go to page ${i + 1}`}
+            />
+          ))}
+        </div>
+      )}
       {/* Interactive Modal */}
       <Modal 
         isOpen={!!activeAchievement} 

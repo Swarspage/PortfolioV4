@@ -1,16 +1,16 @@
-# Graph Report - Portfolio V4  (2026-08-21)
+# Graph Report - Portfolio V4  (2026-09-22)
 
 ## Corpus Check
-- 56 files · ~259,410 words
+- 58 files · ~267,523 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 206 nodes · 342 edges · 20 communities (14 shown, 6 thin omitted)
-- Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
+- 216 nodes · 355 edges · 22 communities (16 shown, 6 thin omitted)
+- Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 4 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `b3b18ed7`
+- Built from commit: `1c16c2ad`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -34,18 +34,20 @@
 - rules/graphify.md
 - extraction-spec.md
 - workflows/graphify.md
+- HeroSection.jsx
+- AchievementsSection.jsx
 
 ## God Nodes (most connected - your core abstractions)
-1. `react` - 31 edges
-2. `What You Must Do When Invoked` - 12 edges
-3. `Card()` - 12 edges
-4. `/graphify` - 10 edges
-5. `Badge()` - 10 edges
-6. `graphify reference: extra exports and benchmark` - 8 edges
-7. `SoundManager` - 8 edges
-8. `Button()` - 8 edges
-9. `graphify reference: query, path, explain` - 5 edges
-10. `scripts` - 5 edges
+1. `react` - 33 edges
+2. `Card()` - 12 edges
+3. `What You Must Do When Invoked` - 12 edges
+4. `Badge()` - 10 edges
+5. `/graphify` - 10 edges
+6. `SoundManager` - 8 edges
+7. `Button()` - 8 edges
+8. `graphify reference: extra exports and benchmark` - 8 edges
+9. `scripts` - 5 edges
+10. `graphify reference: query, path, explain` - 5 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `Navbar()` --calls--> `useTheme()`  [EXTRACTED]
@@ -54,15 +56,15 @@
 ## Import Cycles
 - None detected.
 
-## Communities (20 total, 6 thin omitted)
+## Communities (22 total, 6 thin omitted)
 
 ### Community 0 - "react"
-Cohesion: 0.14
-Nodes (22): react, DashedArrow(), SketchCircle(), SketchStar(), TapeStrip(), Thumbtack(), AboutSection(), AchievementsSection() (+14 more)
+Cohesion: 0.24
+Nodes (13): react, SketchCircle(), SketchStar(), TapeStrip(), Thumbtack(), getImageUrl(), icons, ProjectsSection() (+5 more)
 
 ### Community 1 - "App.jsx"
-Cohesion: 0.13
-Nodes (17): App(), PostItTag(), SquigglyUnderline(), Navbar(), EducationSection(), ExperienceSection(), HeroSection(), getImageUrl() (+9 more)
+Cohesion: 0.10
+Nodes (15): App(), PostItTag(), SquigglyUnderline(), Footer(), navLinks, socials, Navbar(), AboutSection() (+7 more)
 
 ### Community 2 - "devDependencies"
 Cohesion: 0.12
@@ -108,25 +110,33 @@ Nodes (3): For git commit hook, For native CLAUDE.md integration, graphify refer
 Cohesion: 0.50
 Nodes (3): For --cluster-only, For --update (incremental re-extraction), graphify reference: incremental update and cluster-only
 
+### Community 20 - "HeroSection.jsx"
+Cohesion: 0.22
+Nodes (8): DashedArrow(), HeroSection(), Button(), DraggableStickers(), initialStickers, MiniCodeSandbox(), ResumeModal(), Typewriter()
+
+### Community 21 - "AchievementsSection.jsx"
+Cohesion: 0.31
+Nodes (7): AchievementsSection(), getImageUrl(), IconMap, imageMapping, imageModules, ImageWithSkeleton(), Modal()
+
 ## Knowledge Gaps
-- **78 isolated node(s):** `graphify`, `Usage`, `What graphify is for`, `Step 0 - GitHub repos and multi-path merge (only if a URL or several paths)`, `Step 1 - Ensure graphify is installed` (+73 more)
+- **80 isolated node(s):** `navLinks`, `socials`, `imageModules`, `imageMapping`, `IconMap` (+75 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **6 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `react` connect `react` to `App.jsx`, `index.js`, `SoundManager`, `.oxlintrc.json`, `ContactSection.jsx`?**
-  _High betweenness centrality (0.099) - this node is a cross-community bridge._
+- **Why does `react` connect `react` to `App.jsx`, `index.js`, `SoundManager`, `.oxlintrc.json`, `ContactSection.jsx`, `HeroSection.jsx`, `AchievementsSection.jsx`?**
+  _High betweenness centrality (0.116) - this node is a cross-community bridge._
 - **Why does `plugins` connect `.oxlintrc.json` to `react`?**
-  _High betweenness centrality (0.030) - this node is a cross-community bridge._
-- **Why does `devDependencies` connect `devDependencies` to `dependencies`?**
-  _High betweenness centrality (0.024) - this node is a cross-community bridge._
-- **What connects `graphify`, `Usage`, `What graphify is for` to the rest of the system?**
-  _78 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `react` be split into smaller, more focused modules?**
-  _Cohesion score 0.14358974358974358 - nodes in this community are weakly interconnected._
+  _High betweenness centrality (0.031) - this node is a cross-community bridge._
+- **Why does `SoundManager` connect `SoundManager` to `react`?**
+  _High betweenness centrality (0.023) - this node is a cross-community bridge._
+- **What connects `navLinks`, `socials`, `imageModules` to the rest of the system?**
+  _80 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `App.jsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.12648221343873517 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.10461538461538461 - nodes in this community are weakly interconnected._
 - **Should `devDependencies` be split into smaller, more focused modules?**
   _Cohesion score 0.11764705882352941 - nodes in this community are weakly interconnected._
+- **Should `dependencies` be split into smaller, more focused modules?**
+  _Cohesion score 0.08 - nodes in this community are weakly interconnected._
