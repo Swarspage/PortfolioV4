@@ -258,7 +258,7 @@ export class OrbitalEngine {
     panelL.position.x = -0.3;
     panelR.position.x = 0.3;
     this.satellite.add(satBody, panelL, panelR);
-    this.orbit.add(this.orbitRing, this.satellite);
+    // orbit ring and satellite hidden — nothing added to this.orbit
     this.orbit.rotation.set(Math.PI / 2 - 0.38, 0, 0.32);
     this.group.add(this.orbit);
     this.scene.add(this.group);
@@ -442,9 +442,7 @@ export class OrbitalEngine {
     this.orbitRing.scale.setScalar(radius);
     this.brassMaterial.opacity = orbitOpacity;
     this.panelMaterial.opacity = orbitOpacity;
-    const a = (this.reduced ? 0.8 : this.elapsed * 0.35) + sceneSignals.singularity * 2.2;
-    this.satellite.position.set(Math.cos(a) * radius, Math.sin(a) * radius, 0);
-    this.satellite.rotation.set(0, 0, a);
+    // satellite removed — no per-frame update needed
   }
 
   private updateTiles(f: SceneFrame, introE: number) {
