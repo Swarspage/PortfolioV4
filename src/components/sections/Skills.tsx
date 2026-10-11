@@ -84,10 +84,10 @@ export function Skills() {
             {skillsData.length} <em className="italic">{sectionCopy.skills.titleSuffix}</em>
           </h2>
 
-          <div className="mt-9 space-y-4">
+          <div className="-mx-5 mt-9 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-3 md:mx-0 md:block md:space-y-4 md:overflow-visible md:px-0 md:pb-0">
             {groups.map((g) =>
-            <div key={g.cat} data-cat-row className="grid grid-cols-[6.5rem_1fr] items-start gap-4 border-t border-line pt-4 sm:grid-cols-[8rem_1fr]">
-                <div className="flex items-baseline justify-between pr-2">
+            <div key={g.cat} data-cat-row className="min-w-[78vw] snap-start rounded-[8px] border border-line bg-bg/70 p-5 backdrop-blur md:grid md:min-w-0 md:grid-cols-[6.5rem_1fr] md:items-start md:gap-4 md:rounded-none md:border-x-0 md:border-b-0 md:bg-transparent md:p-0 md:pt-4 md:backdrop-blur-0 sm:md:grid-cols-[8rem_1fr]">
+                <div className="mb-4 flex items-baseline justify-between pr-2 md:mb-0">
                   <h3 className="font-mono text-xs text-ink">{g.cat}</h3>
                   <span className="font-mono text-xs text-muted">{String(g.items.length).padStart(2, "0")}</span>
                 </div>

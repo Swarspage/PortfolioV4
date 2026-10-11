@@ -100,12 +100,17 @@ html.theme-switching *::after {
 }
 /* ---------- Portrait (works with any aspect ratio) ---------- */
 .portrait-frame {
-  -webkit-mask-image: linear-gradient(to bottom, #000 60%, transparent 97%);
-  mask-image: linear-gradient(to bottom, #000 60%, transparent 97%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 88%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 88%, transparent 100%);
 }
 .portrait-img {
   mix-blend-mode: var(--portrait-blend);
   filter: var(--portrait-filter);
+}
+.about-portrait {
+  filter: var(--portrait-filter) drop-shadow(0 26px 44px rgba(0, 0, 0, 0.24));
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 76%, rgba(0, 0, 0, 0.82) 88%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 76%, rgba(0, 0, 0, 0.82) 88%, transparent 100%);
 }
 /* ---------- Grain ---------- */
 .grain {

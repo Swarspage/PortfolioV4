@@ -36,12 +36,12 @@ export function About() {
     <section id="about" ref={rootRef} tabIndex={-1} aria-labelledby="about-title" className="relative z-[3] py-[18vh] outline-none">
       <div className="mx-auto grid max-w-[1600px] gap-12 px-5 md:px-10 lg:grid-cols-12 lg:gap-10">
         <figure className="lg:col-span-4">
-          <div data-about-media className="relative aspect-[4/5] w-full max-w-sm overflow-hidden rounded-[20px] bg-raised">
+          <div data-about-media className="relative aspect-[3/4] w-full max-w-md overflow-hidden bg-transparent">
             <AssetImage
               data-about-img
               asset={avatar}
               alt={`${heroData.name}, smiling`}
-              className="absolute inset-x-0 -top-[8%] h-[116%] w-full object-cover object-top" />
+              className="about-portrait absolute inset-0 h-full w-full object-contain object-bottom" />
             
           </div>
           <figcaption className="mt-3 font-mono text-xs text-muted">{heroData.name}</figcaption>

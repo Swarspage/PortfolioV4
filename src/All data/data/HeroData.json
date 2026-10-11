@@ -1,0 +1,20 @@
+{
+  "name": "Swar Shinde",
+  "availability": "Available for Opportunities",
+  "roles": ["Developer", "Builder", "Designer"],
+  "stats": [
+    {
+      "value": "500+",
+      "label": "Daily Users"
+    },
+    {
+      "value": "Top 8",
+      "label": "Hackathon"
+    },
+    {
+      "value": "MERN",
+      "label": "Full-Stack"
+    }
+  ],
+  "resumeLink": "/Swar-Res.pdf"
+}

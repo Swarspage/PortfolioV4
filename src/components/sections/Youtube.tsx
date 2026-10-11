@@ -54,8 +54,8 @@ export function Youtube() {
           <p className="self-end text-muted lg:col-span-4 lg:col-start-9">{copy.intro}</p>
         </header>
 
-        <div className="mt-12 grid gap-10 lg:grid-cols-12">
-          <div className="lg:col-span-7">
+        <div className="mt-12 grid min-w-0 gap-10 lg:grid-cols-12">
+          <div className="min-w-0 lg:col-span-7">
             <div className="relative aspect-video overflow-hidden rounded-[18px] bg-raised">
               {playing ?
               <iframe
@@ -92,14 +92,14 @@ export function Youtube() {
             </div>
           </div>
 
-          <div className="lg:col-span-5">
+          <div className="min-w-0 lg:col-span-5">
             <h3 className="font-mono text-xs text-muted">{copy.recent}</h3>
-            <ul data-yt-list className="mt-4 divide-y divide-[color:var(--line)] border-y border-line">
+            <ul data-yt-list className="-mx-5 mt-4 flex w-full min-w-0 snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-3 md:mx-0 md:block md:divide-y md:divide-[color:var(--line)] md:overflow-visible md:border-y md:border-line md:px-0 md:pb-0">
               {recentVideos.map((video) => {
                 const thumb = resolveThumbnail(video.thumbnail, video.title);
                 const inner =
                 <>
-                    <span className="relative aspect-video w-32 shrink-0 overflow-hidden rounded-[10px] bg-raised sm:w-40">
+                    <span className="relative aspect-video w-full shrink-0 overflow-hidden rounded-[8px] bg-raised md:w-32 md:rounded-[10px] sm:md:w-40">
                       <AssetImage asset={thumb} alt="" className="h-full w-full object-cover" />
                       {video.isLocked &&
                     <span className="absolute inset-0 grid place-items-center text-ink" style={{ backgroundColor: "color-mix(in oklab, var(--bg) 65%, transparent)" }}>
@@ -115,13 +115,13 @@ export function Youtube() {
                   </>;
 
                 return (
-                  <li key={video.title}>
+                  <li key={video.title} className="min-w-[72vw] snap-start md:min-w-0">
                     {video.isLocked ?
-                    <div aria-disabled="true" className="flex items-center gap-4 py-4 opacity-80">
+                    <div aria-disabled="true" className="grid gap-3 rounded-[8px] border border-line bg-bg/70 p-4 opacity-80 md:flex md:items-center md:gap-4 md:rounded-none md:border-0 md:bg-transparent md:p-0 md:py-4">
                         {inner}
                       </div> :
 
-                    <a href={video.link} target="_blank" rel="noreferrer" className="group flex items-center gap-4 py-4">
+                    <a href={video.link} target="_blank" rel="noreferrer" className="group grid gap-3 rounded-[8px] border border-line bg-bg/70 p-4 md:flex md:items-center md:gap-4 md:rounded-none md:border-0 md:bg-transparent md:p-0 md:py-4">
                         {inner}
                         <ArrowUpRightIcon aria-hidden className="h-4 w-4 shrink-0 text-muted transition-transform duration-200 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-ink" />
                       </a>

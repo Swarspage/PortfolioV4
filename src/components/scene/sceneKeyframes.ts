@@ -7,7 +7,7 @@ export interface KeyframeDef {
   frame: Partial<SceneFrame>;
 }
 
-const HERO_DESKTOP: Partial<SceneFrame> = { core: 1, x: 0.3, y: -0.04, scale: 0.92, orbit: 1, tilt: 0.38 };
+const HERO_DESKTOP: Partial<SceneFrame> = { core: 1, x: 0, y: -0.02, scale: 1.05, orbit: 1, tilt: 0.38 };
 const ABOUT_DESKTOP: Partial<SceneFrame> = { core: 1, x: -0.82, y: 0.3, scale: 0.95, seam: 0.42, orbit: 0.25, tilt: 0.2 };
 const PLANET_DESKTOP: Partial<SceneFrame> = { planet: 1, x: 0.42, y: 0, scale: 1.12, atmo: 1, orbit: 1, tilt: 0.42 };
 const PLANET_FAR_DESKTOP: Partial<SceneFrame> = { planet: 1, x: 0.92, y: 0.62, scale: 0.48, atmo: 0.7, orbit: 0.5, tilt: 0.42 };
@@ -32,7 +32,7 @@ const DESKTOP: KeyframeDef[] = [
 { target: "#contact", start: "top 35%", frame: { core: 1, x: 0.55, y: 0.32, scale: 0.95, orbit: 1, tilt: 0.38 } }];
 
 
-const HERO_MOBILE: Partial<SceneFrame> = { core: 1, x: 0.4, y: 0.34, scale: 0.6, orbit: 1, tilt: 0.38 };
+const HERO_MOBILE: Partial<SceneFrame> = { core: 1, x: 0, y: 0.2, scale: 0.72, orbit: 1, tilt: 0.38 };
 
 const MOBILE: KeyframeDef[] = [
 { target: "#hero", start: "top top", frame: HERO_MOBILE },

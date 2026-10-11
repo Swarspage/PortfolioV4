@@ -2,12 +2,10 @@ import React, { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { heroData } from "../../data/content";
 import { sectionCopy } from "../../data/sectionCopy";
-import { resolveAvatar } from "../../utils/assets";
 import { gsap } from "../../utils/gsap";
 import { countUp } from "../../utils/scrollEffects";
 import { useMotionMedia } from "../../hooks/useMotionMedia";
 import { scrollToTarget } from "../../hooks/useSmoothScroll";
-import { AssetImage } from "../ui/AssetImage";
 
 export function Hero({ ready }: {ready: boolean;}) {
   const rootRef = useRef<HTMLElement>(null);
@@ -17,7 +15,6 @@ export function Hero({ ready }: {ready: boolean;}) {
   const reduceMotion = useReducedMotion();
   const [roleIndex, setRoleIndex] = useState(0);
 
-  const avatar = resolveAvatar();
   const firstName = heroData.name.split(" ")[0];
   const nameWords = heroData.name.split(" ");
   const roles = heroData.roles;
@@ -32,33 +29,59 @@ export function Hero({ ready }: {ready: boolean;}) {
     if (reduce) return;
     const q = gsap.utils.selector(root);
 
-    // Intro — inner wrappers only, so it never fights the scroll timeline on the outer wrappers.
-    const intro = gsap.timeline({ paused: true, defaults: { ease: "expo.out", duration: 0.3 } });
-    intro.
-    from(q("[data-intro-ghost]"), { yPercent: 22, autoAlpha: 0 }).
-    from(q("[data-intro-portrait]"), { clipPath: "inset(100% 0% 0% 0%)" }, "-=0.12").
-    from(q("[data-char]"), { yPercent: 115, stagger: 0.025 }, "-=0.16").
-    from(q("[data-intro-fade]"), { y: 14, autoAlpha: 0, stagger: 0.06 }, "-=0.2");
-    q("[data-count]").forEach((el) => intro.add(countUp(el), "<"));
+    // Intro — bring the hero typography and copy into the landing view.
+    const intro = gsap.timeline({ paused: true, defaults: { ease: "power3.out" } });
+    intro
+      .fromTo(
+        q("[data-intro-ghost]"),
+        { yPercent: 18, autoAlpha: 0 },
+        { yPercent: 0, autoAlpha: 1, duration: 1.1 },
+        0
+      )
+      .fromTo(
+        q("[data-char]"),
+        { yPercent: 115, autoAlpha: 0 },
+        { yPercent: 0, autoAlpha: 1, stagger: 0.025, duration: 0.75 },
+        0.28
+      )
+      .fromTo(
+        q("[data-intro-fade]"),
+        { y: 16, autoAlpha: 0 },
+        { y: 0, autoAlpha: 1, stagger: 0.07, duration: 0.75 },
+        0.38
+      );
+    q("[data-count]").forEach((el) => intro.add(countUp(el), 0.45));
     introRef.current = intro;
-    if (readyRef.current) intro.progress(1);
+    if (readyRef.current) intro.play();
 
     if (desktop) {
-      gsap.
-      timeline({
-        scrollTrigger: { trigger: root, start: "top top", end: "+=90%", pin: true, scrub: 0.6, anticipatePin: 1 }
-      }).
-      to(q("[data-scrub-ghost]"), { yPercent: -22, scale: 1.1, autoAlpha: 0, ease: "none" }, 0).
-      to(q("[data-scrub-copy]"), { y: -70, autoAlpha: 0, ease: "none", duration: 0.7 }, 0).
-      to(q("[data-scrub-portrait]"), { yPercent: -8, scale: 0.92, autoAlpha: 0, ease: "none" }, 0.12);
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: root,
+            start: "top top",
+            end: "+=100%",
+            pin: true,
+            scrub: 0.8,
+            anticipatePin: 1
+          }
+        })
+        .to(q("[data-scrub-ghost]"), { yPercent: -22, scale: 1.1, autoAlpha: 0, ease: "none", duration: 0.6 }, 0)
+        .to(q("[data-scrub-copy]"), { y: -70, autoAlpha: 0, ease: "none", duration: 0.65 }, 0);
     }
 
     if (mobile) {
-      gsap.
-      timeline({ scrollTrigger: { trigger: root, start: "top top", end: "bottom top", scrub: true } }).
-      to(q("[data-scrub-ghost]"), { yPercent: -30, autoAlpha: 0, ease: "none" }, 0).
-      to(q("[data-scrub-portrait]"), { yPercent: 12, ease: "none" }, 0).
-      to(q("[data-scrub-copy]"), { autoAlpha: 0, y: -30, ease: "none", duration: 0.6 }, 0);
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: root,
+            start: "top top",
+            end: "bottom top",
+            scrub: 0.8
+          }
+        })
+        .to(q("[data-scrub-ghost]"), { yPercent: -30, autoAlpha: 0, ease: "none", duration: 0.6 }, 0)
+        .to(q("[data-scrub-copy]"), { autoAlpha: 0, y: -30, ease: "none", duration: 0.6 }, 0);
     }
 
     return () => {
@@ -76,35 +99,20 @@ export function Hero({ ready }: {ready: boolean;}) {
       ref={rootRef}
       tabIndex={-1}
       aria-label="Introduction"
-      className="h-dvh-screen relative z-[1] min-h-[540px] w-full overflow-hidden outline-none">
-      
+      className="h-dvh-screen relative z-[3] min-h-[540px] w-full overflow-hidden outline-none"
+    >
       {/* Layer 1: oversized type */}
-      <div data-scrub-ghost aria-hidden className="pointer-events-none absolute inset-x-0 top-[12dvh] flex select-none justify-center md:top-[5dvh]">
+      <div data-scrub-ghost aria-hidden className="pointer-events-none absolute inset-x-0 top-[10dvh] flex select-none justify-center md:top-[4dvh]">
         <span
           data-intro-ghost
-          className="block font-display font-light italic leading-[0.8] tracking-[-0.05em] text-ghost text-[clamp(8rem,34vw,36rem)]">
-          
+          className="block font-display font-light italic leading-[0.8] tracking-[-0.05em] text-ghost text-[clamp(8rem,34vw,36rem)]"
+        >
           {firstName}
         </span>
       </div>
 
-      {/* Layer 2: portrait (any aspect ratio — cover, top-anchored, masked) */}
-      <div
-        data-scrub-portrait
-        className="absolute inset-x-0 bottom-0 mx-auto h-[72dvh] w-[min(86vw,26rem)] md:h-[84dvh] md:w-[min(40vw,34rem)]">
-        
-        <div data-intro-portrait className="portrait-frame h-full w-full" style={{ clipPath: "inset(0% 0% 0% 0%)" }}>
-          <AssetImage
-            asset={avatar}
-            alt={`Portrait of ${heroData.name}`}
-            loading="eager"
-            className="portrait-img h-full w-full object-cover object-top" />
-          
-        </div>
-      </div>
-
-      {/* Layer 3 is the WebGL core (fixed canvas, above this section). Copy sits clear of it. */}
-      <div data-scrub-copy className="relative mx-auto flex h-full max-w-[1600px] flex-col justify-end px-5 pb-5 md:px-10 md:pb-8">
+      {/* Layer 2: copy sits above the 3D scene for crisp interaction */}
+      <div data-scrub-copy className="relative z-[4] mx-auto flex h-full max-w-[1600px] flex-col justify-end px-5 pb-5 md:px-10 md:pb-8">
         <div className="grid items-end gap-8 md:grid-cols-[1fr_auto]">
           <div>
             <p data-intro-fade className="inline-flex items-center gap-2.5 rounded-full border border-line bg-bg px-3 py-1.5 text-xs text-ink">

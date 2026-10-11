@@ -82,13 +82,13 @@ export function FeaturedProject() {
       <div className="relative mx-auto flex h-full max-w-[1600px] flex-col justify-center px-5 md:px-10">
         <div className="max-w-xl lg:max-w-[42%]">
           <SectionLabel>{sectionCopy.featured.label}</SectionLabel>
-          <h2 id="singularity-title" className="mt-5 font-display text-[clamp(3.5rem,9vw,9rem)] font-light italic leading-[0.86] tracking-[-0.04em] text-ink">
+          <h2 id="singularity-title" className="mt-5 font-display text-[clamp(3rem,16vw,5.25rem)] font-light italic leading-[0.86] tracking-[-0.04em] text-ink md:text-[clamp(3.5rem,9vw,9rem)]">
             <SplitWords text={project.name} />
           </h2>
-          <p className="text-balance mt-6 font-display text-2xl leading-snug text-ink md:text-[2rem]">
+          <p className="text-balance mt-5 font-display text-xl leading-snug text-ink md:mt-6 md:text-[2rem]">
             <SplitWords text={project.impactStatement} mode="plain" wordAttr="data-impact-word" />
           </p>
-          <p data-sg-desc className="mt-5 max-w-md leading-relaxed text-muted">
+          <p data-sg-desc className="mt-4 max-w-md leading-relaxed text-muted md:mt-5">
             {project.description}
           </p>
           <ul className="mt-7 flex flex-wrap gap-2" aria-label="Technologies">

@@ -22,7 +22,15 @@ const ROOT_MARKER = "all data/";
 function loadAssetModules(): Record<string, string> {
   try {
     // @ts-ignore — import.meta.glob is provided by Vite at build time.
-    const modules = import.meta.glob("/src/All data/**/*.{webp,png,jpg,jpeg,avif,gif,svg,pdf}", { eager: true, query: "?url", import: "default" }) as Record<string, string>;
+    const modules = import.meta.glob(
+      [
+        "/src/All data/**/*.{webp,png,jpg,jpeg,avif,gif,svg,pdf}",
+        "/src/All data/*.{webp,png,jpg,jpeg,avif,gif,svg,pdf}",
+        "/src/src/All data/**/*.{webp,png,jpg,jpeg,avif,gif,svg,pdf}",
+        "/src/src/All data/*.{webp,png,jpg,jpeg,avif,gif,svg,pdf}"
+      ],
+      { eager: true, query: "?url", import: "default" }
+    ) as Record<string, string>;
     return modules ?? {};
   } catch {
     return {};
@@ -68,7 +76,7 @@ function fileName(ref: string): string {
 }
 
 export function resolveAvatar(): ResolvedAsset {
-  return resolve("Cloudy Face.webp", portraitSilhouette());
+  return resolve("Swar Portrait Cutout.png", portraitSilhouette());
 }
 
 export function resolveSkillIcon(skill: SkillItem): ResolvedAsset {

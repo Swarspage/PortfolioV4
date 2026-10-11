@@ -42,15 +42,15 @@ export function Projects() {
           <p className="self-end text-muted lg:col-span-4 lg:col-start-9">{sectionCopy.projects.intro}</p>
         </header>
 
-        <ol>
+        <ol className="-mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-3 md:mx-0 md:block md:overflow-visible md:px-0 md:pb-0">
           {projects.map((project, i) => {
             const image = resolveProjectImage(project);
             const flip = i % 2 === 1;
             return (
-              <li key={project.name} data-project className="grid items-center gap-8 border-t border-line py-[9vh] lg:grid-cols-12 lg:gap-12">
+              <li key={project.name} data-project className="grid min-w-[84vw] snap-start items-start gap-5 rounded-[8px] border border-line bg-bg/70 p-4 backdrop-blur md:min-w-0 md:items-center md:gap-8 md:rounded-none md:border-x-0 md:border-b-0 md:bg-transparent md:p-0 md:py-[9vh] md:backdrop-blur-0 lg:grid-cols-12 lg:gap-12">
                 <div
                   data-project-media
-                  className={`relative aspect-[16/10] overflow-hidden rounded-[20px] bg-raised lg:row-start-1 lg:col-span-7 ${
+                  className={`relative aspect-[16/10] overflow-hidden rounded-[8px] bg-raised md:rounded-[20px] lg:row-start-1 lg:col-span-7 ${
                   flip ? "lg:col-start-6" : "lg:col-start-1"}`
                   }>
                   
@@ -63,19 +63,19 @@ export function Projects() {
                 </div>
 
                 <article className={`lg:row-start-1 lg:col-span-5 ${flip ? "lg:col-start-1" : "lg:col-start-8"}`}>
-                  <h3 className="font-display text-[clamp(2.5rem,5vw,4.5rem)] font-light italic leading-[0.9] tracking-[-0.03em] text-ink">
+                  <h3 className="font-display text-[clamp(2.15rem,12vw,3.25rem)] font-light italic leading-[0.9] tracking-[-0.03em] text-ink md:text-[clamp(2.5rem,5vw,4.5rem)]">
                     <SplitWords text={project.name} />
                   </h3>
-                  <p data-project-fade className="text-balance mt-4 font-display text-xl text-accent md:text-2xl">
+                  <p data-project-fade className="text-balance mt-3 font-display text-lg text-accent md:mt-4 md:text-2xl">
                     {project.impactStatement}
                   </p>
-                  <p data-project-fade className="mt-4 max-w-md leading-relaxed text-muted">
+                  <p data-project-fade className="mt-3 line-clamp-[6] max-w-md leading-relaxed text-muted md:mt-4 md:line-clamp-none">
                     {project.description}
                   </p>
-                  <p data-project-fade className="mt-5 font-mono text-xs leading-relaxed text-muted">
+                  <p data-project-fade className="mt-4 line-clamp-2 font-mono text-xs leading-relaxed text-muted md:mt-5 md:line-clamp-none">
                     {project.technologies.join("  ·  ")}
                   </p>
-                  <div data-project-fade className="mt-7">
+                  <div data-project-fade className="mt-5 md:mt-7">
                     <ProjectLinks project={project} />
                   </div>
                 </article>

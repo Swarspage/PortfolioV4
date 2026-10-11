@@ -96,14 +96,14 @@ export function Achievements() {
 
         <ol
           data-ach-track
-          className="mt-12 grid gap-14 px-5 md:grid-cols-2 md:gap-x-8 md:px-10 pin:mt-10 pin:flex pin:w-max pin:gap-8 pin:pl-[max(2.5rem,calc((100vw-1600px)/2+2.5rem))] pin:pr-[20vw]">
+          className="mt-12 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-3 md:grid md:overflow-visible md:pb-0 md:grid-cols-2 md:gap-x-8 md:gap-y-14 md:px-10 pin:mt-10 pin:flex pin:w-max pin:gap-8 pin:pl-[max(2.5rem,calc((100vw-1600px)/2+2.5rem))] pin:pr-[20vw]">
           
           {achievementsData.map((item) => {
             const photo = resolveAchievementImage(item.title);
             return (
-              <li key={item.title} data-ach-card className="pin:w-[clamp(19rem,28vw,27rem)] pin:shrink-0">
-                <article>
-                  <figure className="relative aspect-[3/2] overflow-hidden rounded-[18px] bg-raised">
+              <li key={item.title} data-ach-card className="min-w-[82vw] snap-start md:min-w-0 pin:w-[clamp(19rem,28vw,27rem)] pin:shrink-0">
+                <article className="h-full rounded-[8px] border border-line bg-bg/70 p-4 backdrop-blur md:rounded-none md:border-0 md:bg-transparent md:p-0 md:backdrop-blur-0">
+                  <figure className="relative aspect-[3/2] overflow-hidden rounded-[8px] bg-raised md:rounded-[18px]">
                     <AssetImage
                       data-ach-img
                       asset={photo}
@@ -121,8 +121,8 @@ export function Achievements() {
                     </span>
                     <time className="text-muted">{item.date}</time>
                   </div>
-                  <h3 className="mt-2 font-display text-2xl leading-tight tracking-[-0.01em] text-ink">{item.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted">{item.description}</p>
+                  <h3 className="mt-2 font-display text-[1.45rem] leading-tight tracking-[-0.01em] text-ink md:text-2xl">{item.title}</h3>
+                  <p className="mt-2 line-clamp-[6] text-sm leading-relaxed text-muted md:line-clamp-none">{item.description}</p>
                 </article>
               </li>);
 

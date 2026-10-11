@@ -1,11 +1,11 @@
-import aboutJson from "../src/All data/data/AboutData.json";
-import heroJson from "../src/All data/data/HeroData.json";
-import educationJson from "../src/All data/data/EducationData.json";
-import experienceJson from "../src/All data/data/ExperienceData.json";
-import projectsJson from "../src/All data/data/ProjectsData.json";
-import skillsJson from "../src/All data/data/SkillsData.json";
-import achievementsJson from "../src/All data/data/AchievementsData.json";
-import youtubeJson from "../src/All data/data/YoutubeData.json";
+import aboutJson from "../All data/data/AboutData.json";
+import heroJson from "../All data/data/HeroData.json";
+import educationJson from "../All data/data/EducationData.json";
+import experienceJson from "../All data/data/ExperienceData.json";
+import projectsJson from "../All data/data/ProjectsData.json";
+import skillsJson from "../All data/data/SkillsData.json";
+import achievementsJson from "../All data/data/AchievementsData.json";
+import youtubeJson from "../All data/data/YoutubeData.json";
 import type {
   AboutData,
   AchievementsData,

@@ -64,27 +64,27 @@ export function Journey() {
   return (
     <section id="journey" ref={rootRef} tabIndex={-1} aria-labelledby="journey-title" className="relative z-[3] py-[16vh] outline-none">
       <div className="mx-auto grid max-w-[1600px] gap-12 px-5 md:px-10 lg:grid-cols-12">
-        <header className="lg:col-span-4">
+        <header className="lg:sticky lg:top-[24vh] lg:col-span-4 lg:self-start">
           <SectionLabel>{journey.label}</SectionLabel>
           <h2 id="journey-title" className="text-balance mt-5 font-display text-[clamp(2.25rem,4vw,3.75rem)] font-light leading-[1] tracking-[-0.03em] text-ink">
             {journey.title}
           </h2>
         </header>
 
-        <div data-timeline className="relative lg:col-span-7 lg:col-start-6">
-          <span aria-hidden className="absolute bottom-2 left-[7px] top-2 w-px bg-line">
+        <div data-timeline className="relative min-w-0 lg:col-span-7 lg:col-start-6">
+          <span aria-hidden className="absolute bottom-2 left-[7px] top-2 hidden w-px bg-line md:block">
             <span data-line className="absolute inset-0 origin-top bg-accent" />
           </span>
 
           {groups.map((group) =>
-          <div key={group.label} className="mb-14 last:mb-0">
-              <h3 className="mb-6 pl-10 font-mono text-xs text-muted">{group.label}</h3>
-              <ol className="space-y-12">
+          <div key={group.label} className="mb-12 last:mb-0 md:mb-14">
+              <h3 className="mb-4 font-mono text-xs text-muted md:mb-6 md:pl-10">{group.label}</h3>
+              <ol className="-mx-5 flex w-full min-w-0 snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-3 md:mx-0 md:block md:space-y-12 md:overflow-visible md:px-0 md:pb-0">
                 {group.entries.map((entry) =>
-              <li key={entry.key} data-entry className="relative pl-10">
+              <li key={entry.key} data-entry className="relative min-w-[82vw] snap-start rounded-[8px] border border-line bg-bg/70 p-5 backdrop-blur md:min-w-0 md:rounded-none md:border-0 md:bg-transparent md:p-0 md:pl-10 md:backdrop-blur-0">
                     <span
                   aria-hidden
-                  className={`absolute left-0 top-2 h-[15px] w-[15px] rounded-full border-2 border-[color:var(--accent-ink)] ${
+                  className={`absolute left-0 top-2 hidden h-[15px] w-[15px] rounded-full border-2 border-[color:var(--accent-ink)] md:block ${
                   entry.active ? "bg-accent" : "bg-bg"}`
                   } />
                 
@@ -96,9 +96,9 @@ export function Journey() {
                         {entry.status}
                       </span>
                     </div>
-                    <p className="mt-3 font-display text-[clamp(1.6rem,2.6vw,2.4rem)] leading-tight tracking-[-0.015em] text-ink">{entry.title}</p>
+                    <p className="mt-3 font-display text-[clamp(1.45rem,2.6vw,2.4rem)] leading-tight tracking-[-0.015em] text-ink">{entry.title}</p>
                     <p className="mt-1 text-ink">{entry.org}</p>
-                    <p className="mt-3 max-w-xl leading-relaxed text-muted">{entry.body}</p>
+                    <p className="mt-3 line-clamp-[7] max-w-xl leading-relaxed text-muted md:line-clamp-none">{entry.body}</p>
                   </li>
               )}
               </ol>
