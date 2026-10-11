@@ -26,6 +26,16 @@ export function SceneCanvas({ theme, reducedMotion, introPlaying, onReady }: Sce
   const themeRef = useRef(theme);
   themeRef.current = theme;
   const [supported, setSupported] = useState(() => hasWebGL());
+  const [isDesktop, setIsDesktop] = useState(() =>
+    typeof window !== "undefined" && window.matchMedia ? window.matchMedia(PIN_MEDIA).matches : true
+  );
+
+  useEffect(() => {
+    const mq = window.matchMedia(PIN_MEDIA);
+    const onChange = () => setIsDesktop(mq.matches);
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
 
   useEffect(() => {
     if (!supported) {
@@ -35,8 +45,8 @@ export function SceneCanvas({ theme, reducedMotion, introPlaying, onReady }: Sce
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const desktop = window.matchMedia(PIN_MEDIA).matches;
-    const compact = window.matchMedia("(max-width: 767px)").matches;
+    const desktop = isDesktop;
+    const compact = window.matchMedia("(max-width: 767px), (pointer: coarse)").matches;
 
     let engine: OrbitalEngine;
     try {
@@ -95,7 +105,7 @@ export function SceneCanvas({ theme, reducedMotion, introPlaying, onReady }: Sce
       engine.dispose();
       engineRef.current = null;
     };
-  }, [supported, reducedMotion]);
+  }, [supported, reducedMotion, isDesktop]);
 
   useEffect(() => {
     engineRef.current?.setTheme(theme, readAccent());

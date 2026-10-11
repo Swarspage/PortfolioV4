@@ -422,10 +422,7 @@ export class OrbitalEngine {
     const f = this.current;
     const halfH = Math.tan(THREE.MathUtils.degToRad(FOV / 2)) * CAMERA_Z;
     const halfW = halfH * this.camera.aspect;
-    const isPortrait = this.camera.aspect < 1;
-    const responsive = isPortrait
-      ? Math.max(0.85, Math.min(1.1, 1.8 / Math.max(halfW, 0.5)))
-      : Math.max(0.75, Math.min(1.0, halfW / 6.2));
+    const responsive = Math.max(0.5, Math.min(1, halfW / 6.2));
     this.group.position.set(f.x * halfW, f.y * halfH, 0);
     this.group.scale.setScalar(f.scale * responsive * (0.9 + 0.1 * introE));
     this.group.rotation.set(this.pointer.y * 0.06, this.pointer.x * 0.1, 0);
