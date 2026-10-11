@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import type React from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { MenuIcon, XIcon } from "lucide-react";
 import { heroData } from "../../data/content";
@@ -11,7 +12,7 @@ export function Navbar({ ready }: {ready: boolean;}) {
   const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [open, setOpen] = useState(false);
-  const [active, setActive] = useState<string | null>(null);
+  const [active, setActive] = useState<string | null>("about");
   const resumeUrl = resolveResumeUrl(heroData.resumeLink);
 
   useEffect(() => {
@@ -63,7 +64,7 @@ export function Navbar({ ready }: {ready: boolean;}) {
       hidden && !open ? "-translate-y-full" : "translate-y-0"} ${ready ? "opacity-100" : "opacity-0"}`}>
       
       <nav aria-label="Primary" className="mx-auto flex max-w-[1600px] items-center justify-between gap-6 px-5 py-4 md:px-10">
-        <a href="#hero" onClick={go("hero")} className="font-display text-lg italic tracking-tight text-ink">
+        <a href="#hero" onClick={go("hero")} className="font-serif text-lg md:text-xl italic font-light tracking-wide text-ink hover:text-accent transition-colors">
           {heroData.name}
         </a>
 
@@ -74,14 +75,14 @@ export function Navbar({ ready }: {ready: boolean;}) {
               href={`#${item.id}`}
               onClick={go(item.id)}
               aria-current={active === item.id ? "true" : undefined}
-              className={`relative py-1 transition-colors duration-200 ease-out ${
-              active === item.id ? "text-ink" : "text-muted hover:text-ink"}`
+              className={`relative py-1 font-sans text-sm transition-colors duration-200 ease-out ${
+              active === item.id ? "text-ink font-medium" : "text-muted hover:text-ink"}`
               }>
               
                 {item.label}
                 <span
                 aria-hidden
-                className={`absolute -bottom-0.5 left-0 h-px w-full origin-left bg-accent transition-transform duration-200 ease-out ${
+                className={`absolute -bottom-0.5 left-0 h-[2px] w-full origin-left bg-accent transition-transform duration-200 ease-out ${
                 active === item.id ? "scale-x-100" : "scale-x-0"}`
                 } />
               
@@ -90,13 +91,13 @@ export function Navbar({ ready }: {ready: boolean;}) {
           )}
         </ul>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3">
           <ThemeToggle />
           <a
             href={resumeUrl}
             target="_blank"
             rel="noreferrer"
-            className="hidden h-9 items-center rounded-full bg-ink px-4 text-sm text-bg transition-colors duration-200 ease-out hover:bg-accent sm:inline-flex">
+            className="hidden h-9 items-center rounded-full bg-ink px-5 text-sm font-medium text-bg shadow-sm transition-colors duration-200 ease-out hover:bg-accent hover:text-white sm:inline-flex">
             
             {sectionCopy.resume}
           </a>

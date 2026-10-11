@@ -18,7 +18,9 @@ export default {
         accent: "var(--accent-ink)",
       },
       fontFamily: {
-        display: ["Fraunces", "Georgia", "serif"],
+        display: ["Fraunces", '"Cormorant Garamond"', "Georgia", "serif"],
+        serif: ['"Cormorant Garamond"', "Fraunces", "Georgia", "serif"],
+        script: ['"Pinyon Script"', "cursive"],
         sans: ["Geist", "ui-sans-serif", "system-ui", "sans-serif"],
         mono: ['"Geist Mono"', "ui-monospace", "SFMono-Regular", "monospace"],
       },

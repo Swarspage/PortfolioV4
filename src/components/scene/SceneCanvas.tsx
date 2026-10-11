@@ -36,7 +36,7 @@ export function SceneCanvas({ theme, reducedMotion, introPlaying, onReady }: Sce
     if (!canvas) return;
 
     const desktop = window.matchMedia(PIN_MEDIA).matches;
-    const compact = window.matchMedia("(max-width: 767px), (pointer: coarse)").matches;
+    const compact = window.matchMedia("(max-width: 767px)").matches;
 
     let engine: OrbitalEngine;
     try {
@@ -52,7 +52,8 @@ export function SceneCanvas({ theme, reducedMotion, introPlaying, onReady }: Sce
         staticFrame: getStaticFrame(desktop),
         onFirstFrame: () => onReadyRef.current()
       });
-    } catch {
+    } catch (err) {
+      console.error("Failed to initialize WebGL OrbitalEngine:", err);
       setSupported(false);
       return;
     }
@@ -76,10 +77,19 @@ export function SceneCanvas({ theme, reducedMotion, introPlaying, onReady }: Sce
       sceneSignals.pointerX = e.clientX / window.innerWidth * 2 - 1;
       sceneSignals.pointerY = e.clientY / window.innerHeight * 2 - 1;
     };
+    const onTouch = (e: TouchEvent) => {
+      if (e.touches.length > 0) {
+        const t = e.touches[0];
+        sceneSignals.pointerX = (t.clientX / window.innerWidth) * 2 - 1;
+        sceneSignals.pointerY = (t.clientY / window.innerHeight) * 2 - 1;
+      }
+    };
     window.addEventListener("pointermove", onPointer, { passive: true });
+    window.addEventListener("touchmove", onTouch, { passive: true });
 
     return () => {
       window.removeEventListener("pointermove", onPointer);
+      window.removeEventListener("touchmove", onTouch);
       ScrollTrigger.removeEventListener("refresh", sync);
       triggers.forEach((t) => t.st.kill());
       engine.dispose();

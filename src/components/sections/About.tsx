@@ -27,24 +27,24 @@ export function About() {
     }
     const media = q("[data-about-media]")[0];
     const img = q("[data-about-img]")[0];
-    if (media) clipReveal(media, media);
-    if (img && media) parallax(img, media, 7);
+    if (media) revealUp(media, media, "top 85%");
+    if (img && media) parallax(img, media, 5);
     q("[data-about-rest]").forEach((p) => revealUp(p, p, "top 85%"));
   });
 
   return (
     <section id="about" ref={rootRef} tabIndex={-1} aria-labelledby="about-title" className="relative z-[3] py-[18vh] outline-none">
       <div className="mx-auto grid max-w-[1600px] gap-12 px-5 md:px-10 lg:grid-cols-12 lg:gap-10">
-        <figure className="lg:col-span-4">
-          <div data-about-media className="relative aspect-[3/4] w-full max-w-md overflow-hidden bg-transparent">
+        <figure className="flex flex-col items-center lg:col-span-4 lg:items-start">
+          <div data-about-media className="relative flex w-full max-w-md items-end justify-center">
             <AssetImage
               data-about-img
               asset={avatar}
               alt={`${heroData.name}, smiling`}
-              className="about-portrait absolute inset-0 h-full w-full object-contain object-bottom" />
+              className="about-portrait block h-auto w-full select-none object-contain object-bottom pointer-events-none" />
             
           </div>
-          <figcaption className="mt-3 font-mono text-xs text-muted">{heroData.name}</figcaption>
+          <figcaption className="mt-4 font-mono text-xs text-muted">{heroData.name}</figcaption>
         </figure>
 
         <div className="lg:col-span-7 lg:col-start-6">

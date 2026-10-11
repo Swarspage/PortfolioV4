@@ -1,5 +1,21 @@
-﻿{
+{
   "projectsData": [
+    {
+      "name": "SIMS",
+      "impactStatement": "Built for a college. Used by the entire college.",
+      "description": "A Student Information Management System built during my internship under the college HOD. Manages academic records, internships, placements, and achievements across three user roles. I owned the frontend end-to-end - 500+ students use it every day. Not a demo. A real deployment.",
+      "imageSrc": "../assets/sims.webp",
+      "githubLink": null,
+      "liveLink": "https://sims.csidmce.com",
+      "technologies": [
+        "React",
+        "Vite",
+        "Tailwind",
+        "Node.js",
+        "MongoDB",
+        "JWT"
+      ]
+    },
     {
       "name": "Singularity",
       "impactStatement": "NASA. SpaceX. ISRO. One dashboard to rule them all.",
@@ -15,22 +31,6 @@
         "MongoDB",
         "Gemini AI",
         "Framer Motion"
-      ]
-    },
-    {
-      "name": "SIMS",
-      "impactStatement": "Built for a college. Used by the entire college.",
-      "description": "A Student Information Management System built during my internship under the college HOD. Manages academic records, internships, placements, and achievements across three user roles. I owned the frontend end-to-end - 500+ students use it every day. Not a demo. A real deployment.",
-      "imageSrc": "../assets/sims.webp",
-      "githubLink": null,
-      "liveLink": "https://sims.csidmce.com",
-      "technologies": [
-        "React",
-        "Vite",
-        "Tailwind",
-        "Node.js",
-        "MongoDB",
-        "JWT"
       ]
     },
     {

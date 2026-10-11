@@ -39,20 +39,20 @@ interface ThemeLook {
 
 const LOOKS: Record<SceneTheme, ThemeLook> = {
   dark: {
-    base: new THREE.Color("#3a312a"),
-    metalness: 0.62,
-    roughness: 0.3,
-    clearcoat: 0.55,
-    env: 0.85,
-    key: new THREE.Color("#ffdcbc"),
-    keyIntensity: 2.4,
-    rimIntensity: 1.8,
-    ambient: 0.12,
-    brass: new THREE.Color("#c9a26a"),
-    atmosphere: new THREE.Color("#ff9a62"),
-    atmosphereStrength: 0.85,
-    exposure: 1.0,
-    nodeBoost: 1.9
+    base: new THREE.Color("#4a3c32"),
+    metalness: 0.75,
+    roughness: 0.28,
+    clearcoat: 0.65,
+    env: 1.1,
+    key: new THREE.Color("#ffe0c2"),
+    keyIntensity: 2.8,
+    rimIntensity: 2.4,
+    ambient: 0.15,
+    brass: new THREE.Color("#d49b60"),
+    atmosphere: new THREE.Color("#ff9045"),
+    atmosphereStrength: 0.8,
+    exposure: 1.05,
+    nodeBoost: 2.0
   },
   light: {
     base: new THREE.Color("#ece4d6"),
@@ -422,7 +422,10 @@ export class OrbitalEngine {
     const f = this.current;
     const halfH = Math.tan(THREE.MathUtils.degToRad(FOV / 2)) * CAMERA_Z;
     const halfW = halfH * this.camera.aspect;
-    const responsive = Math.max(0.5, Math.min(1, halfW / 6.2));
+    const isPortrait = this.camera.aspect < 1;
+    const responsive = isPortrait
+      ? Math.max(0.85, Math.min(1.1, 1.8 / Math.max(halfW, 0.5)))
+      : Math.max(0.75, Math.min(1.0, halfW / 6.2));
     this.group.position.set(f.x * halfW, f.y * halfH, 0);
     this.group.scale.setScalar(f.scale * responsive * (0.9 + 0.1 * introE));
     this.group.rotation.set(this.pointer.y * 0.06, this.pointer.x * 0.1, 0);

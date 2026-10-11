@@ -1,50 +1,78 @@
 {
   "projectsData": [
     {
+      "name": "SIMS",
+      "impactStatement": "Built for a college. Used by the entire college.",
+      "description": "A Student Information Management System built during my internship under the college HOD. Manages academic records, internships, placements, and achievements across three user roles. I owned the frontend end-to-end - 500+ students use it every day. Not a demo. A real deployment.",
+      "imageSrc": "../assets/sims.webp",
+      "githubLink": null,
+      "liveLink": "https://sims.csidmce.com",
+      "technologies": [
+        "React",
+        "Vite",
+        "Tailwind",
+        "Node.js",
+        "MongoDB",
+        "JWT"
+      ]
+    },
+    {
       "name": "Singularity",
       "impactStatement": "NASA. SpaceX. ISRO. One dashboard to rule them all.",
-      "description": "A full-stack space exploration platform that unifies live launch, mission and telemetry data from three agencies into a single 3D dashboard, with an AI guide for the curious.",
+      "description": "A full-stack space exploration platform pulling real-time telemetry into one mission control. Live ISS tracking, 3D WebGL globe, aurora heatmaps, gamified learning with XP and leaderboards, and an AI chatbot that switches context by page. Built for a hackathon. Finished Top 8 out of 100+.",
       "imageSrc": "../assets/Singularity.webp",
       "githubLink": "https://github.com/Swarspage/Singularity.git",
       "liveLink": "https://space-scope-93kx.vercel.app/",
       "demoLink": "https://www.youtube.com/watch?v=lDWuxWCVywc",
-      "technologies": ["React", "Three.js", "Node.js", "MongoDB", "Gemini AI", "Framer Motion"]
+      "technologies": [
+        "React",
+        "Three.js",
+        "Node.js",
+        "MongoDB",
+        "Gemini AI",
+        "Framer Motion"
+      ]
     },
     {
-      "name": "SIMS",
-      "impactStatement": "Shipped to 500+ daily users across campus.",
-      "description": "A student information management system built during my internship. Attendance, records and notices in one placeholder MERN app.",
-      "imageSrc": "../assets/sims.webp",
-      "githubLink": null,
-      "liveLink": null,
-      "technologies": ["React", "Node.js", "Express", "MongoDB", "Tailwind"]
-    },
-    {
-      "name": "RecipeAi",
-      "impactStatement": "Tell it what's in your fridge. Get dinner.",
-      "description": "Placeholder: an AI recipe generator that turns the ingredients you already have into step-by-step meals.",
+      "name": "Recipe App",
+      "impactStatement": "Your fridge has ingredients. This has ideas.",
+      "description": "An AI-powered recipe platform built around how people actually cook. Drop in what's in your fridge, get matched recipes instantly. Chef AI handles custom recipes, nutrition breakdowns, and builds a taste profile from your history.",
       "imageSrc": "../assets/RecipeAi.webp",
-      "githubLink": "https://github.com/your-handle/recipeai",
-      "liveLink": "https://recipeai.example.com",
-      "technologies": ["React", "Express", "Gemini AI", "MongoDB"]
+      "githubLink": "https://github.com/Swarspage/Recipe-App.git",
+      "liveLink": null,
+      "technologies": [
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Groq API",
+        "Tailwind"
+      ]
     },
     {
-      "name": "Skilltube",
-      "impactStatement": "YouTube, without the rabbit holes.",
-      "description": "Placeholder: a focused learning tracker that turns YouTube playlists into structured courses with progress.",
+      "name": "SkillTube",
+      "impactStatement": "A platform built for the workers the internet forgot.",
+      "description": "A video-first marketplace where skilled workers showcase their craft and connect directly with buyers. No middlemen, no noise, no race to the bottom on pricing.",
       "imageSrc": "../assets/Skilltube.webp",
-      "githubLink": "https://github.com/your-handle/skilltube",
+      "githubLink": "https://github.com/Swarspage/Runtime-Terrors",
       "liveLink": null,
-      "technologies": ["React", "Node.js", "MongoDB", "YouTube Data API"]
+      "technologies": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ]
     },
     {
       "name": "Vayu",
-      "impactStatement": "Air quality you can read at a glance.",
-      "description": "Placeholder: a real-time weather and AQI dashboard with location-aware forecasts.",
+      "impactStatement": "Weather, rendered beautifully.",
+      "description": "Real-time weather and forecasts for any location - wrapped in an interface that doesn't feel like a utility app from 2012.",
       "imageSrc": "../assets/Vayu.webp",
-      "githubLink": "https://github.com/your-handle/vayu",
-      "liveLink": "https://vayu.example.com",
-      "technologies": ["React", "Vite", "Tailwind", "OpenWeather API"]
+      "githubLink": "https://github.com/Swarspage/CSI-Weather-App",
+      "liveLink": null,
+      "technologies": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ]
     }
   ]
 }

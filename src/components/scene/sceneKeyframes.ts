@@ -32,18 +32,18 @@ const DESKTOP: KeyframeDef[] = [
 { target: "#contact", start: "top 35%", frame: { core: 1, x: 0.55, y: 0.32, scale: 0.95, orbit: 1, tilt: 0.38 } }];
 
 
-const HERO_MOBILE: Partial<SceneFrame> = { core: 1, x: 0, y: 0.2, scale: 0.72, orbit: 1, tilt: 0.38 };
+const HERO_MOBILE: Partial<SceneFrame> = { core: 1, x: 0, y: 0, scale: 1.0, orbit: 1, tilt: 0.38 };
 
 const MOBILE: KeyframeDef[] = [
 { target: "#hero", start: "top top", frame: HERO_MOBILE },
-{ target: "#about", start: "top bottom", frame: { core: 1, x: 0, y: 0.25, scale: 0.85, seam: 0.15, orbit: 0.6 } },
-{ target: "#about", start: "top 25%", frame: { core: 1, x: 0.75, y: 0.6, scale: 0.5, seam: 0.4, orbit: 0.2 } },
-{ target: "#singularity", start: "top 60%", frame: { planet: 1, x: 0.35, y: 0.5, scale: 0.7, atmo: 1, orbit: 1, tilt: 0.42 } },
-{ target: "#projects", start: "top 30%", frame: { planet: 1, x: 0.85, y: 0.72, scale: 0.4, atmo: 0.7, orbit: 0.4, tilt: 0.42 } },
-{ target: "#skills", start: "top 60%", frame: { grid: 1, x: 0, y: 0.5, scale: 0.55, tint: 1, tilt: 0 } },
-{ target: "#achievements", start: "top 60%", frame: { ring: 1, x: 0, y: 0.15, scale: 0.55, tilt: 0 } },
-{ target: "#journey", start: "top 40%", frame: { core: 1, x: -0.75, y: 0.6, scale: 0.42, orbit: 0.4 } },
-{ target: "#contact", start: "top 50%", frame: { core: 1, x: 0.45, y: 0.5, scale: 0.6, orbit: 1, tilt: 0.38 } }];
+{ target: "#about", start: "top bottom", frame: { core: 1, x: 0, y: 0.05, scale: 1.15, seam: 0.15, orbit: 0.7, tilt: 0.3 } },
+{ target: "#about", start: "top 25%", frame: { core: 1, x: 0.15, y: 0.25, scale: 0.85, seam: 0.35, orbit: 0.35, tilt: 0.2 } },
+{ target: "#singularity", start: "top 60%", frame: { planet: 1, x: 0, y: 0.15, scale: 0.95, atmo: 1, orbit: 1, tilt: 0.42 } },
+{ target: "#projects", start: "top 30%", frame: { planet: 1, x: 0.2, y: 0.3, scale: 0.75, atmo: 0.7, orbit: 0.5, tilt: 0.42 } },
+{ target: "#skills", start: "top 60%", frame: { grid: 1, x: 0, y: 0.15, scale: 0.85, tint: 1, tilt: 0 } },
+{ target: "#achievements", start: "top 60%", frame: { ring: 1, x: 0, y: 0.05, scale: 0.85, tilt: 0 } },
+{ target: "#journey", start: "top 40%", frame: { core: 1, x: 0, y: 0.2, scale: 0.7, seam: 0.08, orbit: 0.5, tilt: 0.35 } },
+{ target: "#contact", start: "top 50%", frame: { core: 1, x: 0, y: 0.15, scale: 0.95, orbit: 1, tilt: 0.38 } }];
 
 
 export function getKeyframeDefs(desktop: boolean): KeyframeDef[] {
