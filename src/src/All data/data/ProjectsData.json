@@ -1,0 +1,50 @@
+{
+  "projectsData": [
+    {
+      "name": "Singularity",
+      "impactStatement": "NASA. SpaceX. ISRO. One dashboard to rule them all.",
+      "description": "A full-stack space exploration platform that unifies live launch, mission and telemetry data from three agencies into a single 3D dashboard, with an AI guide for the curious.",
+      "imageSrc": "../assets/Singularity.webp",
+      "githubLink": "https://github.com/Swarspage/Singularity.git",
+      "liveLink": "https://space-scope-93kx.vercel.app/",
+      "demoLink": "https://www.youtube.com/watch?v=lDWuxWCVywc",
+      "technologies": ["React", "Three.js", "Node.js", "MongoDB", "Gemini AI", "Framer Motion"]
+    },
+    {
+      "name": "SIMS",
+      "impactStatement": "Shipped to 500+ daily users across campus.",
+      "description": "A student information management system built during my internship. Attendance, records and notices in one placeholder MERN app.",
+      "imageSrc": "../assets/sims.webp",
+      "githubLink": null,
+      "liveLink": null,
+      "technologies": ["React", "Node.js", "Express", "MongoDB", "Tailwind"]
+    },
+    {
+      "name": "RecipeAi",
+      "impactStatement": "Tell it what's in your fridge. Get dinner.",
+      "description": "Placeholder: an AI recipe generator that turns the ingredients you already have into step-by-step meals.",
+      "imageSrc": "../assets/RecipeAi.webp",
+      "githubLink": "https://github.com/your-handle/recipeai",
+      "liveLink": "https://recipeai.example.com",
+      "technologies": ["React", "Express", "Gemini AI", "MongoDB"]
+    },
+    {
+      "name": "Skilltube",
+      "impactStatement": "YouTube, without the rabbit holes.",
+      "description": "Placeholder: a focused learning tracker that turns YouTube playlists into structured courses with progress.",
+      "imageSrc": "../assets/Skilltube.webp",
+      "githubLink": "https://github.com/your-handle/skilltube",
+      "liveLink": null,
+      "technologies": ["React", "Node.js", "MongoDB", "YouTube Data API"]
+    },
+    {
+      "name": "Vayu",
+      "impactStatement": "Air quality you can read at a glance.",
+      "description": "Placeholder: a real-time weather and AQI dashboard with location-aware forecasts.",
+      "imageSrc": "../assets/Vayu.webp",
+      "githubLink": "https://github.com/your-handle/vayu",
+      "liveLink": "https://vayu.example.com",
+      "technologies": ["React", "Vite", "Tailwind", "OpenWeather API"]
+    }
+  ]
+}
