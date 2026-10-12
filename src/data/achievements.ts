@@ -7,8 +7,8 @@ const achievementImages: Record<string, string> = {
   'Shipped to 500+ Users · SIMS': 'soloInternHODPic.webp',
   'Internship · Full Dev Team': 'internshipGroupPhoto.webp',
   'Internship Certificate · DMCE': 'InternCertificate.webp',
-  'Letter of Appreciation': 'LetterofAppreciationInternship.webp',
-  'Official Certificate · TT Doubles': 'Tabletennisdoubles2ndprize.webp',
+  'Letter of Appreciation': 'LOA.webp',
+  'Official Certificate · TT Doubles': 'LetterofAppreciationInternship.webp',
   'Top 8 Finalist · Code-A-Thon 2.0': 'CodeAThonehackthon.webp',
   'The Team Behind Singularity': 'codeAThon2.0withTeam.webp',
   '2nd Place · Table Tennis Doubles': 'Tabletennisdoubles2ndprize.webp'

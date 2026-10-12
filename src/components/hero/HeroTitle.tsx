@@ -1,21 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ArrowDownRightIcon, ArrowDownIcon } from 'lucide-react';
 import { profile } from '../../data/profile';
 import { scrollToId } from '../../hooks/useSmoothScroll';
-import { Placeholder } from '../Placeholder';
+import TechText from './TechText';
 
 interface HeroTitleProps {
   revealed: boolean;
-  showPortrait: boolean;
+  showPortrait?: boolean;
 }
 
 const EASE = [0.23, 1, 0.32, 1] as const;
 
-export function HeroTitle({ revealed, showPortrait }: HeroTitleProps) {
-  const first = profile.firstName.toUpperCase();
-  const last = profile.lastName.toUpperCase();
-
+export function HeroTitle({ revealed }: HeroTitleProps) {
   return (
     <div className="relative z-10 flex h-full flex-col justify-between px-5 pb-6 pt-24 md:px-10 md:pb-10 md:pt-28">
       <FadeIn revealed={revealed} delay={0.35}>
@@ -29,34 +26,42 @@ export function HeroTitle({ revealed, showPortrait }: HeroTitleProps) {
       </FadeIn>
 
       <div>
-        <h1
-          className="font-display text-[17vw] font-black uppercase leading-[0.8] tracking-[-0.035em] text-bone md:text-[14vw] md:[font-stretch:125%]"
-          aria-label={`${profile.firstName} ${profile.lastName}`}>
-          
-          <span className="flex items-center gap-[0.12em]" aria-hidden>
-            <SplitWord text={first} revealed={revealed} offset={0} />
-            {showPortrait &&
-            <motion.span
-              className="inline-block"
-              initial={{ opacity: 0, scale: 0.96 }}
-              animate={revealed ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.3, ease: EASE, delay: 0.3 }}>
-              
-                <Placeholder
-                variant="portrait"
-                src={profile.portrait}
-                label="Your photo"
-                hideLabel
-                className="h-[0.7em] w-[1.15em] rounded-[0.1em]" />
-              
-              </motion.span>
-            }
-          </span>
-          <span className="block" aria-hidden>
-            <SplitWord text={last} revealed={revealed} offset={first.length} />
-            <SplitWord text="." revealed={revealed} offset={first.length + last.length} className="text-signal" />
-          </span>
+        <h1 className="sr-only">
+          {profile.firstName} {profile.lastName}
         </h1>
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={revealed ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.4, ease: EASE, delay: 0.15 }}
+          className="relative -ml-1 w-full h-[28vw] min-h-[130px] max-h-[340px] sm:h-[25vw] md:h-[22vw]"
+        >
+          <TechText
+            text={`SWAR\nSHINDE.`}
+            fontFamily="'Archivo', system-ui, -apple-system, sans-serif"
+            fontWeight={900}
+            fontSize={220}
+            letterSpacing={-0.009}
+            lineHeight={0.8}
+            align="left"
+            color="#ECE9E2"
+            accentColor="#FF4D00"
+            reveal="letter"
+            reach={220}
+            softness={0.7}
+            dashLength={16}
+            dashGap={2}
+            strokeWidth={1.8}
+            lineStyle="dashed"
+            specks={15}
+            selection={true}
+            labels={true}
+            draggable={true}
+            sweep={true}
+            speed={1}
+            className="h-full w-full"
+          />
+        </motion.div>
 
         <FadeIn revealed={revealed} delay={0.45}>
           <div className="mt-6 grid gap-5 md:mt-8 md:grid-cols-12 md:items-end md:gap-8">
@@ -70,14 +75,12 @@ export function HeroTitle({ revealed, showPortrait }: HeroTitleProps) {
               <button
                 onClick={() => scrollToId('work')}
                 className="inline-flex items-center gap-2 bg-signal px-5 py-3 font-mono text-xs font-bold uppercase tracking-[0.14em] text-ink transition-colors duration-150 hover:bg-bone">
-                
                 See the work <ArrowDownRightIcon className="h-4 w-4" aria-hidden />
               </button>
               <a
                 href={profile.resumeLink}
                 download
                 className="inline-flex items-center gap-2 border border-bone/40 px-5 py-3 font-mono text-xs uppercase tracking-[0.14em] text-bone transition-colors duration-150 hover:border-bone">
-                
                 Résumé <ArrowDownIcon className="h-4 w-4" aria-hidden />
               </a>
             </div>
@@ -85,50 +88,21 @@ export function HeroTitle({ revealed, showPortrait }: HeroTitleProps) {
         </FadeIn>
       </div>
     </div>);
-
 }
 
-function SplitWord({
-  text,
-  revealed,
-  offset,
-  className = ''
-
-
-
-
-
-}: {text: string;revealed: boolean;offset: number;className?: string;}) {
-  return (
-    <span className={`inline-flex overflow-hidden pb-[0.04em] ${className}`}>
-      {text.split('').map((char, i) =>
-      <motion.span
-        key={`${char}-${i}`}
-        className="inline-block"
-        initial={{ y: '105%' }}
-        animate={revealed ? { y: '0%' } : {}}
-        transition={{ duration: 0.3, ease: EASE, delay: 0.12 + (offset + i) * 0.03 }}>
-        
-          {char}
-        </motion.span>
-      )}
-    </span>);
-
-}
-
-function FadeIn({ children, revealed, delay }: {children: React.ReactNode;revealed: boolean;delay: number;}) {
+function FadeIn({ children, revealed, delay }: { children: React.ReactNode; revealed: boolean; delay: number; }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 12 }}
       animate={revealed ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.3, ease: EASE, delay }}>
-      
+
       {children}
     </motion.div>);
 
 }
 
-function RoleRotator({ roles }: {roles: string[];}) {
+function RoleRotator({ roles }: { roles: string[]; }) {
   const [index, setIndex] = useState(0);
   useEffect(() => {
     const id = window.setInterval(() => setIndex((i) => (i + 1) % roles.length), 2200);
@@ -145,7 +119,7 @@ function RoleRotator({ roles }: {roles: string[];}) {
           animate={{ y: '0%', opacity: 1 }}
           exit={{ y: '-100%', opacity: 0 }}
           transition={{ duration: 0.25, ease: EASE }}>
-          
+
           {roles[index]}
         </motion.span>
       </AnimatePresence>
