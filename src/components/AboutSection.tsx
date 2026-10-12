@@ -27,10 +27,10 @@ export function AboutSection() {
             <div className="flex flex-col md:col-span-5 md:sticky md:top-24 md:self-start">
               <div className="relative w-full max-w-[480px] self-center md:self-start">
                 <div
-                  className="relative aspect-[3/4] w-full overflow-hidden"
+                  className="relative aspect-[2/3] w-full overflow-hidden"
                   style={{
-                    maskImage: 'linear-gradient(to bottom, black 65%, transparent 100%)',
-                    WebkitMaskImage: 'linear-gradient(to bottom, black 65%, transparent 100%)'
+                    maskImage: 'linear-gradient(to bottom, black 86%, transparent 100%)',
+                    WebkitMaskImage: 'linear-gradient(to bottom, black 86%, transparent 100%)'
                   }}>
                   <img
                     src={profile.about.image || profile.portrait || ''}
@@ -38,7 +38,7 @@ export function AboutSection() {
                     loading="lazy"
                     className="h-full w-full object-cover object-top mix-blend-multiply filter contrast-[1.05]"
                   />
-                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-bone via-bone/40 to-transparent" />
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-bone to-transparent" />
                 </div>
               </div>
             </div>
