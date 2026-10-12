@@ -19,7 +19,7 @@ interface AppProps {
   playIntro?: boolean;
 }
 
-export function App({ showPortrait = true, playIntro = true }: AppProps) {
+export function App({ showPortrait = false, playIntro = true }: AppProps) {
   const [revealed, setRevealed] = useState(!playIntro);
   const [introDone, setIntroDone] = useState(!playIntro);
 
