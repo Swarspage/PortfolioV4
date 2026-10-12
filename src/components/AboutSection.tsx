@@ -23,13 +23,14 @@ export function AboutSection() {
         <div className="mx-auto grid max-w-[1400px] gap-10 md:grid-cols-12 md:gap-8">
           <div className="md:col-span-3">
             <h2 className="font-mono text-xs uppercase tracking-[0.16em] text-smoke">About</h2>
-            <Placeholder
-              variant="portrait"
-              src={profile.portrait}
-              label="Portrait · 4:5"
-              tone="light"
-              className="mt-6 hidden aspect-[4/5] w-full max-w-[240px] md:block" />
-            
+            <div className="mt-6 aspect-[4/5] w-full max-w-[260px] overflow-hidden rounded-[18px] border border-ink/15 shadow-sm">
+              <Placeholder
+                variant="portrait"
+                src={profile.about.image || profile.portrait}
+                label="Swar Shinde · Portrait"
+                tone="light"
+                className="h-full w-full object-cover object-top" />
+            </div>
           </div>
 
           <div className="md:col-span-9">

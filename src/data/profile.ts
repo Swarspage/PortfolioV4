@@ -19,10 +19,11 @@ export const profile: Profile = {
   ],
   resumeLink: heroData.resumeLink || '/Swar-Res.pdf',
   email: 'swarshinde.work@gmail.com',
-  portrait: getAssetUrl('image.webp') || getAssetUrl('Cloudy Face.webp'),
+  portrait: getAssetUrl((aboutData as { imageSrc?: string }).imageSrc) || getAssetUrl('Orange Noir Portrait.png') || getAssetUrl('image.webp') || getAssetUrl('Cloudy Face.webp'),
   about: {
     lead: aboutData.paragraphs[0] || "I'm Swar - a 20-year-old developer from Navi Mumbai. I ship full-stack MERN apps that look cinematic and don't fall apart under real users.",
-    paragraphs: aboutData.paragraphs.slice(1)
+    paragraphs: aboutData.paragraphs.slice(1),
+    image: getAssetUrl((aboutData as { imageSrc?: string }).imageSrc) || getAssetUrl('Orange Noir Portrait.png')
   },
   socials: [
     {

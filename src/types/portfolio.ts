@@ -26,6 +26,7 @@ export interface Profile {
   about: {
     lead: string;
     paragraphs: string[];
+    image?: string | null;
   };
   socials: SocialLink[];
 }
