@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { skillCategoryOrder, skills } from '../data/skills';
 import { Placeholder } from './Placeholder';
@@ -22,20 +22,20 @@ export function SkillsSection() {
           </div>
         </div>
         <div className="mt-16 space-y-20 md:col-span-7 md:mt-0 md:space-y-32">
-          {skillCategoryOrder.map((category) =>
-          <SkillGroup
-            key={category}
-            category={category}
-            items={skills.filter((s) => s.category === category)} />
-
-          )}
+          {skillCategoryOrder.map((category) => (
+            <SkillGroup
+              key={category}
+              category={category}
+              items={skills.filter((s) => s.category === category)}
+            />
+          ))}
         </div>
       </div>
-    </section>);
-
+    </section>
+  );
 }
 
-function SkillGroup({ category, items }: {category: SkillCategory;items: Skill[];}) {
+function SkillGroup({ category, items }: { category: SkillCategory; items: Skill[] }) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] });
   const opacity = useTransform(scrollYProgress, [0, 0.25, 0.75, 1], [0, 1, 1, 0]);
@@ -47,20 +47,34 @@ function SkillGroup({ category, items }: {category: SkillCategory;items: Skill[]
         <h3 className="font-display text-3xl font-extrabold uppercase tracking-tight md:text-5xl">{category}</h3>
         <span className="font-mono text-xs text-steel">{String(items.length).padStart(2, '0')}</span>
       </div>
-      <ul className="mt-6 grid grid-cols-2 gap-x-6 gap-y-5 sm:grid-cols-3">
-        {items.map((skill) =>
-        <li key={skill.name} className="flex items-center gap-3">
-            <Placeholder
-            variant="icon"
-            src={skill.icon}
-            label={skill.name}
-            accent={skill.glow}
-            className="h-11 w-11 shrink-0" />
-          
-            <span className="text-base font-medium md:text-lg">{skill.name}</span>
+      <ul className="mt-6 grid grid-cols-2 gap-x-6 gap-y-4 sm:grid-cols-3">
+        {items.map((skill) => (
+          <li
+            key={skill.name}
+            className="group flex items-center gap-3.5 rounded-lg px-2 py-2 -mx-2 transition-all duration-200 ease-out hover:bg-white/[0.04] cursor-default"
+          >
+            <div className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-line/50 bg-char/70 p-1.5 transition-all duration-200 ease-out group-hover:-translate-y-0.5 group-hover:scale-110 group-hover:border-line group-hover:shadow-[0_0_16px_rgba(255,255,255,0.08)]">
+              {skill.glow && (
+                <span
+                  className="pointer-events-none absolute inset-0 rounded-lg opacity-0 blur-[8px] transition-opacity duration-200 group-hover:opacity-45"
+                  style={{ backgroundColor: skill.glow }}
+                  aria-hidden
+                />
+              )}
+              <Placeholder
+                variant="icon"
+                src={skill.icon}
+                label={skill.name}
+                accent={skill.glow}
+                className="relative z-10 h-full w-full !object-contain transition-transform duration-200 ease-out group-hover:scale-105"
+              />
+            </div>
+            <span className="text-base font-medium text-bone/90 transition-all duration-200 ease-out group-hover:translate-x-1 group-hover:text-bone md:text-lg">
+              {skill.name}
+            </span>
           </li>
-        )}
+        ))}
       </ul>
-    </motion.div>);
-
+    </motion.div>
+  );
 }

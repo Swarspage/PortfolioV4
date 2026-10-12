@@ -62,13 +62,13 @@
   {
     "skill": "Python",
     "glow": "#4B8BBE",
-    "category": "Backend",
+    "category": "Languages",
     "icon": "Python.webp"
   },
   {
     "skill": "Java",
     "glow": "#ED8B00",
-    "category": "Backend",
+    "category": "Languages",
     "icon": "java.webp"
   },
   {

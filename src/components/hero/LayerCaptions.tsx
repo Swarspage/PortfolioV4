@@ -34,10 +34,10 @@ function LayerCaption({ layer, index, progress }: {layer: StackLayer;index: numb
       <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-signal md:text-xs">
         Layer 0{index + 1} — {layer.label}
       </p>
-      <h2 className="wide mt-3 font-display text-[2.6rem] font-black uppercase leading-[0.88] tracking-[-0.02em] text-bone md:text-[4.5rem]">
+      <h2 className="wide mt-3 font-display text-[clamp(2rem,7vw,2.6rem)] font-black uppercase leading-[0.88] tracking-[-0.02em] text-bone md:text-[4.5rem]">
         {layer.title}
       </h2>
-      <p className="mt-4 max-w-md text-base leading-relaxed text-steel md:text-lg">{layer.description}</p>
+      <p className="mt-3 sm:mt-4 max-w-md text-sm sm:text-base leading-relaxed text-steel md:text-lg">{layer.description}</p>
       <ul className="mt-5 flex flex-wrap gap-2">
         {layerSkills.map((s) =>
         <li
@@ -60,14 +60,17 @@ function Finale({ progress }: {progress: MotionValue<number>;}) {
   return (
     <motion.div
       style={{ opacity, scale }}
-      className="absolute inset-0 flex flex-col items-center justify-center px-5 text-center">
+      className="absolute inset-0 flex flex-col items-center justify-center px-4 sm:px-6 text-center select-none">
       
-      <h2 className="wide font-display text-[15vw] font-black uppercase leading-[0.82] tracking-[-0.035em] text-bone md:text-[9vw]">
-        Full stack<span className="text-signal">.</span>
-        <br />
-        No handoffs<span className="text-signal">.</span>
+      <h2 className="wide font-display text-[clamp(1.75rem,8.2vw,3.25rem)] sm:text-[8.5vw] md:text-[7.5vw] lg:text-[7vw] 2xl:text-[7.5rem] font-black uppercase leading-[0.88] tracking-[-0.035em] text-bone max-w-full">
+        <span className="block whitespace-nowrap">
+          Full stack<span className="text-signal">.</span>
+        </span>
+        <span className="block whitespace-nowrap">
+          No handoffs<span className="text-signal">.</span>
+        </span>
       </h2>
-      <p className="mt-6 font-mono text-xs uppercase tracking-[0.16em] text-steel">
+      <p className="mt-4 sm:mt-6 font-mono text-[10px] sm:text-xs uppercase tracking-[0.14em] sm:tracking-[0.16em] text-steel px-4">
         Four layers. One builder. Keep going.
       </p>
     </motion.div>);

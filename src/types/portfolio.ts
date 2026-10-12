@@ -10,6 +10,7 @@ export interface SocialLink {
   handle: string;
   href: string;
   icon: string | null;
+  copyValue?: string;
 }
 
 export interface Profile {

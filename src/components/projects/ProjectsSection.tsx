@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef, useState } from 'react';
+import { useLayoutEffect, useRef, useState } from 'react';
 import { motion, useMotionValueEvent, useScroll, useTransform } from 'framer-motion';
 import { projects } from '../../data/projects';
 import { useMediaQuery } from '../../hooks/useMediaQuery';
@@ -9,10 +9,10 @@ export function ProjectsSection() {
   return isDesktop ? <ProjectsTrack /> : <ProjectsStack />;
 }
 
-function SectionIntro({ className = '' }: {className?: string;}) {
+function SectionIntro({ className = '' }: { className?: string }) {
   return (
     <div className={className}>
-      <h2 className="wide font-display text-[clamp(3rem,6vw,6.5rem)] font-black uppercase leading-[0.84] tracking-[-0.035em] text-bone">
+      <h2 className="wide font-display text-[clamp(2.5rem,4.5vw,5rem)] font-black uppercase leading-[0.86] tracking-[-0.035em] text-bone">
         Selected
         <br />
         work<span className="text-signal">.</span>
@@ -20,8 +20,8 @@ function SectionIntro({ className = '' }: {className?: string;}) {
       <p className="mt-6 max-w-xs text-base leading-relaxed text-steel md:text-lg">
         {projects.length} products, all shipped. Scroll to move through them.
       </p>
-    </div>);
-
+    </div>
+  );
 }
 
 /** Desktop: vertical scroll drives a horizontal track of cards that slide left. */
@@ -60,8 +60,8 @@ function ProjectsTrack() {
       style={{ height: `calc(${distance}px + 100vh)` }}>
       
       <div className="sticky top-0 flex h-screen flex-col justify-center overflow-hidden">
-        <motion.div ref={trackRef} style={{ x }} className="flex w-max items-stretch gap-6 px-10">
-          <SectionIntro className="flex w-[30vw] shrink-0 flex-col justify-end pb-4" />
+        <motion.div ref={trackRef} style={{ x }} className="flex w-max items-stretch gap-8 px-10 lg:gap-12">
+          <SectionIntro className="flex w-auto min-w-[320px] md:min-w-[420px] lg:min-w-[480px] shrink-0 flex-col justify-end pb-6 pr-8 lg:pr-12" />
           {projects.map((project, i) =>
           <div key={project.slug} className="h-[min(78vh,720px)] w-[min(60vw,860px)] shrink-0">
               <ProjectCard project={project} index={i} total={projects.length} layout="fill" />

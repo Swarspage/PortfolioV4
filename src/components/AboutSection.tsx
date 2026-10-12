@@ -25,20 +25,25 @@ export function AboutSection() {
           <div className="grid items-start gap-10 md:grid-cols-12 md:gap-8 lg:gap-12">
             {/* Left Column: 40% width with large blended portrait pulled right to the top alongside lead text */}
             <div className="flex flex-col md:col-span-5 md:sticky md:top-24 md:self-start">
-              <div className="relative w-full max-w-[480px] self-center md:self-start">
-                <div
-                  className="relative aspect-[2/3] w-full overflow-hidden"
-                  style={{
-                    maskImage: 'linear-gradient(to bottom, black 86%, transparent 100%)',
-                    WebkitMaskImage: 'linear-gradient(to bottom, black 86%, transparent 100%)'
-                  }}>
+              <div className="relative w-full max-w-[460px] self-center md:self-start">
+                <div className="relative aspect-[4/5] w-full overflow-hidden border border-ink/15 bg-bone">
                   <img
                     src={profile.about.image || profile.portrait || ''}
                     alt="Swar Shinde · Portrait"
                     loading="lazy"
-                    className="h-full w-full object-cover object-top mix-blend-multiply filter contrast-[1.05]"
+                    className="h-full w-full object-cover object-top mix-blend-multiply translate-y-1 sm:translate-y-2"
                   />
-                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-bone to-transparent" />
+                  {/* Subtle gallery metadata badges */}
+                  <div className="pointer-events-none absolute left-3 top-3 font-mono text-[9px] uppercase tracking-widest text-ink/35">
+                    01 // PORTRAIT
+                  </div>
+                  <div className="pointer-events-none absolute right-3 top-3 font-mono text-[9px] text-ink/30">
+                    [+]
+                  </div>
+                </div>
+                <div className="mt-2.5 flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.14em] text-smoke">
+                  <span>Swar Shinde</span>
+                  <span>19.0330° N, 73.0297° E</span>
                 </div>
               </div>
             </div>
