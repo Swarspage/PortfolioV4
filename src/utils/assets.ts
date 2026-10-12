@@ -1,114 +1,70 @@
-import { achievementImages } from "../data/achievementImages";
-import { siteConfig } from "../data/siteConfig";
-import type { ProjectItem, SkillItem } from "../types/content";
-import { monogramTile, plate, portraitSilhouette } from "./placeholders";
+// Asset resolver using Vite's eager import.meta.glob to load assets from 'src/All data'
 
-/**
- * The single asset resolver.
- * Every file under "src/All data/" is discovered at build time with import.meta.glob.
- * A reference resolves to the real file when it exists, otherwise to a designed placeholder.
- * Drop a real file at the same path and it appears automatically — no code changes.
- */
+const assetModules = import.meta.glob<{ default: string }>(
+  [
+    '/src/All data/**/*.{webp,png,jpg,jpeg,avif,gif,svg,pdf}',
+    '/src/All data/*.{webp,png,jpg,jpeg,avif,gif,svg,pdf}'
+  ],
+  { eager: true }
+);
 
-export interface ResolvedAsset {
-  src: string;
-  placeholder: string;
-  isPlaceholder: boolean;
-  path: string;
-}
+const assetMap = new Map<string, string>();
 
-const ROOT_MARKER = "all data/";
+for (const [path, mod] of Object.entries(assetModules)) {
+  const url = mod.default || (mod as unknown as string);
+  if (!url || typeof url !== 'string') continue;
 
-function loadAssetModules(): Record<string, string> {
-  try {
-    // @ts-ignore — import.meta.glob is provided by Vite at build time.
-    const modules = import.meta.glob(
-      [
-        "/src/All data/**/*.{webp,png,jpg,jpeg,avif,gif,svg,pdf}",
-        "/src/All data/*.{webp,png,jpg,jpeg,avif,gif,svg,pdf}",
-        "/src/src/All data/**/*.{webp,png,jpg,jpeg,avif,gif,svg,pdf}",
-        "/src/src/All data/*.{webp,png,jpg,jpeg,avif,gif,svg,pdf}"
-      ],
-      { eager: true, query: "?url", import: "default" }
-    ) as Record<string, string>;
-    return modules ?? {};
-  } catch {
-    return {};
+  const normalized = path.replace(/\\/g, '/');
+  // Full path
+  assetMap.set(normalized.toLowerCase(), url);
+
+  // Extract relative after 'All data/'
+  const marker = '/all data/';
+  const idx = normalized.toLowerCase().indexOf(marker);
+  if (idx !== -1) {
+    const rel = normalized.slice(idx + marker.length).toLowerCase();
+    assetMap.set(rel, url);
+    // If inside assets/, also map without 'assets/' prefix
+    if (rel.startsWith('assets/')) {
+      assetMap.set(rel.slice('assets/'.length), url);
+    }
+    // Map just filename
+    const filename = rel.split('/').pop();
+    if (filename) {
+      assetMap.set(filename, url);
+    }
   }
 }
 
-const byPath = new Map<string, string>();
-const byName = new Map<string, string>();
-
-for (const [key, url] of Object.entries(loadAssetModules())) {
-  if (typeof url !== "string") continue;
-  const lower = key.replace(/\\/g, "/").toLowerCase();
-  const at = lower.indexOf(ROOT_MARKER);
-  const rel = at >= 0 ? lower.slice(at + ROOT_MARKER.length) : lower.replace(/^\/+/, "");
-  if (rel.includes("/backups/")) continue;
-  byPath.set(rel, url);
-  const name = rel.split("/").pop() ?? rel;
-  if (!byName.has(name)) byName.set(name, url);
-}
-
-export function normalizeAssetRef(ref: string): string {
-  let r = ref.trim().replace(/\\/g, "/").split("?")[0].toLowerCase();
-  const at = r.indexOf(ROOT_MARKER);
-  if (at >= 0) r = r.slice(at + ROOT_MARKER.length);
-  return r.replace(/^(\.\.?\/)+/, "").replace(/^\/+/, "");
-}
-
-/** Real URL for a reference such as "../assets/Singularity.webp", "/Swar-Res.pdf" or "Cloudy Face.webp". */
-export function findAssetUrl(ref: string): string | null {
+/**
+ * Resolves a filename or relative path (e.g., 'Singularity.webp', '../assets/sims.webp', 'CSITechLead.webp')
+ * to its Vite-bundled URL.
+ */
+export function getAssetUrl(ref: string | null | undefined): string | null {
   if (!ref) return null;
   if (/^(https?:|data:|blob:)/i.test(ref)) return ref;
-  const n = normalizeAssetRef(ref);
-  return byPath.get(n) ?? byPath.get(`assets/${n}`) ?? byName.get(n.split("/").pop() ?? "") ?? null;
-}
 
-function resolve(ref: string, placeholder: string): ResolvedAsset {
-  const url = findAssetUrl(ref);
-  return { src: url ?? placeholder, placeholder, isPlaceholder: !url, path: ref };
-}
+  const clean = ref
+    .trim()
+    .replace(/\\/g, '/')
+    .replace(/^(\.\.\/)+/, '')
+    .replace(/^\/+/, '')
+    .toLowerCase();
 
-function fileName(ref: string): string {
-  return ref.split("/").pop() ?? ref;
-}
+  if (assetMap.has(clean)) {
+    return assetMap.get(clean)!;
+  }
 
-export function resolveAvatar(): ResolvedAsset {
-  return resolve("Swar Portrait Cutout.png", portraitSilhouette());
-}
+  // Try checking just the filename
+  const filename = clean.split('/').pop()?.toLowerCase();
+  if (filename && assetMap.has(filename)) {
+    return assetMap.get(filename)!;
+  }
 
-export function resolveSkillIcon(skill: SkillItem): ResolvedAsset {
-  return resolve(`assets/${skill.icon}`, monogramTile(skill.skill, skill.glow));
-}
+  // Try checking with assets/ prefix
+  if (assetMap.has(`assets/${clean}`)) {
+    return assetMap.get(`assets/${clean}`)!;
+  }
 
-export function resolveProjectImage(project: ProjectItem): ResolvedAsset {
-  return resolve(project.imageSrc, plate(project.name, fileName(project.imageSrc)));
-}
-
-export function resolveAchievementImage(title: string): ResolvedAsset {
-  const path = achievementImages[title] ?? "";
-  return resolve(path, plate(title, path ? fileName(path) : "Achievements"));
-}
-
-export function resolveThumbnail(thumbnail: string, title: string): ResolvedAsset {
-  const ref = /^(https?:|data:)/i.test(thumbnail) || thumbnail.includes("/") ? thumbnail : `assets/${thumbnail}`;
-  return resolve(ref, plate(title.replace(/^Placeholder:\s*/i, ""), thumbnail, "wide"));
-}
-
-export function resolveBanner(): ResolvedAsset {
-  return resolve("assets/utubebanner.webp", plate("On YouTube", "utubebanner.webp", "banner"));
-}
-
-export function resolveSocialIcon(file: string, label: string): ResolvedAsset {
-  return resolve(`assets/${file}`, monogramTile(label, "#2a2420"));
-}
-
-export function resolveResumeUrl(link: string): string {
-  return findAssetUrl(link) ?? siteConfig.resumeFallbackUrl;
-}
-
-export function hasRealAsset(ref: string): boolean {
-  return findAssetUrl(ref) !== null;
+  return null;
 }

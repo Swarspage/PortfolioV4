@@ -5,26 +5,23 @@ export default {
 ],
   theme: {
     extend: {
-      screens: {
-        pin: { raw: "(min-width: 1024px) and (min-height: 640px)" },
-      },
       colors: {
-        bg: "var(--bg)",
-        raised: "var(--bg-raised)",
-        ink: "var(--ink)",
-        muted: "var(--muted)",
-        line: "var(--line)",
-        ghost: "var(--ghost)",
-        accent: "var(--accent-ink)",
+        ink: '#0A0A0B',
+        char: '#131315',
+        line: '#26262A',
+        steel: '#8D8D94',
+        bone: '#ECE9E2',
+        smoke: '#55555B',
+        signal: '#FF4D00',
       },
       fontFamily: {
-        display: ["Fraunces", '"Cormorant Garamond"', "Georgia", "serif"],
-        serif: ['"Cormorant Garamond"', "Fraunces", "Georgia", "serif"],
-        script: ['"Pinyon Script"', "cursive"],
-        sans: ["Geist", "ui-sans-serif", "system-ui", "sans-serif"],
-        mono: ['"Geist Mono"', "ui-monospace", "SFMono-Regular", "monospace"],
+        display: ['Archivo', 'system-ui', 'sans-serif'],
+        sans: ['Archivo', 'system-ui', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
+      },
+      transitionTimingFunction: {
+        out: 'cubic-bezier(0.23, 1, 0.32, 1)',
       },
     },
   },
-  plugins: [],
 };

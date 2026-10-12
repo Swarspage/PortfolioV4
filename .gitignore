@@ -23,10 +23,10 @@ dist-ssr
 *.sln
 *.sw?
 
-# Environment variables (keep secrets out of git)
+# Environment variables
 .env
 .env.*
 
-# graphify
+# Local tools & caches
+.kilo/
 graphify-out/
-.graphify/

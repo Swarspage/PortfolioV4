@@ -13,9 +13,8 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "@emotion/react": "^11.13.3",
-    "gsap": "^3.12.5",
-    "lenis": "latest",
     "three": "^0.170.0",
+    "lenis": "latest",
     "lucide-react": "0.522.0",
     "framer-motion": "^11.5.4"
   },
@@ -23,7 +22,6 @@
     "@types/node": "^20.11.18",
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.1",
-    "@types/three": "^0.170.0",
     "@typescript-eslint/eslint-plugin": "^5.54.0",
     "@typescript-eslint/parser": "^5.54.0",
     "@vitejs/plugin-react": "^4.2.1",

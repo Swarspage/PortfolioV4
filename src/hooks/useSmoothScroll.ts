@@ -1,39 +1,38 @@
-import { useEffect } from "react";
-import Lenis from "lenis";
-import { gsap, ScrollTrigger } from "../utils/gsap";
+import { useEffect } from 'react';
+import Lenis from 'lenis';
+import { isCoarsePointer, prefersReducedMotion } from '../utils/device';
 
-let lenis: Lenis | null = null;
+let lenisInstance: Lenis | null = null;
 
-export function getLenis(): Lenis | null {
-  return lenis;
-}
-
+/** Inertial wheel scrolling on desktop only. Touch devices keep native scrolling (cheaper and feels right). */
 export function useSmoothScroll(enabled: boolean) {
   useEffect(() => {
-    if (!enabled) return;
-    const instance = new Lenis({ lerp: 0.1, smoothWheel: true });
-    lenis = instance;
-    instance.on("scroll", ScrollTrigger.update);
-    const tick = (time: number) => instance.raf(time * 1000);
-    gsap.ticker.add(tick);
-    gsap.ticker.lagSmoothing(0);
+    if (!enabled || prefersReducedMotion() || isCoarsePointer()) return;
+    const lenis = new Lenis({
+      duration: 1.1,
+      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+    });
+    lenisInstance = lenis;
+    let raf = 0;
+    const loop = (time: number) => {
+      lenis.raf(time);
+      raf = requestAnimationFrame(loop);
+    };
+    raf = requestAnimationFrame(loop);
     return () => {
-      gsap.ticker.remove(tick);
-      instance.destroy();
-      if (lenis === instance) lenis = null;
+      cancelAnimationFrame(raf);
+      lenis.destroy();
+      lenisInstance = null;
     };
   }, [enabled]);
 }
 
-export function scrollToTarget(selector: string) {
-  const el = document.querySelector<HTMLElement>(selector);
+export function scrollToId(id: string) {
+  const el = document.getElementById(id);
   if (!el) return;
-  const focus = () => el.focus({ preventScroll: true });
-  if (lenis) {
-    lenis.scrollTo(el, { duration: 1.2, onComplete: focus });
-    return;
+  if (lenisInstance) {
+    lenisInstance.scrollTo(el);
+  } else {
+    el.scrollIntoView({ behavior: prefersReducedMotion() ? 'auto' : 'smooth' });
   }
-  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  el.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
-  focus();
 }
