@@ -1,8 +1,5 @@
 User-agent: *
 Allow: /
-
-# Sitemap location
-Sitemap: https://swarshinde.dev/sitemap.xml
-
-# Block build artifacts (not needed for single-page site but good practice)
 Disallow: /assets/*.map
+
+Sitemap: https://swarshinde.dev/sitemap.xml

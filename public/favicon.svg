@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect width="100" height="100" rx="22" fill="#0A0A0B"/>
+  <rect width="98" height="98" x="1" y="1" rx="21" fill="none" stroke="#27272A" stroke-width="2"/>
+  <text x="14" y="68" font-family="'Archivo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="52" font-weight="900" letter-spacing="-2" fill="#ECE9E2">SS</text>
+  <rect x="74" y="56" width="12" height="12" rx="2" fill="#FF4D00"/>
+</svg>
