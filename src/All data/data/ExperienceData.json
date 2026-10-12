@@ -1,0 +1,23 @@
+[
+  {
+    "role": "Frontend Intern",
+    "org": "Datta Meghe College",
+    "duration": "Aug 2025 - Mar 2026",
+    "active": false,
+    "description": "Built and maintained features across the stack - React on the front, Express and MongoDB in the back. Integrated real-world APIs like OpenWeather and Leaflet into student-facing apps. SIMS, the college management system I built here, has 500+ students registered on it. Not a demo project."
+  },
+  {
+    "role": "Technical Co-Lead",
+    "org": "CSI-CATT DMCE",
+    "duration": "Jul 2026 - Present",
+    "active": true,
+    "description": "Elected Technical Co-Lead for CSI-CATT 2026-27. Leading the technical wing of the college's Computer Society chapter - driving workshops, events, and the chapter's dev projects. Went from contributor to the person setting the technical direction."
+  },
+  {
+    "role": "Freelance Developer",
+    "org": "Self-employed",
+    "duration": "2022 – Present",
+    "active": false,
+    "description": "End-to-end ownership: design, MERN development, deployment, polish. No handoffs, no excuses. Every project has been a lesson in what it actually takes to ship something you're proud of."
+  }
+]
