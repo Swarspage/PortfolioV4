@@ -1,10 +1,10 @@
-﻿{
+{
   "projectsData": [
     {
       "name": "Singularity",
       "impactStatement": "NASA. SpaceX. ISRO. One dashboard to rule them all.",
       "description": "A full-stack space exploration platform pulling real-time telemetry into one mission control. Live ISS tracking, 3D WebGL globe, aurora heatmaps, gamified learning with XP and leaderboards, and an AI chatbot that switches context by page. Built for a hackathon. Finished Top 8 out of 100+.",
-      "imageSrc": "../assets/Singularity.webp",
+      "imageSrc": "../assets/projects/Singularity.webp",
       "githubLink": "https://github.com/Swarspage/Singularity.git",
       "liveLink": "https://space-scope-93kx.vercel.app/",
       "demoLink": "https://www.youtube.com/watch?v=lDWuxWCVywc",
@@ -21,7 +21,7 @@
       "name": "SIMS",
       "impactStatement": "Built for a college. Used by the entire college.",
       "description": "A Student Information Management System built during my internship under the college HOD. Manages academic records, internships, placements, and achievements across three user roles. I owned the frontend end-to-end - 500+ students use it every day. Not a demo. A real deployment.",
-      "imageSrc": "../assets/sims.webp",
+      "imageSrc": "../assets/projects/sims.webp",
       "githubLink": null,
       "liveLink": "https://sims.csidmce.com",
       "technologies": [
@@ -37,7 +37,7 @@
       "name": "Recipe App",
       "impactStatement": "Your fridge has ingredients. This has ideas.",
       "description": "An AI-powered recipe platform built around how people actually cook. Drop in what's in your fridge, get matched recipes instantly. Chef AI handles custom recipes, nutrition breakdowns, and builds a taste profile from your history.",
-      "imageSrc": "../assets/RecipeAi.webp",
+      "imageSrc": "../assets/projects/RecipeAi.webp",
       "githubLink": "https://github.com/Swarspage/Recipe-App.git",
       "liveLink": null,
       "technologies": [
@@ -52,7 +52,7 @@
       "name": "SkillTube",
       "impactStatement": "A platform built for the workers the internet forgot.",
       "description": "A video-first marketplace where skilled workers showcase their craft and connect directly with buyers. No middlemen, no noise, no race to the bottom on pricing.",
-      "imageSrc": "../assets/Skilltube.webp",
+      "imageSrc": "../assets/projects/Skilltube.webp",
       "githubLink": "https://github.com/Swarspage/Runtime-Terrors",
       "liveLink": null,
       "technologies": [
@@ -65,7 +65,7 @@
       "name": "Vayu",
       "impactStatement": "Weather, rendered beautifully.",
       "description": "Real-time weather and forecasts for any location - wrapped in an interface that doesn't feel like a utility app from 2012.",
-      "imageSrc": "../assets/Vayu.webp",
+      "imageSrc": "../assets/projects/Vayu.webp",
       "githubLink": "https://github.com/Swarspage/CSI-Weather-App",
       "liveLink": null,
       "technologies": [
