@@ -12,12 +12,5 @@
     "duration": "Jul 2026 - Present",
     "active": true,
     "description": "Elected Technical Co-Lead of CSI-CATT for 2026-27. I lead the technical side of the college's Computer Society chapter, which means planning workshops and events and guiding the chapter's dev projects. I joined as a contributor, so setting the direction is a big step up."
-  },
-  {
-    "role": "Freelance Developer",
-    "org": "Self-employed",
-    "duration": "2022 – Present",
-    "active": false,
-    "description": "I've been freelancing since 2022 and handle everything myself: design, MERN development, deployment, and the final polish. Working solo means every project teaches me something new about what it takes to ship."
   }
 ]
