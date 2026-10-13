@@ -1,11 +1,15 @@
 {
   "name": "Swar Shinde",
   "availability": "Available for Opportunities",
-  "roles": ["Developer", "Builder", "Designer"],
+  "roles": [
+    "Developer",
+    "Builder",
+    "Designer"
+  ],
   "stats": [
     {
       "value": "500+",
-      "label": "Daily Users"
+      "label": "Registered Users"
     },
     {
       "value": "Top 8",

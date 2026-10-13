@@ -56,6 +56,7 @@ export interface Project {
   impactStatement: string;
   description: string;
   image: string | null;
+  wip?: boolean;
   links: {
     github: string | null;
     live: string | null;

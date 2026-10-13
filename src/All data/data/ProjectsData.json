@@ -1,9 +1,25 @@
 {
   "projectsData": [
     {
+      "name": "SIMS",
+      "impactStatement": "Built for a college. Used by 500+ of its students.",
+      "description": "A Student Information Management System I built during my internship under the college HOD. It tracks academic records, internships, placements, and achievements across three user roles. I owned the frontend end to end, and 500+ students have registered on it. It's a live deployment, not a demo.",
+      "imageSrc": "../assets/projects/sims.webp",
+      "githubLink": null,
+      "liveLink": "https://sims.csidmce.com",
+      "technologies": [
+        "React",
+        "Vite",
+        "Tailwind",
+        "Node.js",
+        "MongoDB",
+        "JWT"
+      ]
+    },
+    {
       "name": "Singularity",
-      "impactStatement": "NASA. SpaceX. ISRO. One dashboard to rule them all.",
-      "description": "A full-stack space exploration platform pulling real-time telemetry into one mission control. Live ISS tracking, 3D WebGL globe, aurora heatmaps, gamified learning with XP and leaderboards, and an AI chatbot that switches context by page. Built for a hackathon. Finished Top 8 out of 100+.",
+      "impactStatement": "Space data from NASA, SpaceX, and ISRO, all in one dashboard.",
+      "description": "A full-stack space exploration platform that brings live space data into a single mission control. It includes live ISS tracking, a 3D WebGL globe, aurora heatmaps, XP-based learning with leaderboards, and an AI chatbot that adapts to whichever page you're on. Built for a hackathon, where it placed Top 8 out of 100+ entries.",
       "imageSrc": "../assets/projects/Singularity.webp",
       "githubLink": "https://github.com/Swarspage/Singularity.git",
       "liveLink": "https://space-scope-93kx.vercel.app/",
@@ -18,25 +34,9 @@
       ]
     },
     {
-      "name": "SIMS",
-      "impactStatement": "Built for a college. Used by the entire college.",
-      "description": "A Student Information Management System built during my internship under the college HOD. Manages academic records, internships, placements, and achievements across three user roles. I owned the frontend end-to-end - 500+ students use it every day. Not a demo. A real deployment.",
-      "imageSrc": "../assets/projects/sims.webp",
-      "githubLink": null,
-      "liveLink": "https://sims.csidmce.com",
-      "technologies": [
-        "React",
-        "Vite",
-        "Tailwind",
-        "Node.js",
-        "MongoDB",
-        "JWT"
-      ]
-    },
-    {
       "name": "Recipe App",
       "impactStatement": "Your fridge has ingredients. This has ideas.",
-      "description": "An AI-powered recipe platform built around how people actually cook. Drop in what's in your fridge, get matched recipes instantly. Chef AI handles custom recipes, nutrition breakdowns, and builds a taste profile from your history.",
+      "description": "An AI-powered recipe app built around how people actually cook. Enter what's in your fridge and get matching recipes right away. Chef AI can also write custom recipes, break down the nutrition, and learn your taste from what you've cooked before.",
       "imageSrc": "../assets/projects/RecipeAi.webp",
       "githubLink": "https://github.com/Swarspage/Recipe-App.git",
       "liveLink": null,
@@ -49,29 +49,30 @@
       ]
     },
     {
-      "name": "SkillTube",
-      "impactStatement": "A platform built for the workers the internet forgot.",
-      "description": "A video-first marketplace where skilled workers showcase their craft and connect directly with buyers. No middlemen, no noise, no race to the bottom on pricing.",
-      "imageSrc": "../assets/projects/Skilltube.webp",
-      "githubLink": "https://github.com/Swarspage/Runtime-Terrors",
+      "name": "Campus Connect",
+      "wip": true,
+      "impactStatement": "Your campus, as a marketplace. Building it right now.",
+      "description": "A campus-only marketplace where students buy, sell, and rent things like textbooks, lab coats, and cycles, or offer skills like tutoring. Listings come with a meetup spot on campus, like the library or main building, and profiles are meant for verified students only. It's a work in progress, and I'm building it right now.",
+      "imageSrc": "../assets/projects/CampusConnect.webp",
+      "githubLink": null,
       "liveLink": null,
       "technologies": [
-        "HTML",
-        "CSS",
-        "JavaScript"
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Tailwind"
       ]
     },
     {
-      "name": "Vayu",
-      "impactStatement": "Weather, rendered beautifully.",
-      "description": "Real-time weather and forecasts for any location - wrapped in an interface that doesn't feel like a utility app from 2012.",
-      "imageSrc": "../assets/projects/Vayu.webp",
-      "githubLink": "https://github.com/Swarspage/CSI-Weather-App",
+      "name": "SkillTube",
+      "wip": true,
+      "impactStatement": "A platform for the workers the internet forgot. Building it right now.",
+      "description": "A video-first marketplace where skilled workers show off their craft and connect directly with buyers. No middlemen, and no pressure to undercut each other on price. It's a work in progress.",
+      "imageSrc": "../assets/projects/Skilltube.webp",
+      "githubLink": null,
       "liveLink": null,
       "technologies": [
-        "HTML",
-        "CSS",
-        "JavaScript"
+        "HTML"
       ]
     }
   ]

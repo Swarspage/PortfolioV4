@@ -54,9 +54,8 @@ export function Navbar({ visible }: NavbarProps) {
         <nav className="flex items-center justify-between px-5 py-4 md:px-10 md:py-5" aria-label="Primary">
           <button
             onClick={() => go('top')}
-            className="wide font-display text-lg font-black tracking-tight"
+            className="wide font-display text-base font-black tracking-tight sm:text-lg"
             aria-label="Back to top">
-            
             SS<span className="text-signal">.</span>
           </button>
           <ul className="hidden items-center gap-9 md:flex">
@@ -110,8 +109,7 @@ export function Navbar({ visible }: NavbarProps) {
               
                   <button
                 onClick={() => go(link.id)}
-                className="font-display text-6xl font-black uppercase tracking-tight text-bone">
-                
+                className="font-display text-[clamp(2.2rem,8vw,3.5rem)] font-black uppercase leading-[0.9] tracking-tight text-bone">
                     {link.label}
                   </button>
                 </motion.li>

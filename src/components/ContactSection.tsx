@@ -64,7 +64,8 @@ export function ContactSection() {
             <p className="font-mono text-xs uppercase tracking-[0.16em]">Fastest way to reach me</p>
             <a
               href={`mailto:${profile.email}`}
-              className="mt-3 block break-all font-display text-3xl font-extrabold tracking-tight underline decoration-2 underline-offset-[6px] md:text-5xl">
+              title={profile.email}
+              className="mt-3 block truncate font-display text-2xl font-extrabold tracking-tight underline decoration-2 underline-offset-[6px] md:text-5xl md:overflow-visible md:whitespace-normal">
               {profile.email}
             </a>
             <div className="mt-8 flex flex-wrap gap-3">

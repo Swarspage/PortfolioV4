@@ -32,7 +32,7 @@ function LayerCaption({ layer, index, progress }: {layer: StackLayer;index: numb
       className="absolute inset-x-5 bottom-8 md:inset-x-auto md:bottom-auto md:left-10 md:top-1/2 md:w-[min(40vw,520px)] md:-translate-y-1/2">
       
       <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-signal md:text-xs">
-        Layer 0{index + 1} — {layer.label}
+        Layer 0{index + 1} - {layer.label}
       </p>
       <h2 className="wide mt-3 font-display text-[clamp(2rem,7vw,2.6rem)] font-black uppercase leading-[0.88] tracking-[-0.02em] text-bone md:text-[4.5rem]">
         {layer.title}

@@ -17,7 +17,7 @@ export function SkillsSection() {
               arsenal<span className="text-signal">.</span>
             </h2>
             <p className="mt-6 max-w-sm text-base leading-relaxed text-steel md:text-lg">
-              {skills.length} tools I reach for without thinking — grouped by where they live in the stack.
+              {skills.length} tools I reach for without thinking - grouped by where they live in the stack.
             </p>
           </div>
         </div>

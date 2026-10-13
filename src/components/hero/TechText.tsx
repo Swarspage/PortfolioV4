@@ -24,6 +24,7 @@ export interface TechTextProps {
   draggable?: boolean;
   sweep?: boolean;
   speed?: number;
+  fontStretch?: string;
   stretchX?: number;
   className?: string;
   style?: React.CSSProperties;
@@ -85,6 +86,7 @@ interface Settings {
   draggable: boolean;
   sweep: boolean;
   speed: number;
+  fontStretch: string;
   stretchX: number;
 }
 
@@ -146,6 +148,7 @@ export const TechText: React.FC<TechTextProps> = ({
   draggable = true,
   sweep = true,
   speed = 1,
+  fontStretch = 'normal',
   stretchX = 1,
   className = '',
   style
@@ -179,6 +182,7 @@ export const TechText: React.FC<TechTextProps> = ({
       draggable,
       sweep,
       speed,
+      fontStretch,
       stretchX
     };
     wakeRef.current();
@@ -224,7 +228,8 @@ export const TechText: React.FC<TechTextProps> = ({
     };
 
     const family = (s: Settings) => s.fontFamily || getComputedStyle(container).fontFamily || 'sans-serif';
-    const fontFor = (s: Settings, size: number) => `${s.fontWeight} ${size}px ${family(s)}`;
+    const fontFor = (s: Settings, size: number) =>
+      `${s.fontWeight} ${s.fontStretch && s.fontStretch !== 'normal' ? s.fontStretch + ' ' : ''}${size}px ${family(s)}`;
 
     const setFont = (target: CanvasRenderingContext2D, s: Settings, size: number) => {
       target.font = fontFor(s, size);

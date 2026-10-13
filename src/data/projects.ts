@@ -19,6 +19,7 @@ export const projects: Project[] = projectsJson.projectsData.map((p) => {
     impactStatement: p.impactStatement,
     description: p.description,
     image: getAssetUrl(p.imageSrc),
+    wip: 'wip' in p ? Boolean(p.wip) : false,
     links: {
       github: p.githubLink || null,
       live: p.liveLink || null,

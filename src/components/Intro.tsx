@@ -77,7 +77,7 @@ export function Intro({ onReveal, onDone }: IntroProps) {
         
         <div className="flex justify-between font-mono text-[11px] uppercase tracking-[0.16em] text-steel">
           <span>Swar Shinde</span>
-          <span>Portfolio — 2026</span>
+          <span>Portfolio - 2026</span>
         </div>
         <div>
           <p className="wide font-display text-[26vw] font-black leading-[0.8] tracking-[-0.04em] text-bone md:text-[16vw]">

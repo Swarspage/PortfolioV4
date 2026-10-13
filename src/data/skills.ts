@@ -14,7 +14,7 @@ export const stackLayers: StackLayer[] = [
     kind: 'interface',
     label: 'Interface',
     title: 'The surface.',
-    description: 'Interfaces that feel fast because they are. React, motion and WebGL — tuned until every frame earns its place.',
+    description: 'Interfaces that feel fast because they are. React, motion and WebGL - tuned until every frame earns its place.',
     categories: ['Frontend']
   },
   {

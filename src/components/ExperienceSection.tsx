@@ -18,7 +18,7 @@ export function ExperienceSection() {
               record<span className="text-signal">.</span>
             </h2>
             <p className="mt-6 max-w-sm text-base leading-relaxed text-smoke md:text-lg">
-              Where I've put in the work — and what came out the other side.
+              Where I've put in the work - and what came out the other side.
             </p>
           </div>
         </div>

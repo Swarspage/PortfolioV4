@@ -21,7 +21,7 @@ export function HeroTitle({ revealed }: HeroTitleProps) {
             <span className="h-1.5 w-1.5 bg-[#3BD671]" aria-hidden />
             {profile.availability}
           </p>
-          <p className="hidden md:block">Full-stack developer — {profile.location}</p>
+          <p className="hidden md:block">Full-stack developer - {profile.location}</p>
         </div>
       </FadeIn>
 
@@ -40,6 +40,7 @@ export function HeroTitle({ revealed }: HeroTitleProps) {
             text={`SWAR\nSHINDE.`}
             fontFamily="'Archivo', system-ui, -apple-system, sans-serif"
             fontWeight={900}
+            fontStretch="expanded"
             fontSize={220}
             letterSpacing={-0.009}
             lineHeight={0.8}

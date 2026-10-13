@@ -14,7 +14,7 @@ export function AchievementsSection() {
             Receipts<span className="text-signal">.</span>
           </h2>
           <p className="max-w-sm text-base leading-relaxed text-steel md:text-lg">
-            Proof over promises. Wins, roles and recognition — with the photos to back them up.
+            Proof over promises. Wins, roles and recognition - with the photos to back them up.
           </p>
         </div>
         <ul
