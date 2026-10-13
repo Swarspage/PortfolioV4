@@ -17,7 +17,7 @@ export const profile: Profile = {
     { value: 'Top 8', label: 'Hackathon Finalist' },
     { value: 'MERN', label: 'Full-Stack Developer' }
   ],
-  resumeLink: heroData.resumeLink || '/Swar-Res.pdf',
+  resumeLink: heroData.resumeLink || '/Swar-Shinde-Resume.pdf',
   email: 'shindeswar@hotmail.com',
   portrait: getAssetUrl((aboutData as { imageSrc?: string }).imageSrc) || getAssetUrl('Orange Noir Portrait.png'),
   about: {
