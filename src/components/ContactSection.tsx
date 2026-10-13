@@ -4,6 +4,7 @@ import { ArrowDownIcon, ArrowUpIcon, ArrowUpRightIcon, CheckIcon, CopyIcon } fro
 import { profile } from '../data/profile';
 import { scrollToId } from '../hooks/useSmoothScroll';
 import { Placeholder } from './Placeholder';
+import { VisitorCounter } from './VisitorCounter';
 
 export function ContactSection() {
   const ref = useRef<HTMLElement>(null);
@@ -158,8 +159,9 @@ export function ContactSection() {
           </ul>
         </div>
 
-        <footer className="mt-24 flex flex-col gap-4 border-t border-ink/25 pt-6 font-mono text-xs uppercase tracking-[0.12em] md:mt-32 md:flex-row md:items-center md:justify-between">
+        <footer className="mt-24 flex flex-col gap-5 border-t border-ink/25 pt-6 font-mono text-xs uppercase tracking-[0.12em] md:mt-32 md:flex-row md:items-center md:justify-between">
           <span>© 2026 {profile.firstName} {profile.lastName}. Designed & built by me.</span>
+          <VisitorCounter />
           <button onClick={() => scrollToId('top')} className="inline-flex items-center gap-2 hover:underline">
             Back to top <ArrowUpIcon className="h-3.5 w-3.5" aria-hidden />
           </button>
