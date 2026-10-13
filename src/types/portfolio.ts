@@ -110,3 +110,11 @@ export interface NavLink {
   id: string;
   label: string;
 }
+
+export interface MoreWorkItem {
+  name: string;
+  tag: string;
+  description: string;
+  liveLink: string | null;
+  githubLink: string | null;
+}

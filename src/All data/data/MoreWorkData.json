@@ -1,0 +1,51 @@
+[
+  {
+    "name": "College Aptitude Platform",
+    "tag": "Backend Lead",
+    "description": "An aptitude exam platform for the whole college, built under my guidance as Technical Co-Lead. I tuned and optimized the backend so exams ran smoothly, and 50 to 70 students took tests on it. Another group handled the frontend. Open to DMCE students only.",
+    "liveLink": "https://apticore.swarshinde.dev",
+    "githubLink": null
+  },
+  {
+    "name": "Technitude Website",
+    "tag": "Team of 4",
+    "description": "The official website for Technitude, a college tech event with four games. Four of us built it, and I contributed frontend tweaks and design. Participants registered for the games through it, using a third-party sponsor platform.",
+    "liveLink": "https://technitude26.swarshinde.dev",
+    "githubLink": null
+  },
+  {
+    "name": "CSI Attendance App",
+    "tag": "Design & Lead",
+    "description": "A full-stack attendance app for recording who showed up at any event. I designed it and led the team that built it, which meant setting the direction, running the meetings, and guiding everyone through the build. The code itself was written by my team.",
+    "liveLink": "https://csi-attendance-web-app.vercel.app/",
+    "githubLink": null
+  },
+  {
+    "name": "Big Shot",
+    "tag": "Contributor",
+    "description": "A playable browser game from the Technitude event. I was one of the contributors on the build, and it's still live to play.",
+    "liveLink": "https://bigshot.swarshinde.dev",
+    "githubLink": null
+  },
+  {
+    "name": "College Page Watermark Tool",
+    "tag": "Built with a friend",
+    "description": "A tool for students without blank college pages. Upload a plain PDF and it comes back on the official college page layout, ready to print. It started as my friend's idea and we built it together.",
+    "liveLink": "https://watermark.swarshinde.dev",
+    "githubLink": null
+  },
+  {
+    "name": "NWIS · Well Prediction",
+    "tag": "SIH Prototype",
+    "description": "A Smart India Hackathon prototype from a team of friends and me. An AI/ML model that predicts drilling parameters like pore pressure and rate of penetration for a well being dug. A prototype, not a finished product.",
+    "liveLink": "https://nwis.swarshinde.dev",
+    "githubLink": null
+  },
+  {
+    "name": "Polar EMS",
+    "tag": "SIH Prototype",
+    "description": "A Smart India Hackathon prototype from a team of friends and me. An energy management app for research stations in polar regions, using AI predictions to plan energy use more efficiently. A prototype, not a finished product.",
+    "liveLink": "https://polarems.swarshinde.dev",
+    "githubLink": null
+  }
+]

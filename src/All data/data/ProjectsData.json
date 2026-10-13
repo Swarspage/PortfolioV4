@@ -17,6 +17,17 @@
       ]
     },
     {
+      "name": "Scaffold",
+      "impactStatement": "Skip the blank page. Start with a good prompt.",
+      "description": "A prompt library with two collections: design prompts and workflow prompts. Browse, copy, and drop them straight into your own work. It's a frontend-only React app, built and run entirely by me.",
+      "imageSrc": "../assets/projects/scaffold.webp",
+      "githubLink": null,
+      "liveLink": "https://scaffold.swarshinde.dev",
+      "technologies": [
+        "React"
+      ]
+    },
+    {
       "name": "Singularity",
       "impactStatement": "Space data from NASA, SpaceX, and ISRO, all in one dashboard.",
       "description": "A full-stack space exploration platform that brings live space data into a single mission control. It includes live ISS tracking, a 3D WebGL globe, aurora heatmaps, XP-based learning with leaderboards, and an AI chatbot that adapts to whichever page you're on. Built for a hackathon, where it placed Top 8 out of 100+ entries.",
@@ -67,7 +78,7 @@
       "name": "SkillTube",
       "wip": true,
       "impactStatement": "A platform for the workers the internet forgot. Building it right now.",
-      "description": "A video-first marketplace where skilled workers show off their craft and connect directly with buyers. No middlemen, and no pressure to undercut each other on price. It's a work in progress.",
+      "description": "A video-first marketplace where skilled workers show off their craft and connect directly with buyers. No middlemen, and no pressure to undercut each other on price. It's a work in progress, and I'm building it in plain HTML for now.",
       "imageSrc": "../assets/projects/Skilltube.webp",
       "githubLink": null,
       "liveLink": null,

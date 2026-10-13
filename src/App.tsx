@@ -6,6 +6,7 @@ import { Marquee } from './components/Marquee';
 import { AboutSection } from './components/AboutSection';
 import { SkillsSection } from './components/SkillsSection';
 import { ProjectsSection } from './components/projects/ProjectsSection';
+import { MoreWorkSection } from './components/MoreWorkSection';
 import { ExperienceSection } from './components/ExperienceSection';
 import { AchievementsSection } from './components/AchievementsSection';
 import { YoutubeSection } from './components/YoutubeSection';
@@ -44,6 +45,7 @@ export function App({ showPortrait = false, playIntro = true }: AppProps) {
         <AboutSection />
         <SkillsSection />
         <ProjectsSection />
+        <MoreWorkSection />
         <ExperienceSection />
         <AchievementsSection />
         <YoutubeSection />
