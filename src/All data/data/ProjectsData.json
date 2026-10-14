@@ -19,12 +19,15 @@
     {
       "name": "Scaffold",
       "impactStatement": "Skip the blank page. Start with a good prompt.",
-      "description": "A prompt library with two collections: design prompts and workflow prompts. Browse, copy, and drop them straight into your own work. It's a frontend-only React app, built and run entirely by me.",
-      "imageSrc": "../assets/projects/scaffold.webp",
+      "description": "A prompt directory for people who build with AI. It has 35 design-system prompts with live previews, 58 workflow prompts that cover everything from exploring a new codebase to shipping, 23 image prompts, and a searchable directory of 1,678 public APIs. Fill in the variables to fit your project, copy the prompt, and save favorites to My Kit to export as Markdown or JSON. It's frontend only, so everything runs in your browser.",
+      "imageSrc": "../assets/projects/Scaffold.webp",
       "githubLink": null,
-      "liveLink": "https://scaffold.swarshinde.dev",
+      "liveLink": "https://scaffold.swarshinde.dev/",
       "technologies": [
-        "React"
+        "React",
+        "Vite",
+        "Tailwind",
+        "GSAP"
       ]
     },
     {
