@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowUpRightIcon, CodeIcon } from 'lucide-react';
 import { moreWork } from '../data/moreWork';
 import type { MoreWorkItem } from '../types/portfolio';
+import { GithubContributionGrid } from './GithubContributionGrid';
 
 export function MoreWorkSection() {
   return (
@@ -11,36 +12,43 @@ export function MoreWorkSection() {
       data-nav="dark"
       className="overflow-x-clip border-t border-line/40 bg-ink px-5 py-24 text-bone md:px-10 md:py-36"
     >
-      <div className="mx-auto max-w-[1400px] md:grid md:grid-cols-12 md:gap-10">
-        {/* Sticky Editorial Intro */}
-        <div className="md:col-span-5">
-          <div className="md:sticky md:top-28">
-            <span className="font-mono text-xs uppercase tracking-[0.16em] text-signal">
-              Archive & Side Builds
-            </span>
-            <h2 className="wide mt-3 font-display text-[clamp(2.75rem,5vw,5.25rem)] font-black uppercase leading-[0.86] tracking-[-0.03em]">
-              More
-              <br />
-              work<span className="text-signal">.</span>
-            </h2>
-            <p className="mt-6 max-w-sm text-base leading-relaxed text-steel md:text-lg">
-              {moreWork.length} secondary builds, hackathon prototypes, and college platforms. Real
-              code that solved real problems without the spotlight.
-            </p>
-            <div className="mt-8 flex items-center gap-3 font-mono text-xs text-smoke">
-              <span className="flex h-1.5 w-1.5 rounded-full bg-signal" aria-hidden />
-              <span>{String(moreWork.length).padStart(2, '0')} entries recorded</span>
+      <div className="mx-auto max-w-[1400px]">
+        <div className="md:grid md:grid-cols-12 md:gap-10">
+          {/* Sticky Editorial Intro */}
+          <div className="md:col-span-5">
+            <div className="md:sticky md:top-28">
+              <span className="font-mono text-xs uppercase tracking-[0.16em] text-signal">
+                Archive & Side Builds
+              </span>
+              <h2 className="wide mt-3 font-display text-[clamp(2.75rem,5vw,5.25rem)] font-black uppercase leading-[0.86] tracking-[-0.03em]">
+                More
+                <br />
+                work<span className="text-signal">.</span>
+              </h2>
+              <p className="mt-6 max-w-sm text-base leading-relaxed text-steel md:text-lg">
+                {moreWork.length} secondary builds, hackathon prototypes, and college platforms. Real
+                code that solved real problems without the spotlight.
+              </p>
+              <div className="mt-8 flex items-center gap-3 font-mono text-xs text-smoke">
+                <span className="flex h-1.5 w-1.5 rounded-full bg-signal" aria-hidden />
+                <span>{String(moreWork.length).padStart(2, '0')} entries recorded</span>
+              </div>
             </div>
+          </div>
+
+          {/* Compact Secondary Tier List */}
+          <div className="mt-14 md:col-span-7 md:mt-0">
+            <ul className="divide-y divide-line border-y border-line">
+              {moreWork.map((item, index) => (
+                <MoreWorkRow key={item.name} item={item} index={index} />
+              ))}
+            </ul>
           </div>
         </div>
 
-        {/* Compact Secondary Tier List */}
-        <div className="mt-14 md:col-span-7 md:mt-0">
-          <ul className="divide-y divide-line border-y border-line">
-            {moreWork.map((item, index) => (
-              <MoreWorkRow key={item.name} item={item} index={index} />
-            ))}
-          </ul>
+        {/* GitHub Commit Velocity Card */}
+        <div className="mt-20 border-t border-line/40 pt-16">
+          <GithubContributionGrid username="Swarspage" />
         </div>
       </div>
     </section>
