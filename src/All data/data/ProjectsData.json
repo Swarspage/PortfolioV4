@@ -36,7 +36,7 @@
       "description": "A full-stack space exploration platform that brings live space data into a single mission control. It includes live ISS tracking, a 3D WebGL globe, aurora heatmaps, XP-based learning with leaderboards, and an AI chatbot that adapts to whichever page you're on. Built for a hackathon, where it placed Top 8 out of 100+ entries.",
       "imageSrc": "../assets/projects/Singularity.webp",
       "githubLink": "https://github.com/Swarspage/Singularity.git",
-      "liveLink": "https://space-scope-93kx.vercel.app/",
+      "liveLink": null,
       "demoLink": "https://www.youtube.com/watch?v=lDWuxWCVywc",
       "technologies": [
         "React",
